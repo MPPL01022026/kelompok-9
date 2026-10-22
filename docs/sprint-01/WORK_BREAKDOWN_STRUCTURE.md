@@ -1,16 +1,16 @@
 # Work Breakdown Structure (WBS)
 
-Pembagian PIC di bawah adalah usulan awal berdasarkan fokus anggota di brief. Tim perlu menyepakati PIC dan status sebelum dipakai sebagai komitmen kerja.
+Pembagian PIC berikut memasukkan klarifikasi tim bahwa Zahra membagi pekerjaan Analyst & Designer dengan Niluh. Niluh menangani analisis kebutuhan, use case, dan alur proses; Zahra memimpin wireframe dan rancangan basis data dengan tinjauan Niluh. PIC dan status tetap perlu disepakati tim.
 
 | ID | Paket kerja | Deliverable | PIC usulan | Dependensi |
 |---|---|---|---|---|
 | 1.1 | Observasi dan wawancara pemilik | Catatan kebutuhan yang diizinkan | Nayla (koordinasi), semua anggota | Ketersediaan pemilik |
 | 1.2 | Identifikasi masalah dan kebutuhan | Daftar kebutuhan tervalidasi | Niluh (analisis), tim | 1.1 |
 | 1.3 | Charter, register, WBS, pembagian tugas | Dokumen perencanaan | Nayla (koordinasi), tim | Brief dan 1.1 |
-| 2.1 | Analisis fungsional/nonfungsional | Spesifikasi kebutuhan | Niluh, tim | 1.2 |
-| 2.2 | Use case dan alur proses | Diagram/alur sistem | Niluh | 2.1 |
-| 2.3 | Wireframe halaman | Mockup katalog, pemesanan, login, dashboard, laporan | Niluh | 2.1 |
-| 2.4 | Rancangan basis data | Model data produk, transaksi, detail, admin untuk Supabase PostgreSQL | Niluh dan Faiza | 2.1 |
+| 2.1 | Analisis fungsional/nonfungsional | Spesifikasi kebutuhan | Niluh (lead), Zahra dan tim (review) | 1.2 |
+| 2.2 | Use case dan alur proses | Diagram/alur sistem | Niluh (lead), Zahra (review desain alur) | 2.1 |
+| 2.3 | Wireframe halaman | Mockup katalog, pemesanan, login, dashboard, laporan | Zahra (lead), Niluh (review kebutuhan) | 2.1 |
+| 2.4 | Rancangan basis data | Model data produk, transaksi, detail, admin untuk Supabase PostgreSQL | Zahra (lead), Niluh (analisis kebutuhan), Faiza (review teknis) | 2.1 |
 | 2.5 | Rencana arsitektur dan deployment | Dokumen rencana: Next.js App Router dengan TypeScript dan Tailwind CSS; Supabase PostgreSQL untuk data dan Supabase Auth untuk akun admin; Vercel sebagai target hosting. Catat alur katalog publik/admin, kebutuhan environment variables, dan prasyarat deployment. Tahap ini dokumentasi saja; implementasi dan deployment dilakukan pada paket 3.x setelah rancangan disetujui. | Faiza (rencana teknis), Nayla (koordinasi), tim | 2.1 |
 | 3.1 | Database dan koneksi aplikasi | Skema Supabase PostgreSQL dan koneksi aplikasi | Faiza (usulan) | 2.4, 2.5 |
 | 3.2 | Beranda dan katalog | Halaman katalog | Niluh (usulan) | 2.3 |

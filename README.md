@@ -41,13 +41,14 @@ Integrasi pembayaran otomatis, pelacakan kurir GPS, marketplace, akuntansi penuh
 
 ## Tim
 
-| Anggota | Fokus sesuai brief |
+| Anggota | Fokus |
 |---|---|
 | Nayla Salsabila Awika (230504093) | Project Manager |
-| Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer |
+| Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer (requirements, use cases, process flows) |
 | Faiza Rahmatika (230504050) | Developer / Tester |
+| Zahra (akun GitHub: `zahraanissa377-wq`) | Analyst & Designer (wireframes and database design), collaborating with Niluh |
 
-Pembagian pekerjaan di backlog adalah usulan untuk memulai; tim dapat menyepakatinya dan memperbaruinya.
+Pembagian Zahra dan Niluh mengikuti klarifikasi tim. Nama lengkap dan nomor mahasiswa Zahra belum tersedia; lengkapi sebelum laporan formal. Rincian PIC masih usulan dan dapat diperbarui bersama.
 
 ## Dokumen proyek
 
