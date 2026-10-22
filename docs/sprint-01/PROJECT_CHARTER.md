@@ -9,8 +9,8 @@
 | Project Manager | Nayla Salsabila Awika (230504093) |
 | Tim inti | Niluh Naswa Salfa Adlian Lubis (230504092), Faiza Rahmatika (230504050), Zahra (`zahraanissa377-wq`) |
 | Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL), tahun akademik 2026/2027 |
-| Durasi rencana | 4 pekan, 19 Oktober–13 November 2026 (asumsi kalender untuk baseline latihan) |
-| Fase saat ini | Perencanaan; aplikasi dan layanan belum dibuat |
+| Durasi baseline | 7 pekan kalender; empat sprint, 19 Oktober–4 Desember 2026 |
+| Fase saat ini | Inisiasi dan perencanaan; implementasi mengikuti persetujuan kebutuhan dan desain |
 | Stack rencana | Next.js App Router, TypeScript, Tailwind CSS, Supabase PostgreSQL/Auth, Vercel |
 
 Dasar proyek adalah `Tugas MPPL 1.docx`; detail bisnis yang tidak tercantum tidak dianggap sebagai fakta.
@@ -23,7 +23,7 @@ Brief menggambarkan UMKM makanan ringan/olahan ayam dengan menu ayam gunting, ke
 
 1. Menghasilkan spesifikasi katalog, pengelolaan produk, transaksi, dan laporan yang dapat ditinjau terhadap brief.
 2. Menghasilkan diagram use case/alur, wireframe halaman, dan rancangan model data awal.
-3. Menetapkan rencana implementasi yang memetakan Next.js/TypeScript/Tailwind ke Supabase dan Vercel tanpa membangun aplikasi pada Sprint 2.
+3. Menetapkan rancangan implementasi yang memetakan Next.js/TypeScript/Tailwind ke Supabase dan Vercel sebagai dasar pekerjaan pengembangan Sprint 3.
 4. Menyelesaikan paket dokumen perencanaan Sprint 2 sebelum 6 November 2026 menurut baseline usulan.
 5. Sebelum implementasi, memperoleh keputusan tim atas kebutuhan admin, model transaksi, status produk, serta definisi metrik laporan.
 
@@ -37,14 +37,14 @@ Kriteria review: setiap fitur lingkup memiliki aktor, alur utama, data yang dipa
 
 ## Deliverable dan jadwal baseline
 
-| Pekan | Tanggal asumsi | Deliverable utama | PIC koordinasi |
+| Sprint | Periode baseline | Deliverable utama | PIC koordinasi |
 |---|---|---|---|
 | 1 | 19–23 Okt 2026 | Charter, stakeholder, WBS, backlog, pertanyaan terbuka, estimasi FP | Nayla |
-| 2 | 26–30 Okt 2026 | Validasi kebutuhan, spesifikasi, use case dan alur, wireframe/model data draft | Niluh dan Zahra |
-| 3 | 2–6 Nov 2026 | Review desain, rancangan teknis, estimasi dan risiko diperbarui | Faiza dan Nayla |
-| 4 | 9–13 Nov 2026 | Presentasi/review, perbaikan dokumen dan baseline akhir | Seluruh tim; Nayla koordinasi |
+| 2 | 26 Okt–6 Nov 2026 | Validasi kebutuhan, spesifikasi, use case/alur, wireframe, model data, arsitektur | Niluh, Zahra, Faiza |
+| 3 | 9–20 Nov 2026 | Setup dan implementasi katalog, admin, produk, transaksi | Faiza, Niluh |
+| 4 | 23 Nov–4 Des 2026 | Laporan, pengujian, deployment, dokumentasi, demo dan evaluasi | Seluruh tim; Nayla koordinasi |
 
-Tanggal adalah asumsi perencanaan, bukan jadwal resmi mata kuliah.
+Periode di atas adalah baseline kerja tim. Nayla memasukkannya ke pemantauan proyek dan mengajukan perubahan bila kalender kuliah atau keputusan stakeholder memerlukan penyesuaian.
 
 ## Peran dan kewenangan
 
@@ -52,14 +52,14 @@ Nayla mengoordinasikan baseline, rapat, perubahan, risiko, dan review. Niluh mem
 
 ## Asumsi, batasan, dan risiko utama
 
-- Pemilik bersedia mengonfirmasi menu, harga, alur transaksi, dan kebutuhan laporan; waktu wawancara belum terjadwal.
+- Pemilik diminta mengonfirmasi menu, harga, alur transaksi, dan kebutuhan laporan pada Sprint 2; Nayla mengoordinasikan wawancara.
 - Aplikasi ditujukan untuk penggunaan web sederhana dengan satu peran admin awal; aturan multi-user harus dikonfirmasi.
-- Anggaran kas Sprint 2 diasumsikan Rp0 karena hanya menghasilkan dokumen dan menggunakan alat yang tersedia; ini bukan konfirmasi harga layanan masa depan.
-- Ketersediaan tiap anggota diasumsikan 3–4 jam per hari kerja pada pekan kerja; estimasi perlu diturunkan bila jadwal kuliah berbeda.
+- Baseline biaya kas proyek Rp1.914.000, terpisah dari nilai ekonomi tenaga kerja Rp7.150.000; mencakup dua bulan Supabase Pro dan Vercel Pro untuk penggunaan UMKM.
+- Tiap anggota menyediakan hingga 4 jam fokus per hari kerja; baseline effort dan alokasi dijelaskan di Sprint 2 dan disesuaikan saat review kapasitas.
 - Ketidakjelasan kebutuhan dan terlambatnya validasi adalah risiko tinggi; lihat [Risk Register](../sprint-02/RISK_REGISTER.md).
 
 ## Persetujuan baseline
 
-Baseline ini dipersiapkan Nayla untuk review tim. Angka dan tanggal yang disebut sebagai asumsi menjadi dasar perencanaan kerja, bukan klaim persetujuan pemilik/dosen. Perubahan dicatat dalam Pull Request dan Sprint Tracker.
+Nayla mengelola baseline ini bersama tim. Asumsi kerja dipakai untuk penjadwalan sampai pemilik/dosen memberi keputusan; perubahan scope, biaya, atau tanggal dicatat pada Pull Request dan Sprint Tracker.
 
 Lihat [Tech Stack](../../README.md#tech-stack-rencana) dan [WBS](WORK_BREAKDOWN_STRUCTURE.md).

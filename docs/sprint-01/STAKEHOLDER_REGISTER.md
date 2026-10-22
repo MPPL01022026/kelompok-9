@@ -23,4 +23,4 @@ Register ini mengidentifikasi pihak yang mempengaruhi atau menggunakan hasil pro
 | 5 Nov | Seluruh tim | Review risiko, biaya, dan kesiapan rencana teknis | Nayla; Faiza isu teknis |
 | 6 Nov | Tim inti | Sprint review 30 menit; keputusan lanjut/perubahan | Nayla |
 
-Asumsi jadwal komunikasi mengikuti baseline Sprint 2 (26 Oktober–6 November 2026). Sesuaikan jam rapat dengan jadwal nyata anggota.
+Jadwal komunikasi mengikuti baseline Sprint 2 (26 Oktober–6 November 2026). Nayla mengirim undangan dan menyesuaikan jam rapat terhadap jadwal kuliah anggota.

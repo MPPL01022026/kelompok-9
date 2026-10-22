@@ -1,6 +1,6 @@
 # Project Schedule / Gantt Chart — Sprint 2
 
-**Baseline period:** Senin, 26 Oktober–Jumat, 6 November 2026 (10 hari kerja). Ini asumsi jadwal untuk perencanaan; kalender akademik/dosen dapat menggantikannya. Hari kerja Senin–Jumat, tanpa memperhitungkan hari libur yang belum diketahui.
+**Baseline period:** Senin, 26 Oktober–Jumat, 6 November 2026 (10 hari kerja). Baseline tim memakai hari kerja Senin–Jumat. Nayla memindahkan milestone bila kalender kuliah memuat hari nonaktif dan mencatat perubahannya di tracker.
 
 | ID | Aktivitas | PIC | Durasi kerja | Mulai | Selesai | Dependensi | Milestone / bukti selesai |
 |---|---|---|---:|---|---|---|---|
