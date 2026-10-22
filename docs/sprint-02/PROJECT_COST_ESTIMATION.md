@@ -1,4 +1,4 @@
-# Project Cost Estimation — baseline proyek
+# Project Cost Estimation - baseline proyek
 
 Anggaran mencakup empat sprint dari inisiasi sampai demo akhir (19 Oktober–4 Desember 2026). Perhitungan memisahkan biaya kas dari nilai ekonomi tenaga kerja. Nilai menjadi baseline pengendalian; Nayla membandingkan pengeluaran aktual setiap akhir sprint.
 

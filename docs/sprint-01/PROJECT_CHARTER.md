@@ -5,23 +5,21 @@
 | Elemen | Baseline proyek |
 |---|---|
 | Nama | Sistem Informasi Penjualan dan Manajemen Produk UMKM Ayam Gunting Malaysia |
-| Sponsor/pemilik | Pemilik UMKM Ayam Gunting Malaysia; nama tidak tercantum dalam brief |
+| Sponsor/pemilik | Pemilik UMKM Ayam Gunting Malaysia |
 | Project Manager | Nayla Salsabila Awika (230504093) |
-| Tim inti | Niluh Naswa Salfa Adlian Lubis (230504092), Faiza Rahmatika (230504050), Zahra (`zahraanissa377-wq`) |
+| Tim inti | Niluh Naswa Salfa Adlian Lubis (230504092), Faiza Rahmatika (230504050), Zahra (NIM 230504047) |
 | Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL), tahun akademik 2026/2027 |
 | Durasi baseline | 7 pekan kalender; empat sprint, 19 Oktober–4 Desember 2026 |
 | Fase saat ini | Inisiasi dan perencanaan; implementasi mengikuti persetujuan kebutuhan dan desain |
 | Stack rencana | Next.js App Router, TypeScript, Tailwind CSS, Supabase PostgreSQL/Auth, Vercel |
 
-Dasar proyek adalah `Tugas MPPL 1.docx`; detail bisnis yang tidak tercantum tidak dianggap sebagai fakta.
-
 ## Latar belakang dan masalah
 
-Brief menggambarkan UMKM makanan ringan/olahan ayam dengan menu ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Katalog, pengelolaan produk, pencatatan penjualan, dan ringkasan periode adalah kebutuhan yang dituju. Proses manual yang sekarang dipakai, harga, volume transaksi, serta kendala spesifik belum terukur; Sprint 2 memvalidasi dan merancangnya.
+UMKM Ayam Gunting Malaysia menjual ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Sistem akan menyediakan katalog produk, pengelolaan menu, pencatatan penjualan, dan ringkasan periode. Pada Sprint 2, tim memetakan proses operasional bersama pemilik dan mengonfirmasi harga, volume transaksi, serta aturan bisnis yang digunakan.
 
 ## Tujuan dan hasil yang diukur
 
-1. Menghasilkan spesifikasi katalog, pengelolaan produk, transaksi, dan laporan yang dapat ditinjau terhadap brief.
+1. Menghasilkan spesifikasi katalog, pengelolaan produk, transaksi, dan laporan yang disetujui pemilik serta tim.
 2. Menghasilkan diagram use case/alur, wireframe halaman, dan rancangan model data awal.
 3. Menetapkan rancangan implementasi yang memetakan Next.js/TypeScript/Tailwind ke Supabase dan Vercel sebagai dasar pekerjaan pengembangan Sprint 3.
 4. Menyelesaikan paket dokumen perencanaan Sprint 2 sebelum 6 November 2026 menurut baseline usulan.
@@ -33,7 +31,7 @@ Kriteria review: setiap fitur lingkup memiliki aktor, alur utama, data yang dipa
 
 **Termasuk:** katalog publik; detail produk; pencatatan pesanan/transaksi sederhana; autentikasi dan dashboard admin; CRUD/nonaktif produk; riwayat transaksi; rekap dan statistik per periode; rancangan UI/data; rencana test, deployment, dan dokumentasi.
 
-**Tidak termasuk:** pembayaran online otomatis, GPS kurir, marketplace/kurir pihak ketiga, akuntansi lengkap, penggajian, aplikasi native, serta sinkronisasi eksternal yang tidak disebut brief.
+**Tidak termasuk:** pembayaran online otomatis, GPS kurir, integrasi marketplace/kurir pihak ketiga, akuntansi lengkap, penggajian, dan aplikasi native.
 
 ## Deliverable dan jadwal baseline
 

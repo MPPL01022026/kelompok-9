@@ -1,4 +1,4 @@
-# Effort Estimation (Manday) — baseline proyek dan Sprint 2
+# Effort Estimation (Manday) - baseline proyek dan Sprint 2
 
 Estimasi bottom-up berikut mencakup seluruh paket WBS 1.1–5.3. **Satu manday = 4 jam fokus** pada baseline tim ini. Angka merupakan usaha rencana, sementara status penyelesaian dicatat terpisah pada Sprint Tracker.
 

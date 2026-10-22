@@ -4,11 +4,11 @@ WBS ini membagi proyek menjadi deliverable yang dapat diperiksa. Tanggal adalah 
 
 | ID | Sprint | Paket kerja / aktivitas | Deliverable dan kriteria selesai | PIC utama | Dependensi |
 |---|---|---|---|---|---|
-| 1.1 | 1 | Analisis brief dan batas proyek | Ringkasan masalah, tujuan, in/out scope; setiap fitur ditautkan ke brief | Nayla | Tugas MPPL 1 |
+| 1.1 | 1 | Inisiasi dan penetapan batas proyek | Ringkasan masalah, tujuan, ruang lingkup dan hasil yang dituju | Nayla | Kebutuhan UMKM |
 | 1.2 | 1 | Project Charter | Sasaran, deliverable, asumsi, jadwal awal dan kriteria hasil tercatat | Nayla | 1.1 |
 | 1.3 | 1 | Stakeholder Register | Pemilik, tim, pelanggan, evaluator; kebutuhan komunikasi tercatat | Nayla | 1.1 |
 | 1.4 | 1 | WBS, backlog, dan pertanyaan terbuka | ID pekerjaan, PIC, dependensi, prioritas, kriteria dan pertanyaan tersusun | Nayla; tim review | 1.1 |
-| 1.5 | 1 | Function Point awal | Angka brief ditranskripsikan, hitungan subtotal dan ketidaksesuaian ditandai | Niluh; tim review | 1.1 |
+| 1.5 | 1 | Estimasi Function Point | Klasifikasi fungsi dan bobot dihitung; metode serta asumsi ditinjau tim | Niluh; tim review | 1.1 |
 | 1.6 | 1 | Repository dan proses kontribusi | Branch kerja, commit autentik per anggota, PR dan tracker digunakan | Nayla; seluruh tim | Repository dibuat |
 | 2.1 | 2 | Kickoff dan konfirmasi kebutuhan | Catatan keputusan untuk pengguna, produk, pesanan, stok, admin, dan laporan | Nayla (fasilitasi), Niluh (catat) | 1.2–1.4 |
 | 2.2 | 2 | Spesifikasi fungsional/nonfungsional | Setiap kebutuhan punya ID, aktor, prioritas, dan kriteria penerimaan | Niluh | 2.1 |

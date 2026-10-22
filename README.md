@@ -1,4 +1,4 @@
-# README — Ayam Gunting Malaysia
+# README - Ayam Gunting Malaysia
 
 ### Sistem Informasi Penjualan dan Manajemen Produk UMKM
 
@@ -6,7 +6,7 @@
 
 ## Ringkasan proyek
 
-Brief tugas menyebut produk ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Sistem direncanakan untuk membantu pemilik mengelola informasi produk dan transaksi secara terstruktur. Nama pemilik, harga menu, proses transaksi saat ini, dan aturan operasional belum tersedia dalam materi yang sudah dimasukkan; kebutuhan tersebut diperlakukan sebagai asumsi sampai dikonfirmasi.
+UMKM Ayam Gunting Malaysia menyediakan ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Sistem ini membantu pemilik mengelola informasi produk dan transaksi secara terstruktur. Pada Sprint 2, tim mengonfirmasi daftar produk dan harga, alur transaksi saat ini, serta aturan operasional langsung dengan pemilik.
 
 | Masalah yang dituju | Fitur rencana | Pengguna utama |
 |---|---|---|
@@ -26,20 +26,20 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 | Nayla Salsabila Awika (230504093) | Project Manager; rencana, koordinasi, jadwal, risiko, review, dan pelaporan |
 | Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer; kebutuhan, use case, alur proses, dan katalog/statistik |
 | Faiza Rahmatika (230504050) | Developer / Tester; arsitektur teknis, database integration, admin/transaksi, testing, deployment plan |
-| Zahra (`zahraanissa377-wq`) | Analyst & Designer; wireframe dan rancangan basis data bersama Niluh |
+| Zahra (NIM 230504047) | Analyst & Designer; wireframe dan rancangan basis data bersama Niluh |
 
 ## Dokumen proyek
 
-### Sprint 1 — inisiasi dan perencanaan awal
+### Sprint 1 - inisiasi dan perencanaan awal
 
 | Dokumen | Isi |
 |---|---|
-| [Project Charter](docs/sprint-01/PROJECT_CHARTER.md) | Sasaran, ruang lingkup, asumsi, kriteria hasil, dan jadwal empat pekan |
+| [Project Charter](docs/sprint-01/PROJECT_CHARTER.md) | Sasaran, ruang lingkup, keputusan, kriteria hasil, dan jadwal proyek |
 | [Stakeholder Register](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pengguna, tim, pemilik, evaluator, kebutuhan, dan komunikasi |
 | [WBS](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Paket kerja, deliverable, PIC, dependensi, dan sprint |
-| [Function Point](docs/sprint-01/FUNCTION_POINT.md) | Perhitungan ulang rincian EI/EO/EQ/ILF/EIF dan perbandingan dengan angka brief |
+| [Function Point](docs/sprint-01/FUNCTION_POINT.md) | Estimasi fungsi sistem menggunakan EI/EO/EQ/ILF/EIF |
 
-### Sprint 2 — analisis, desain, dan baseline perencanaan
+### Sprint 2 - analisis, desain, dan baseline perencanaan
 
 | Dokumen | Isi |
 |---|---|
@@ -69,8 +69,8 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 | Deployment | Vercel |
 | Kolaborasi | Git dan GitHub; branch per perubahan, commit dengan identitas akun sendiri, Pull Request ke `main` |
 
-Stack adalah keputusan perencanaan, belum dibangun atau diuji. Tidak ada scaffolding aplikasi, proyek Supabase, atau deployment dalam deliverable perencanaan ini. Jangan menyimpan secret di repository.
+Arsitektur implementasi menggunakan Next.js dan TypeScript pada Vercel dengan Supabase untuk PostgreSQL dan autentikasi. Faiza menyiapkan konfigurasi deployment pada Sprint 3–4 setelah model data dan kebutuhan akses disetujui. Simpan credential di environment variable dan jangan masukkan secret ke repository.
 
-## Baseline asumsi
+## Baseline kerja proyek
 
-Jadwal kerja contoh memakai Sprint 1 tanggal 19–23 Oktober 2026 dan Sprint 2 tanggal 26 Oktober–6 November 2026. Angka ini merupakan baseline usulan untuk latihan perencanaan, bukan tenggat resmi dosen. Perkiraan manday, biaya kas, durasi, dan risiko juga merupakan estimasi awal. Perbarui setelah tim dan pihak terkait memberi konfirmasi.
+Jadwal proyek berjalan dalam empat sprint: Sprint 1 (19–23 Oktober 2026), Sprint 2 (26 Oktober–6 November), Sprint 3 (9–20 November), dan Sprint 4 (23 November–4 Desember). Nayla mengelola perubahan jadwal, effort, anggaran, dan risiko berdasarkan keputusan tim, pemilik, serta dosen.

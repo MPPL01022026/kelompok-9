@@ -1,4 +1,4 @@
-# Resource & Responsibility Plan — Sprint 2
+# Resource & Responsibility Plan - Sprint 2
 
 Sprint 2 menggunakan tim empat orang dan alat kerja yang tersedia. Kapasitas rencana adalah **4 jam fokus per orang per hari kerja**, maksimum 40 jam per anggota dalam 10 hari kerja. Alokasi tugas aktual di baseline adalah 54 jam tim; sisa kapasitas menjadi ruang untuk kuliah, koordinasi, dan revisi.
 
@@ -22,7 +22,7 @@ Sprint 2 menggunakan tim empat orang dan alat kerja yang tersedia. Kapasitas ren
 | Nayla Salsabila Awika | 20 jam tersedia; 10 jam teralokasi | 2.50 | Koordinasi, validasi, risiko, review dan tracker |
 | Niluh Naswa Salfa Adlian Lubis | 20 jam tersedia; 18 jam teralokasi | 4.50 | Requirement, use case/alur, review desain |
 | Faiza Rahmatika | 20 jam tersedia; 9 jam teralokasi | 2.25 | Arsitektur dan deployment plan, review model/testability |
-| Zahra (`zahraanissa377-wq`) | 20 jam tersedia; 17 jam teralokasi | 4.25 | Wireframe, model data, review |
+| Zahra (NIM 230504047) | 20 jam tersedia; 17 jam teralokasi | 4.25 | Wireframe, model data, review |
 | **Total** | **80 jam tersedia; 54 jam teralokasi** | **13.50 manday** | 13.5 manday total |
 
 Konversi effort: 1 manday = 4 jam fokus sesuai definisi baseline proyek ini. Alokasi 13.5 manday adalah estimasi pekerjaan sprint, sedangkan kapasitas 80 jam adalah batas ketersediaan anggota, bukan target pemakaian.
@@ -32,10 +32,10 @@ Konversi effort: 1 manday = 4 jam fokus sesuai definisi baseline proyek ini. Alo
 | Sumber daya | Alokasi | Aturan pemakaian |
 |---|---|---|
 | Repository GitHub `MPPL01022026/kelompok-9` | Semua anggota | Satu branch per kontribusi, identitas commit sesuai akun, PR menuju `main`; jangan masukkan credential |
-| Brief dan dokumen Sprint 1 | Niluh, Zahra, Nayla | Sumber kebutuhan; bedakan fakta brief dari asumsi baru |
+| Kebutuhan dan keputusan proyek | Niluh, Zahra, Nayla | Gunakan kebutuhan yang disepakati dan catat perubahan setelah validasi pemilik |
 | Editor Markdown dan alat gambar/diagram yang tersedia | Semua anggota | Gunakan alat gratis/tersedia; wireframe dapat berupa sketsa low-fidelity |
 | Waktu pemilik usaha | Nayla mengatur, Niluh mencatat | Satu sesi wawancara 30–45 menit pada 26–27 Okt; keputusan dicatat di backlog/pertanyaan terbuka |
 | Supabase/Vercel | Faiza merencanakan lingkungan untuk Sprint 3–4 | Baseline dua bulan Pro tercatat di estimasi biaya; PM menyetujui billing sebelum aktivasi, secret hanya pada environment variable |
 | Waktu tim | Kickoff 26 Okt, review 30 Okt dan 6 Nov | Sinkronisasi 30 menit; pekerjaan asinkron dicatat pada PR/tracker |
 
-Identitas kontribusi Git Zahra dicatat melalui username `zahraanissa377-wq`. Untuk daftar akademik, Nayla meminta nama lengkap dan NIM dari Zahra sebelum laporan akhir.
+NIM Zahra 230504047 dicatat pada daftar anggota proyek.

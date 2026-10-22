@@ -1,22 +1,22 @@
 # Pertanyaan Terbuka dan Keputusan Proyek
 
-Daftar ini berisi keputusan yang belum bersumber dari brief. Baseline di bawah dipakai sementara agar desain dapat bergerak; Nayla meminta konfirmasi pihak yang disebutkan dan memperbarui status setelah menerima jawaban.
+Daftar berikut mengarahkan validasi bisnis dan keputusan desain. Sementara menunggu jawaban, tim memakai asumsi kerja yang tercatat dan menghindari penguncian desain pada keputusan yang masih terbuka.
 
-| ID | Pertanyaan | Asumsi kerja untuk desain | Pihak konfirmasi | Target keputusan | Status |
+| ID | Keputusan yang diperlukan | Asumsi kerja saat ini | Pemilik keputusan | Tenggat | Status |
 |---|---|---|---|---|---|
-| Q1 | Siapa pemilik dan siapa pengguna sehari-hari? | Pemilik mengelola katalog/laporan; satu admin operasional menginput transaksi. | Pemilik UMKM | 27 Okt 2026 | Asumsi, menunggu validasi |
-| Q2 | Apa produk dan harga final? | Empat contoh menu dari brief dipakai sebagai data contoh; bukan harga final. | Pemilik UMKM | 27 Okt 2026 | Asumsi, menunggu validasi |
-| Q3 | Pesanan dibuat pelanggan atau dicatat admin? | Sprint 2 merancang pencatatan oleh admin; katalog publik hanya menampilkan produk. | Pemilik dan dosen | 27 Okt 2026 | Asumsi kerja |
-| Q4 | Field transaksi apa yang diperlukan? | Waktu, item, kuantitas, harga snapshot, total, catatan, status; nama/telepon pelanggan opsional setelah persetujuan. | Pemilik, Niluh, Faiza | 30 Okt 2026 | Asumsi kerja |
-| Q5 | Bagaimana laporan menghitung omzet? | Omzet = jumlah harga item × kuantitas pada transaksi berstatus selesai; periode memakai tanggal transaksi lokal. | Pemilik dan dosen | 30 Okt 2026 | Usulan rumus |
-| Q6 | Produk dihapus atau dinonaktifkan? | Gunakan status aktif/nonaktif agar detail transaksi lama tetap tersimpan. | Pemilik dan tim | 30 Okt 2026 | Usulan keputusan |
-| Q7 | Siapa boleh memakai dashboard? | Satu/lebih akun admin undangan; pendaftaran publik admin ditutup. | Pemilik dan Faiza | 30 Okt 2026 | Usulan keamanan |
-| Q8 | Stack Next.js, TypeScript, Tailwind, Supabase, Vercel disetujui? | Gunakan stack tersebut untuk rencana; implementasi menunggu review tim/dosen. | Tim dan dosen | 5 Nov 2026 | Rencana, belum persetujuan final |
-| Q9 | Boleh menyimpan foto/nama pelanggan atau pemilik? | Tidak menyimpan data pribadi/foto tanpa izin eksplisit; gunakan catatan anonim. | Pemilik dan tim | Sebelum bukti diunggah | Aturan konservatif berlaku |
-| Q10 | Apa tenggat dan format dosen? | Gunakan baseline proyek 19 Okt–4 Des 2026 untuk latihan; tenggat resmi harus menggantikan baseline. | Dosen pengampu | 26 Okt 2026 | Asumsi kalender |
-| Q11 | Apakah Function Point 74 sesuai metode kelas? | Tampilkan hitung brief dan tandai ΣFi=25 untuk klarifikasi; jangan jadikan ukuran final. | Dosen dan tim | 30 Okt 2026 | Menunggu review metode |
-| Q12 | Apa identitas akademik Zahra untuk laporan? | Gunakan nama depan dan akun `zahraanissa377-wq` dalam dokumen Git sampai nama/NIM dikonfirmasi. | Zahra dan Nayla | Sebelum laporan akhir | Data belum tersedia |
+| Q1 | Pengguna harian dan pemilik proses | Pemilik meninjau laporan; admin operasional mencatat transaksi | Pemilik UMKM | 27 Okt 2026 | Menunggu konfirmasi |
+| Q2 | Daftar produk, harga, dan ketersediaan | Katalog awal memuat ayam gunting, kentang goreng, chicken ball, dan fire chicken wings; harga dikonfirmasi pemilik | Pemilik UMKM | 27 Okt 2026 | Menunggu konfirmasi harga |
+| Q3 | Cara pesanan masuk | Admin mencatat pesanan; katalog publik menampilkan produk | Pemilik UMKM | 27 Okt 2026 | Perlu keputusan |
+| Q4 | Data yang dicatat pada transaksi | Waktu, item, kuantitas, harga saat transaksi, total, catatan dan status; identitas pelanggan hanya bila diperlukan | Pemilik, Niluh, Faiza | 30 Okt 2026 | Perlu validasi |
+| Q5 | Definisi omzet dan periode laporan | Omzet menjumlahkan item pada transaksi selesai; periode memakai tanggal transaksi lokal | Pemilik dan dosen | 30 Okt 2026 | Usulan untuk disetujui |
+| Q6 | Penanganan produk yang tidak dijual | Ubah status menjadi nonaktif agar transaksi lama tetap utuh | Pemilik dan tim | 30 Okt 2026 | Usulan untuk disetujui |
+| Q7 | Hak akses dashboard | Akun admin dibuat/diundang; pendaftaran admin publik ditutup | Pemilik dan Faiza | 30 Okt 2026 | Usulan keamanan |
+| Q8 | Persetujuan arsitektur | Next.js, TypeScript, Tailwind, Supabase PostgreSQL/Auth, dan Vercel menjadi stack target | Tim dan dosen | 5 Nov 2026 | Menunggu persetujuan desain |
+| Q9 | Penyimpanan foto dan data pribadi | Hanya simpan informasi minimum dengan izin; catatan pelanggan dianonimkan | Pemilik dan tim | Sebelum pengumpulan bukti | Aturan pengelolaan data |
+| Q10 | Kalender akademik, format, dan tenggat | Baseline proyek 19 Okt–4 Des 2026; Nayla menyesuaikannya dengan kalender dan arahan dosen | Dosen dan Nayla | 26 Okt 2026 | Konfirmasi jadwal diperlukan |
+| Q11 | Metode Function Point | Estimasi 74 FP; klarifikasi diperlukan atas nilai `ΣFi = 25` dan kompleksitas fungsi | Dosen dan Niluh | 30 Okt 2026 | Review metode diperlukan |
+| Q12 | Nama resmi Zahra untuk daftar anggota akademik | NIM 230504047 sudah dicatat; gunakan nama lengkap sesuai daftar akademik | Zahra dan Nayla | Sebelum laporan akhir | NIM terverifikasi oleh tim; nama lengkap dicocokkan saat finalisasi |
 
-## Aturan perubahan
+## Alur penyelesaian keputusan
 
-Jawaban yang diterima dicatat sebagai keputusan dengan tanggal dan sumber pada PR yang memperbarui dokumen terkait. Jika target keputusan lewat, Nayla memilih apakah asumsi dipakai sementara atau fitur terkait ditunda; keputusan dan dampak jadwal ditulis di Sprint Tracker.
+Nayla mencatat jawaban dan tanggalnya pada review sprint. Niluh memperbarui requirement/use case, Zahra memperbarui wireframe/model data, dan Faiza memperbarui arsitektur atau risiko bila terdampak. Keputusan yang mengubah biaya atau jadwal disetujui tim dan dicatat di Sprint Tracker.

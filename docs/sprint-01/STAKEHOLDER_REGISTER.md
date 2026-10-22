@@ -8,7 +8,7 @@ Register ini mengidentifikasi pihak yang mempengaruhi atau menggunakan hasil pro
 | S02 | Nayla Salsabila Awika (230504093) | Project Manager | Tinggi | Tinggi | Ringkasan status dua kali per pekan selama sprint; mengelola jadwal, risiko, keputusan, dan PR |
 | S03 | Niluh Naswa Salfa Adlian Lubis (230504092) | Analyst & Designer / Developer | Tinggi | Sedang | Memimpin kebutuhan dan alur; membagikan spesifikasi untuk review sebelum wireframe/data dibekukan |
 | S04 | Faiza Rahmatika (230504050) | Developer / Tester | Tinggi | Sedang | Meninjau arsitektur dan testability pada akhir Sprint 2; catat isu teknis dan asumsi deployment |
-| S05 | Zahra (`zahraanissa377-wq`) | Analyst & Designer | Tinggi | Sedang | Menyusun wireframe dan model data; review bersama Niluh agar rancangan tertaut ke kebutuhan |
+| S05 | Zahra (NIM 230504047) | Analyst & Designer | Tinggi | Sedang | Menyusun wireframe dan model data; review bersama Niluh agar rancangan tertaut ke kebutuhan |
 | S06 | Pelanggan UMKM | Pengguna katalog/pemesanan potensial | Sedang | Sedang | Kebutuhan keterbacaan katalog dan alur sederhana; masukan dapat dikumpulkan jika pemilik menyetujui uji pengguna |
 | S07 | Dosen pengampu MPPL | Evaluator akademik | Tinggi | Tinggi | Nayla mengonfirmasi format deliverable, rubrik, dan tenggat melalui kanal kelas sebelum laporan akhir |
 
