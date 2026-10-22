@@ -2,68 +2,64 @@
 
 ## Informasi umum
 
-| Elemen | Keterangan |
+| Elemen | Baseline proyek |
 |---|---|
-| Nama proyek | Pengembangan Sistem Informasi Penjualan dan Manajemen Produk UMKM Ayam Gunting Malaysia |
-| Sponsor/pemilik | Pemilik UMKM Ayam Gunting Malaysia (nama belum tersedia) |
+| Nama | Sistem Informasi Penjualan dan Manajemen Produk UMKM Ayam Gunting Malaysia |
+| Sponsor/pemilik | Pemilik UMKM Ayam Gunting Malaysia; nama tidak tercantum dalam brief |
 | Project Manager | Nayla Salsabila Awika (230504093) |
-| Tim | Niluh Naswa Salfa Adlian Lubis (230504092); Faiza Rahmatika (230504050); Zahra (akun GitHub: `zahraanissa377-wq`, nama lengkap dan nomor mahasiswa belum tersedia) |
-| Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL) |
-| Tahun akademik | 2026/2027 |
-| Tahap | Perencanaan awal; kebutuhan dan detail teknis perlu divalidasi |
-| Stack rencana awal | Next.js, TypeScript, Tailwind CSS, Supabase (PostgreSQL dan Auth), deployment ke Vercel |
+| Tim inti | Niluh Naswa Salfa Adlian Lubis (230504092), Faiza Rahmatika (230504050), Zahra (`zahraanissa377-wq`) |
+| Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL), tahun akademik 2026/2027 |
+| Durasi rencana | 4 pekan, 19 Oktober–13 November 2026 (asumsi kalender untuk baseline latihan) |
+| Fase saat ini | Perencanaan; aplikasi dan layanan belum dibuat |
+| Stack rencana | Next.js App Router, TypeScript, Tailwind CSS, Supabase PostgreSQL/Auth, Vercel |
 
-Sumber: `Tugas MPPL 1.docx` yang diberikan untuk proyek ini.
+Dasar proyek adalah `Tugas MPPL 1.docx`; detail bisnis yang tidak tercantum tidak dianggap sebagai fakta.
 
-## Latar belakang
+## Latar belakang dan masalah
 
-UMKM Ayam Gunting Malaysia menjual makanan ringan dan olahan ayam. Materi yang menjadi dasar brief memperlihatkan ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Informasi menu, harga, transaksi, dan rekap penjualan perlu dikelola secara terstruktur agar pemilik lebih mudah melihat informasi operasional.
+Brief menggambarkan UMKM makanan ringan/olahan ayam dengan menu ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Katalog, pengelolaan produk, pencatatan penjualan, dan ringkasan periode adalah kebutuhan yang dituju. Proses manual yang sekarang dipakai, harga, volume transaksi, serta kendala spesifik belum terukur; Sprint 2 memvalidasi dan merancangnya.
 
-Proyek merencanakan sistem informasi sederhana yang mencakup katalog, pengelolaan produk, pencatatan transaksi, dan rekap/statistik penjualan. Kondisi proses saat ini belum dijelaskan rinci dalam brief; hasil observasi/wawancara dibutuhkan sebelum desain dikunci.
+## Tujuan dan hasil yang diukur
 
-## Tujuan
+1. Menghasilkan spesifikasi katalog, pengelolaan produk, transaksi, dan laporan yang dapat ditinjau terhadap brief.
+2. Menghasilkan diagram use case/alur, wireframe halaman, dan rancangan model data awal.
+3. Menetapkan rencana implementasi yang memetakan Next.js/TypeScript/Tailwind ke Supabase dan Vercel tanpa membangun aplikasi pada Sprint 2.
+4. Menyelesaikan paket dokumen perencanaan Sprint 2 sebelum 6 November 2026 menurut baseline usulan.
+5. Sebelum implementasi, memperoleh keputusan tim atas kebutuhan admin, model transaksi, status produk, serta definisi metrik laporan.
 
-1. Menyajikan katalog produk dengan nama, harga, deskripsi, dan ketersediaan.
-2. Memungkinkan admin mengelola data produk.
-3. Mencatat transaksi dan riwayat penjualan secara digital.
-4. Menyediakan rekap/statistik dari data transaksi untuk membantu pemantauan penjualan.
-5. Menghasilkan sistem yang sederhana dan mudah digunakan oleh UMKM.
+Kriteria review: setiap fitur lingkup memiliki aktor, alur utama, data yang dipakai, dan kriteria penerimaan; setiap tabel/entitas data mempunyai tujuan dan relasi yang dijelaskan; asumsi dan pertanyaan terbuka memiliki PIC.
 
 ## Ruang lingkup
 
-**Termasuk:** beranda dan katalog; detail produk; pemesanan sederhana atau pencatatan pesanan; login dan dashboard admin; tambah/edit/hapus produk; transaksi; riwayat; rekap dan grafik per periode; pengujian dan dokumentasi.
+**Termasuk:** katalog publik; detail produk; pencatatan pesanan/transaksi sederhana; autentikasi dan dashboard admin; CRUD/nonaktif produk; riwayat transaksi; rekap dan statistik per periode; rancangan UI/data; rencana test, deployment, dan dokumentasi.
 
-**Tidak termasuk:** payment gateway/pembayaran online otomatis; pelacakan kurir GPS real-time; integrasi marketplace atau layanan antar pihak ketiga; akuntansi lengkap; penggajian.
+**Tidak termasuk:** pembayaran online otomatis, GPS kurir, marketplace/kurir pihak ketiga, akuntansi lengkap, penggajian, aplikasi native, serta sinkronisasi eksternal yang tidak disebut brief.
 
-## Jadwal kasar
+## Deliverable dan jadwal baseline
 
-| Pekan | Rencana kegiatan |
-|---|---|
-| 1 | Wawancara/observasi, analisis kebutuhan, scope, dokumen proyek |
-| 2 | UI/wireframe, rancangan database, struktur awal sistem |
-| 3 | Katalog, manajemen produk, transaksi, dashboard admin |
-| 4 | Laporan/statistik, pengujian, evaluasi, perbaikan, dokumentasi |
+| Pekan | Tanggal asumsi | Deliverable utama | PIC koordinasi |
+|---|---|---|---|
+| 1 | 19–23 Okt 2026 | Charter, stakeholder, WBS, backlog, pertanyaan terbuka, estimasi FP | Nayla |
+| 2 | 26–30 Okt 2026 | Validasi kebutuhan, spesifikasi, use case dan alur, wireframe/model data draft | Niluh dan Zahra |
+| 3 | 2–6 Nov 2026 | Review desain, rancangan teknis, estimasi dan risiko diperbarui | Faiza dan Nayla |
+| 4 | 9–13 Nov 2026 | Presentasi/review, perbaikan dokumen dan baseline akhir | Seluruh tim; Nayla koordinasi |
 
-Ini jadwal estimasi dari brief, bukan tanggal yang sudah disepakati.
+Tanggal adalah asumsi perencanaan, bukan jadwal resmi mata kuliah.
 
-## Risiko dan asumsi
+## Peran dan kewenangan
 
-- Nama pemilik, proses transaksi yang berjalan, menu final, dan harga belum disediakan; validasi diperlukan.
-- Data transaksi historis dan aturan penghitungan statistik belum diketahui.
-- Kebutuhan alur pemesanan belum jelas (pemesanan pelanggan atau pencatatan oleh admin); putuskan bersama pemilik.
-- Stack di atas merupakan pilihan teknis awal tim untuk mendukung deployment ke Vercel dan penggunaan Supabase; validasi kesesuaiannya dengan kebutuhan serta ketentuan mata kuliah sebelum implementasi.
-- Perhitungan Function Point adalah estimasi awal, bukan ukuran final.
-- Materi dokumentasi observasi pada DOCX tidak otomatis disalin ke repository; pastikan izin dan privasi sebelum menambahkan foto atau identitas.
+Nayla mengoordinasikan baseline, rapat, perubahan, risiko, dan review. Niluh memimpin kebutuhan, use case, alur proses, serta telaah katalog/laporan. Zahra memimpin wireframe dan model data bersama Niluh. Faiza memimpin review arsitektur teknis, integrasi, dan test plan. Perubahan scope, biaya, atau jadwal dibahas tim dan dicatat oleh Nayla.
 
-## Deliverable rencana
+## Asumsi, batasan, dan risiko utama
 
-Dokumen perencanaan, hasil analisis dan desain, aplikasi sesuai kebutuhan terkonfirmasi, hasil pengujian, dokumentasi sistem, laporan dan presentasi akhir.
+- Pemilik bersedia mengonfirmasi menu, harga, alur transaksi, dan kebutuhan laporan; waktu wawancara belum terjadwal.
+- Aplikasi ditujukan untuk penggunaan web sederhana dengan satu peran admin awal; aturan multi-user harus dikonfirmasi.
+- Anggaran kas Sprint 2 diasumsikan Rp0 karena hanya menghasilkan dokumen dan menggunakan alat yang tersedia; ini bukan konfirmasi harga layanan masa depan.
+- Ketersediaan tiap anggota diasumsikan 3–4 jam per hari kerja pada pekan kerja; estimasi perlu diturunkan bila jadwal kuliah berbeda.
+- Ketidakjelasan kebutuhan dan terlambatnya validasi adalah risiko tinggi; lihat [Risk Register](../sprint-02/RISK_REGISTER.md).
 
-## Persetujuan
+## Persetujuan baseline
 
-Persetujuan pemilik UMKM: belum dikonfirmasi.  
-Persetujuan dosen pengampu: belum dikonfirmasi.  
-Tanggal: belum tersedia.
+Baseline ini dipersiapkan Nayla untuk review tim. Angka dan tanggal yang disebut sebagai asumsi menjadi dasar perencanaan kerja, bukan klaim persetujuan pemilik/dosen. Perubahan dicatat dalam Pull Request dan Sprint Tracker.
 
-Rincian stack dan status implementasi dicatat pada bagian [Tech Stack](../../README.md#tech-stack).
-
+Lihat [Tech Stack](../../README.md#tech-stack-rencana) dan [WBS](WORK_BREAKDOWN_STRUCTURE.md).

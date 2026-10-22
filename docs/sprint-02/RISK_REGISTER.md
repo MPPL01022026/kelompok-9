@@ -1,15 +1,17 @@
 # Risk Register — Sprint 2
 
-Probabilitas dan dampak di bawah adalah penilaian awal tim untuk dibahas, bukan hasil pengukuran. Skala: Rendah, Sedang, Tinggi. Tinjau pemilik risiko dan status pada setiap review sprint.
+Skor kualitatif memakai skala 1–3: probabilitas dan dampak rendah=1, sedang=2, tinggi=3. Skor = P × I; 6–9 tinggi, 3–4 sedang, 1–2 rendah. Angka merupakan perkiraan awal untuk mengarahkan perhatian, bukan data historis.
 
-| ID | Risiko dan penyebab | Probabilitas | Dampak | Respons / mitigasi | Rencana kontingensi | Pemilik | Status |
-|---|---|---|---|---|---|---|---|
-| R-01 | Kebutuhan, menu, harga, dan alur pesanan belum tervalidasi sehingga desain dapat berubah | Tinggi | Tinggi | Jadwalkan validasi; tandai asumsi dan pertanyaan terbuka; minta persetujuan untuk kebutuhan utama | Perbarui spesifikasi/desain dan jadwal bila keputusan berubah | Nayla (koordinasi), Niluh (analisis) | Terbuka |
-| R-02 | Pemilik UMKM atau dosen tidak tersedia pada waktu yang direncanakan | Sedang | Tinggi | Minta waktu review lebih awal dan siapkan pertanyaan ringkas | Geser aktivitas yang bergantung pada validasi; kerjakan aktivitas independen | Nayla | Terbuka |
-| R-03 | Kapasitas/availability anggota belum diketahui dan estimasi awal bisa terlalu rendah | Sedang | Sedang | Minta tiap PIC mengonfirmasi kapasitas dan meninjau manday | Kurangi scope sprint atau negosiasikan jadwal | Nayla, semua PIC | Terbuka |
-| R-04 | Pembagian analisis dan desain antara Niluh dan Zahra tumpang tindih atau ada celah | Sedang | Sedang | Review kebutuhan, alur, wireframe, dan model data bersama; sepakati pemilik deliverable | PM menetapkan PIC dan merevisi rencana kerja | Nayla, Niluh, Zahra | Terbuka |
-| R-05 | Model data atau rencana teknis tidak sesuai dengan kebutuhan setelah validasi | Sedang | Tinggi | Faiza meninjau kelayakan; Zahra dan Niluh menelusuri rancangan ke kebutuhan | Revisi desain sebelum implementasi; evaluasi kembali estimasi | Faiza, Zahra, Niluh | Terbuka |
-| R-06 | Informasi pribadi atau foto observasi dibagikan tanpa izin | Rendah | Tinggi | Simpan hanya bukti yang diizinkan; hindari data sensitif; minta izin sebelum publikasi | Hapus/arsipkan bukti yang tidak diizinkan dan ikuti arahan pemilik/dosen | Nayla, semua anggota | Terbuka |
-| R-07 | Biaya layanan atau batas paket gratis berubah/ternyata tidak mencukupi saat implementasi | Rendah | Sedang | Verifikasi harga dan batas layanan sebelum membuat akun atau memilih tier | Sesuaikan rencana/layanan dengan persetujuan tim; jangan simpan rahasia di repo | Faiza, Nayla | Terbuka |
+| ID | Risiko / pemicu | P | I | Skor | Respons pencegahan | Kontingensi | Pemilik | Indikator pemicu / status |
+|---|---|---:|---:|---:|---|---|---|---|
+| R1 | Pemilik tidak tersedia untuk validasi pada 26–27 Okt | 2 | 3 | 6 Tinggi | Nayla meminta slot sebelum kickoff; siapkan daftar 8 pertanyaan ringkas | Jalankan requirement berbasis brief, tandai asumsi, jadwalkan validasi susulan | Nayla | Belum ada slot pada 26 Okt / Terbuka |
+| R2 | Menu, harga, atau alur transaksi berubah setelah wireframe dibuat | 3 | 3 | 9 Tinggi | Niluh mencatat keputusan dan sumber; wireframe memberi label data contoh sampai disetujui | Revisi wireframe/model data; pindahkan fitur noninti bila jadwal terancam | Niluh, Zahra | Perubahan keputusan setelah 30 Okt / Terbuka |
+| R3 | Beban kuliah mengurangi 4 jam fokus harian yang diasumsikan | 2 | 2 | 4 Sedang | Tiap PIC lapor kapasitas pada kickoff; tugas dipecah menjadi review asinkron | PM kurangi cakupan draft dan jaga deliverable inti: requirement, wireframe, data, rencana teknis | Nayla | Anggota tersedia < 3 jam/hari / Terbuka |
+| R4 | Wireframe/model data tidak konsisten dengan use case | 2 | 3 | 6 Tinggi | Review silang Niluh–Zahra tanggal 3 Nov; tautkan setiap komponen ke ID requirement | Tahan baseline desain dan lakukan sesi revisi 1 hari | Niluh, Zahra | Ada elemen tanpa requirement atau alur tak terwakili / Terbuka |
+| R5 | Keputusan biaya/stack dianggap implementasi yang sudah berjalan | 1 | 2 | 2 Rendah | Tulis label “rencana” pada dokumen; jangan membuat layanan atau membagikan secret | Koreksi dokumen/PR dan cabut credential jika pernah terpublikasi | Faiza, Nayla | Ada pembelian/akun tanpa persetujuan / Terbuka |
+| R6 | Identitas akademik Zahra tidak lengkap di laporan | 2 | 2 | 4 Sedang | Minta nama lengkap/NIM sebelum laporan formal dikumpulkan; username dipakai untuk Git | Perbarui dokumen dan daftar kontributor sebelum submission | Nayla | Laporan final disusun tanpa data anggota / Terbuka |
+| R7 | Foto/catatan observasi berisi data pribadi tanpa izin | 1 | 3 | 3 Sedang | Simpan hanya bukti yang diizinkan; minimalkan data pelanggan/pemilik | Hapus file dari branch/repo dan minta arahan pemilik/dosen | Nayla, semua anggota | Bukti belum memiliki izin / Terbuka |
 
-Prioritas awal yang disarankan untuk dibahas: R-01 dan R-02. Perbarui probabilitas, dampak, respons, pemilik, dan status berdasarkan bukti dan keputusan terbaru.
+## Fokus respons sprint
+
+Nayla menindaklanjuti R1 pada kickoff 26 Oktober. R2 dan R4 ditinjau saat review desain 4–5 November. Semua risiko diperiksa pada review penutupan 6 November; status hanya diubah menjadi “Ditangani” atau “Ditutup” setelah ada bukti tindakan.

@@ -1,24 +1,41 @@
 # Resource & Responsibility Plan — Sprint 2
 
-Rencana ini menghubungkan anggota, tanggung jawab, dan sumber daya terhadap pekerjaan Sprint 2. Peran dan kapasitas adalah usulan untuk disepakati; nama lengkap/nomor mahasiswa Zahra dan ketersediaan waktu tiap anggota masih perlu dikonfirmasi.
+Sprint 2 menggunakan tim empat orang dan alat yang sudah dimiliki. Kapasitas rencana adalah **4 jam fokus per orang per hari kerja** pada aktivitas Sprint 2; total maksimum teoritis 40 jam per orang selama 10 hari kerja. Tugas kuliah lain dapat mengurangi kapasitas, sehingga komitmen per deliverable di bawah lebih penting daripada angka maksimum.
 
-## Tanggung jawab anggota
+## Responsibility matrix
 
-| Anggota | Peran | Tanggung jawab Sprint 2 | Kebutuhan sumber daya / akses | Kapasitas |
+| Deliverable | Nayla (PM) | Niluh (analisis) | Faiza (teknis/test) | Zahra (design/data) |
 |---|---|---|---|---|
-| Nayla Salsabila Awika (230504093) | Project Manager | Menyepakati jadwal dan prioritas, mengoordinasikan review, memantau risiko, merapikan keputusan dan status | Repository GitHub, brief, komunikasi tim/pemilik/dosen | Belum dikonfirmasi |
-| Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer | Memimpin analisis kebutuhan, use case, dan alur proses; meninjau wireframe dan model data terhadap kebutuhan | Brief, masukan pemilik, WBS, alat dokumentasi/diagram yang tersedia | Belum dikonfirmasi |
-| Faiza Rahmatika (230504050) | Developer / Tester | Meninjau arsitektur dan kelayakan rencana teknis; mengidentifikasi kebutuhan lingkungan dan kriteria uji awal | Dokumen rencana stack, akses repository, informasi batasan mata kuliah | Belum dikonfirmasi |
-| Zahra (GitHub: `zahraanissa377-wq`) | Analyst & Designer | Memimpin wireframe dan rancangan basis data; meninjau konsistensi desain dengan alur yang disusun Niluh | Brief, kebutuhan tervalidasi, alat dokumentasi/diagram yang tersedia | Belum dikonfirmasi |
+| S2-01 validasi kebutuhan | A/R, fasilitator dan keputusan | R, notulen kebutuhan | C, pertanyaan kelayakan | C, pertanyaan desain |
+| S2-02 requirement/use case/alur | A, mengunci prioritas | R, penulis | C, review testability | C, review alur desain |
+| S2-03 wireframe | A, memastikan scope | C, review requirement | C, review area admin | R, penulis wireframe |
+| S2-04 model data | A, mengelola keputusan | C, menurunkan kebutuhan data | C, review integrasi | R, penulis model |
+| S2-05 arsitektur/deployment plan | A, koordinasi | C, kebutuhan produk | R, penulis teknis | C, input model data |
+| S2-06 review dan baseline berikutnya | R, memfasilitasi dan mencatat | R, presentasi analisis | R, presentasi risiko teknis | R, presentasi desain |
 
-## Sumber daya bersama
+`R` = mengerjakan; `A` = memastikan hasil/keputusan; `C` = dimintai masukan. Nayla menjadi A untuk setiap paket perencanaan sprint.
 
-| Sumber daya | Penggunaan | Status / catatan |
+## Kapasitas dan kebutuhan sumber daya
+
+| Anggota | Kapasitas (20 jam tersedia) dan alokasi | Beban manday teralokasi | Fokus penggunaan |
+|---|---:|---:|---|
+| Nayla Salsabila Awika | 10 jam teralokasi | 2.50 | Koordinasi, validasi, risiko, review dan tracker |
+| Niluh Naswa Salfa Adlian Lubis | 20 jam tersedia; 18 jam teralokasi | 4.50 | Requirement, use case/alur, review desain |
+| Faiza Rahmatika | 20 jam tersedia; 9 jam teralokasi | 2.25 | Arsitektur dan deployment plan, review model/testability |
+| Zahra (`zahraanissa377-wq`) | 20 jam tersedia; 17 jam teralokasi | 4.25 | Wireframe, model data, review |
+| **Total** | **80 jam tersedia; 54 jam teralokasi** | **13.50 manday** | 13.5 manday total |
+
+Asumsi konversi: 1 manday = 4 jam fokus untuk rencana sprint mahasiswa ini. Angka 4 jam bukan aturan industri; 13.5 manday adalah penjumlahan alokasi anggota di atas. Kapasitas tersedia tidak otomatis menjadi effort terpakai.
+
+## Sumber daya dan akses
+
+| Sumber daya | Alokasi | Aturan pemakaian |
 |---|---|---|
-| Repository GitHub kelompok | Versi dokumen, branch, commit, dan Pull Request | Tersedia; kontribusi memakai akun masing-masing |
-| Brief tugas dan dokumen proyek | Dasar kebutuhan dan batas ruang lingkup | Tersedia; hal yang belum jelas dicatat sebagai pertanyaan |
-| Waktu pemilik UMKM dan dosen | Validasi kebutuhan dan arahan akademik | Jadwal belum dikonfirmasi |
-| Perangkat dokumentasi dan diagram | Menyusun jadwal, alur, wireframe, dan model data | Gunakan alat yang tersedia; lisensi berbayar tidak diasumsikan |
-| Akun/layanan teknis | Belum diperlukan untuk dokumen perencanaan | Tidak membuat akun atau layanan untuk aktivitas ini |
+| Repository GitHub `MPPL01022026/kelompok-9` | Semua anggota | Satu branch per kontribusi, identitas commit sesuai akun, PR menuju `main`; jangan masukkan credential |
+| Brief dan dokumen Sprint 1 | Niluh, Zahra, Nayla | Sumber kebutuhan; bedakan fakta brief dari asumsi baru |
+| Editor Markdown dan alat gambar/diagram yang tersedia | Semua anggota | Gunakan alat gratis/tersedia; wireframe dapat berupa sketsa low-fidelity |
+| Waktu pemilik usaha | Nayla mengatur, Niluh mencatat | Satu wawancara 30–45 menit yang disepakati; tanpa jadwal, gunakan asumsi yang dilabeli |
+| Supabase/Vercel | Belum dialokasikan di Sprint 2 | Hanya rencana teknologi; tidak membuat project/service saat sprint dokumentasi |
+| Waktu tim | Kickoff 26 Okt, review 30 Okt dan 6 Nov | Sinkronisasi 30 menit; pekerjaan asinkron dicatat pada PR/tracker |
 
-Nayla mengumpulkan konfirmasi kapasitas dan akses sebelum baseline jadwal disetujui. Perubahan PIC atau kapasitas dicatat pada revisi dokumen dan dibahas dalam review sprint.
+Nama lengkap dan NIM Zahra tidak diketahui dari informasi yang diberikan; repo memakai nama depan dan username sampai identitas akademik dikonfirmasi.
