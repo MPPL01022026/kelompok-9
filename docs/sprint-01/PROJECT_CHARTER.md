@@ -7,7 +7,7 @@
 | Nama proyek | Pengembangan Sistem Informasi Penjualan dan Manajemen Produk UMKM Ayam Gunting Malaysia |
 | Sponsor/pemilik | Pemilik UMKM Ayam Gunting Malaysia (nama belum tersedia) |
 | Project Manager | Nayla Salsabila Awika (230504093) |
-| Tim | Niluh Naswa Salfa Adlian Lubis (230504092); Faiza Rahmatika (230504050) |
+| Tim | Niluh Naswa Salfa Adlian Lubis (230504092); Faiza Rahmatika (230504050); Zahra (akun GitHub: `zahraanissa377-wq`, nama lengkap dan nomor mahasiswa belum tersedia) |
 | Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL) |
 | Tahun akademik | 2026/2027 |
 | Tahap | Perencanaan awal; kebutuhan dan detail teknis perlu divalidasi |
