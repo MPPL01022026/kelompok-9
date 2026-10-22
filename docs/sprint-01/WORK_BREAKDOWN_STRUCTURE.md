@@ -1,33 +1,37 @@
 # Work Breakdown Structure (WBS)
 
-Pembagian PIC berikut memasukkan klarifikasi tim bahwa Zahra membagi pekerjaan Analyst & Designer dengan Niluh. Niluh menangani analisis kebutuhan, use case, dan alur proses; Zahra memimpin wireframe dan rancangan basis data dengan tinjauan Niluh. PIC dan status tetap perlu disepakati tim.
+WBS berikut memecah proyek menjadi pekerjaan yang dapat ditinjau. Sprint 1 dan 2 berisi perencanaan; Sprint 3–4 adalah rencana implementasi dan review, bukan pekerjaan yang sudah dilaksanakan. Tanggal Sprint 2 mengikuti baseline asumsi 26 Oktober–6 November 2026.
 
-| ID | Paket kerja | Deliverable | PIC usulan | Dependensi |
-|---|---|---|---|---|
-| 1.1 | Observasi dan wawancara pemilik | Catatan kebutuhan yang diizinkan | Nayla (koordinasi), semua anggota | Ketersediaan pemilik |
-| 1.2 | Identifikasi masalah dan kebutuhan | Daftar kebutuhan tervalidasi | Niluh (analisis), tim | 1.1 |
-| 1.3 | Charter, register, WBS, pembagian tugas | Dokumen perencanaan | Nayla (koordinasi), tim | Brief dan 1.1 |
-| 2.1 | Analisis fungsional/nonfungsional | Spesifikasi kebutuhan | Niluh (lead), Zahra dan tim (review) | 1.2 |
-| 2.2 | Use case dan alur proses | Diagram/alur sistem | Niluh (lead), Zahra (review desain alur) | 2.1 |
-| 2.3 | Wireframe halaman | Mockup katalog, pemesanan, login, dashboard, laporan | Zahra (lead), Niluh (review kebutuhan) | 2.1 |
-| 2.4 | Rancangan basis data | Model data produk, transaksi, detail, admin untuk Supabase PostgreSQL | Zahra (lead), Niluh (analisis kebutuhan), Faiza (review teknis) | 2.1 |
-| 2.5 | Rencana arsitektur dan deployment | Dokumen rencana: Next.js App Router dengan TypeScript dan Tailwind CSS; Supabase PostgreSQL untuk data dan Supabase Auth untuk akun admin; Vercel sebagai target hosting. Catat alur katalog publik/admin, kebutuhan environment variables, dan prasyarat deployment. Tahap ini dokumentasi saja; implementasi dan deployment dilakukan pada paket 3.x setelah rancangan disetujui. | Faiza (rencana teknis), Nayla (koordinasi), tim | 2.1 |
-| 3.1 | Database dan koneksi aplikasi | Skema Supabase PostgreSQL dan koneksi aplikasi | Faiza (usulan) | 2.4, 2.5 |
-| 3.2 | Beranda dan katalog | Halaman katalog | Niluh (usulan) | 2.3 |
-| 3.3 | Detail produk | Informasi harga/ketersediaan | Niluh (usulan) | 3.2 |
-| 3.4 | Login/dashboard admin | Area administrasi | Faiza (usulan) | 2.4 |
-| 3.5 | Manajemen produk | Tambah, edit, hapus produk | Faiza (usulan) | 3.1, 3.4 |
-| 3.6 | Pencatatan transaksi | Input transaksi dan item pesanan | Faiza (usulan) | 3.1, 3.5 |
-| 3.7 | Riwayat transaksi | Daftar transaksi | Faiza (usulan) | 3.6 |
-| 3.8 | Rekap dan statistik | Rekap, grafik omzet dan jumlah produk | Niluh & Faiza (usulan) | 3.6 |
-| 3.9 | Persiapan deployment | Konfigurasi deployment aplikasi Next.js ke Vercel dan environment variables Supabase | Faiza (usulan) | 3.1–3.8 |
-| 4.1 | Uji login dan hak akses | Hasil pengujian | Faiza (koordinasi) | 3.4 |
-| 4.2 | Uji katalog/detail | Hasil pengujian | Faiza | 3.2–3.3 |
-| 4.3 | Uji transaksi dan statistik | Hasil pengujian | Faiza, Niluh | 3.6–3.8 |
-| 4.4 | Perbaikan bug | Versi perbaikan | Tim | Hasil pengujian |
-| 5.1 | Dokumentasi dan laporan akhir | Dokumen akhir | Nayla (koordinasi), tim | Semua paket |
-| 5.2 | Presentasi dan demo | Materi presentasi | Tim | Sistem tersedia |
-| 5.3 | Evaluasi akhir | Catatan evaluasi | Nayla (koordinasi), tim | Demo |
+| ID | Sprint | Paket kerja / aktivitas | Deliverable dan kriteria selesai | PIC utama | Dependensi |
+|---|---|---|---|---|---|
+| 1.1 | 1 | Analisis brief dan batas proyek | Ringkasan masalah, tujuan, in/out scope; setiap fitur ditautkan ke brief | Nayla | Tugas MPPL 1 |
+| 1.2 | 1 | Project Charter | Sasaran, deliverable, asumsi, jadwal awal dan kriteria hasil tercatat | Nayla | 1.1 |
+| 1.3 | 1 | Stakeholder Register | Pemilik, tim, pelanggan, evaluator; kebutuhan komunikasi tercatat | Nayla | 1.1 |
+| 1.4 | 1 | WBS, backlog, dan pertanyaan terbuka | ID pekerjaan, PIC, dependensi, prioritas, kriteria dan pertanyaan tersusun | Nayla; tim review | 1.1 |
+| 1.5 | 1 | Function Point awal | Angka brief ditranskripsikan, hitungan subtotal dan ketidaksesuaian ditandai | Niluh; tim review | 1.1 |
+| 1.6 | 1 | Repository dan proses kontribusi | Branch kerja, commit autentik per anggota, PR dan tracker digunakan | Nayla; seluruh tim | Repository dibuat |
+| 2.1 | 2 | Kickoff dan konfirmasi kebutuhan | Catatan keputusan untuk pengguna, produk, pesanan, stok, admin, dan laporan | Nayla (fasilitasi), Niluh (catat) | 1.2–1.4 |
+| 2.2 | 2 | Spesifikasi fungsional/nonfungsional | Setiap kebutuhan punya ID, aktor, prioritas, dan kriteria penerimaan | Niluh | 2.1 |
+| 2.3 | 2 | Use case dan alur proses | Alur katalog, kelola produk, catat transaksi, dan lihat laporan ditinjau | Niluh; Zahra review | 2.2 |
+| 2.4 | 2 | Wireframe halaman | Draft beranda/katalog, detail, admin, produk, transaksi, dan laporan | Zahra; Niluh review | 2.2–2.3 |
+| 2.5 | 2 | Model data konseptual | Entitas Product, Transaction, TransactionItem, Admin/User beserta relasi dan aturan | Zahra; Faiza review | 2.2–2.3 |
+| 2.6 | 2 | Rencana arsitektur dan deployment | Peta Next.js/TypeScript/Tailwind, Supabase PostgreSQL/Auth, Vercel, env dan batas keamanan | Faiza; Nayla koordinasi | 2.2, 2.5 |
+| 2.7 | 2 | Baseline jadwal, effort, cost, risiko | Lima dokumen Sprint 2 direview dan keputusan dicatat | Nayla; semua PIC | 2.1–2.6 |
+| 3.1 | 3 | Setup aplikasi dan konfigurasi lingkungan | Aplikasi dapat dijalankan lokal; konfigurasi rahasia di env lokal | Faiza | 2.6 disetujui |
+| 3.2 | 3 | Skema data dan autentikasi | Skema awal dan akses admin diuji di lingkungan development | Faiza | 2.5, 3.1 |
+| 3.3 | 3 | Katalog dan detail produk | Produk aktif terlihat; harga dan status mengikuti data | Niluh | 2.4, 3.2 |
+| 3.4 | 3 | Dashboard dan manajemen produk | Admin dapat mengelola produk sesuai aturan yang disetujui | Faiza | 3.2 |
+| 3.5 | 3 | Pencatatan transaksi dan riwayat | Transaksi serta item tersimpan dan dapat ditinjau | Faiza | 3.2, 3.4 |
+| 4.1 | 4 | Rekap dan statistik | Filter periode dan definisi metrik sesuai keputusan pemilik | Niluh, Faiza | 3.5 |
+| 4.2 | 4 | Pengujian penerimaan dan perbaikan | Skenario katalog, akses, CRUD, transaksi, dan laporan lulus/temuan dicatat | Faiza; tim | 3.3–4.1 |
+| 4.3 | 4 | Deployment dan dokumentasi akhir | Aplikasi target Vercel terhubung aman ke Supabase; panduan dan demo siap | Faiza; Nayla koordinasi | 4.2 |
+| 4.4 | 4 | Review dan presentasi | Feedback dosen/pemilik dan keputusan tindak lanjut terdokumentasi | Nayla; tim | 4.3 |
 
-Status pekerjaan dicatat di [Sprint Tracker](../SPRINT_TRACKER.md) setelah ada bukti nyata.
+## Baseline sprint
 
+- Sprint 1: 19–23 Oktober 2026 (5 hari kerja), inisiasi dan perencanaan awal.
+- Sprint 2: 26 Oktober–6 November 2026 (10 hari kerja), analisis, desain dan baseline rencana.
+- Sprint 3: 9–20 November 2026 (10 hari kerja), implementasi awal sesuai desain.
+- Sprint 4: 23 November–4 Desember 2026 (10 hari kerja), laporan, pengujian, deployment dan evaluasi.
+
+Tanggal dan durasi merupakan asumsi latihan; tenggat mata kuliah dan hari nonaktif harus diperiksa sebelum komitmen.

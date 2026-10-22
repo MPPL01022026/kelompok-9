@@ -1,17 +1,30 @@
 # Project Cost Estimation — Sprint 2
 
-Estimasi biaya berikut bersifat awal dan belum menjadi anggaran yang disetujui. Tidak ada tarif tenaga kerja, kebutuhan pembelian, atau biaya layanan yang diberikan, sehingga nominal yang tidak diketahui ditandai belum tersedia alih-alih dibuat-buat.
+Estimasi menggunakan Rupiah dan membedakan **biaya kas** dari **nilai ekonomi tenaga kerja**. Sprint 2 hanya menyiapkan dokumen; akun atau layanan Vercel/Supabase tidak dibuat. Semua tarif di bawah adalah asumsi latihan untuk membuat estimasi yang terhitung, bukan harga pasar atau tarif resmi.
 
-| Komponen | Dasar hitung | Estimasi biaya | Status / asumsi |
+## Estimasi dasar
+
+| Komponen | Kuantitas dan tarif asumsi | Biaya dasar | Jenis |
 |---|---|---:|---|
-| Tenaga kerja tim mahasiswa | 13.5 manday awal; tarif per manday belum ditentukan | Belum dihitung | Gunakan Rp 0 untuk anggaran kas hanya jika tugas tidak membebankan biaya tenaga kerja; jangan menafsirkan sebagai nilai usaha nol |
-| Repository GitHub | Fitur yang diperlukan untuk kolaborasi dokumen | Rp 0 diasumsikan | Memakai repository/fitur yang sudah tersedia; verifikasi kebutuhan aktual sebelum penggunaan |
-| Perangkat dokumentasi dan diagram | Alat yang telah dimiliki/tersedia | Rp 0 diasumsikan | Tidak diasumsikan ada pembelian atau lisensi berbayar |
-| Layanan hosting dan database | Belum dibutuhkan untuk kegiatan dokumentasi Sprint 2 | Rp 0 untuk sprint ini | Vercel dan Supabase hanya target stack; tidak ada proyek/layanan dibuat. Biaya implementasi mendatang perlu diperiksa sebelum dipakai |
-| Komunikasi dan koordinasi | Perangkat serta koneksi yang telah tersedia | Belum dihitung | Biaya pribadi/overhead tidak diketahui |
-| Overhead/cadangan | Belum ada kebijakan atau persentase yang ditetapkan | Belum dihitung | Minta arahan dosen/tim jika format tugas mensyaratkan |
-| **Total biaya kas Sprint 2** | Tidak termasuk biaya yang belum diketahui | **Rp 0 sementara** | Hanya jika seluruh asumsi biaya nol di atas benar; revisi bila ada pengeluaran |
+| Usaha tim mahasiswa | 13.5 manday × Rp100.000/manday (tarif bayangan untuk latihan) | Rp1.350.000 | Nilai ekonomi; tidak dibayarkan |
+| GitHub | 1 repository yang sudah tersedia × Rp0 biaya tambahan | Rp0 | Kas |
+| Editor/diagram/wireframe | 4 anggota × alat/perangkat yang tersedia × Rp0 pembelian baru | Rp0 | Kas |
+| Supabase dan Vercel | Tidak dipakai dalam sprint dokumentasi | Rp0 | Kas sprint ini; bukan estimasi biaya implementasi nanti |
+| Komunikasi | 3 sesi daring × koneksi/perangkat tersedia, tanpa pembelian tambahan | Rp0 | Kas tambahan |
+| **Total biaya kas** | Tanpa pembelian/layanan baru | **Rp0** | Anggaran kas Sprint 2 |
+| **Total nilai ekonomi termasuk tenaga kerja** | Rp1.350.000 tenaga kerja + Rp0 biaya kas | **Rp1.350.000** | Estimasi ekonomi |
 
-## Rumus dan tindak lanjut
+## Skenario sensitivitas tarif tenaga kerja
 
-Jika biaya tenaga kerja diperlukan: `biaya tenaga kerja = manday aktual/estimasi × tarif per manday yang disepakati`. Catat mata uang, sumber tarif, dan tanggal pemeriksaan harga. Nayla mengonfirmasi apakah laporan memerlukan valuasi tenaga kerja, lalu mencatat setiap biaya aktual beserta bukti dan pemilik persetujuannya.
+| Tarif bayangan per manday | Biaya tenaga kerja untuk 13.5 manday | Total ekonomi dengan biaya kas Rp0 |
+|---:|---:|---:|
+| Rp0 (tugas tidak dinilai dengan tarif) | Rp0 | Rp0 |
+| Rp100.000 (baseline latihan) | Rp1.350.000 | Rp1.350.000 |
+| Rp150.000 (skenario tinggi) | Rp2.025.000 | Rp2.025.000 |
+
+## Dasar, pengecualian, dan kontrol
+
+- Biaya pribadi internet/listrik tidak dihitung terpisah agar tidak mengarang pemakaian; diasumsikan termasuk fasilitas anggota yang sudah tersedia.
+- Tidak ada overhead atau cadangan kas pada baseline karena tidak ada pembelian yang direncanakan. Jika pengeluaran baru disetujui, Nayla catat vendor, bukti, tanggal, dan penanggung jawab sebelum memperbarui total.
+- Nilai ekonomi tenaga kerja adalah perangkat estimasi tugas, bukan janji pembayaran atau gaji.
+- Biaya layanan ketika implementasi dimulai harus diestimasi ulang dari paket yang dipilih. Target stack saja tidak berarti layanan telah dibeli/dibuat.

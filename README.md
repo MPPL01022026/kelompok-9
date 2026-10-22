@@ -1,93 +1,76 @@
-<div align="center">
-
-# Ayam Gunting Malaysia
+# README — Ayam Gunting Malaysia
 
 ### Sistem Informasi Penjualan dan Manajemen Produk UMKM
 
-![Status](https://img.shields.io/badge/Status-Perencanaan%20Proyek-orange?style=flat-square)
-![Mata Kuliah](https://img.shields.io/badge/MPPL-2026%2F2027-blue?style=flat-square)
-![Kolaborasi](https://img.shields.io/badge/Kolaborasi-GitHub-181717?style=flat-square&logo=github)
+**Tujuan:** merencanakan sistem untuk menampilkan katalog, mengelola produk, mencatat transaksi, dan menyajikan ringkasan penjualan UMKM Ayam Gunting Malaysia.
 
-**Merancang sistem untuk menampilkan katalog, mencatat transaksi, mengelola produk, dan merangkum penjualan UMKM Ayam Gunting Malaysia.**
+## Ringkasan proyek
 
-</div>
+Brief tugas menyebut produk ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Sistem direncanakan untuk membantu pemilik mengelola informasi produk dan transaksi secara terstruktur. Nama pemilik, harga menu, proses transaksi saat ini, dan aturan operasional belum tersedia dalam materi yang sudah dimasukkan; kebutuhan tersebut diperlakukan sebagai asumsi sampai dikonfirmasi.
 
----
+| Masalah yang dituju | Fitur rencana | Pengguna utama |
+|---|---|---|
+| Informasi produk sulit dilihat dan diperbarui | Katalog dengan nama, harga, deskripsi, dan ketersediaan | Pelanggan dan admin |
+| Data menu perlu dirawat | Tambah, ubah, dan nonaktifkan produk | Admin |
+| Penjualan perlu dicatat | Transaksi dan item pesanan | Admin |
+| Pemilik perlu melihat hasil penjualan | Riwayat, rekap, dan grafik per periode | Pemilik/admin |
 
-## Tentang proyek
+## Batas ruang lingkup
 
-Proyek MPPL ini merencanakan sistem informasi sederhana untuk membantu UMKM Ayam Gunting Malaysia mengelola katalog produk, pesanan/transaksi, dan ringkasan penjualan. Dokumen brief menyebut menu seperti ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Daftar produk serta harga final harus dikonfirmasi langsung kepada pemilik.
+Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, manajemen produk, transaksi, riwayat, rekap, pengujian, dan dokumentasi. Payment gateway, GPS kurir, integrasi marketplace, akuntansi penuh, dan penggajian berada di luar ruang lingkup awal.
 
-| Kondisi/kebutuhan | Rencana solusi |
+## Tim dan pembagian fokus
+
+| Anggota | Peran/fokus |
 |---|---|
-| Informasi menu dan ketersediaan perlu mudah dilihat | Halaman beranda dan katalog produk |
-| Data produk perlu dikelola | Dashboard admin untuk tambah, ubah, dan hapus produk |
-| Transaksi perlu tercatat terstruktur | Pencatatan pesanan/transaksi dan riwayat |
-| Pemilik perlu melihat perkembangan penjualan | Rekap dan statistik berdasarkan periode |
-
-Rincian kebutuhan masih merupakan rancangan dari brief dan perlu divalidasi bersama pemilik UMKM serta dosen pengampu.
-
-## Rencana fitur
-
-- Katalog dengan nama, harga, deskripsi, dan ketersediaan produk.
-- Pemesanan sederhana atau pencatatan pesanan.
-- Login dan dashboard admin.
-- Manajemen produk (tambah, edit, hapus/nonaktifkan).
-- Pencatatan transaksi dan detail pesanan.
-- Riwayat transaksi.
-- Rekap dan grafik/statistik penjualan per periode.
-
-Integrasi pembayaran otomatis, pelacakan kurir GPS, marketplace, akuntansi penuh, dan penggajian termasuk out of scope pada brief.
-
-## Tim
-
-| Anggota | Fokus |
-|---|---|
-| Nayla Salsabila Awika (230504093) | Project Manager |
-| Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer (requirements, use cases, process flows) |
-| Faiza Rahmatika (230504050) | Developer / Tester |
-| Zahra (akun GitHub: `zahraanissa377-wq`) | Analyst & Designer (wireframes and database design), collaborating with Niluh |
-
-Pembagian Zahra dan Niluh mengikuti klarifikasi tim. Nama lengkap dan nomor mahasiswa Zahra belum tersedia; lengkapi sebelum laporan formal. Rincian PIC masih usulan dan dapat diperbarui bersama.
+| Nayla Salsabila Awika (230504093) | Project Manager; rencana, koordinasi, jadwal, risiko, review, dan pelaporan |
+| Niluh Naswa Salfa Adlian Lubis (230504092) | Developer / Analyst & Designer; kebutuhan, use case, alur proses, dan katalog/statistik |
+| Faiza Rahmatika (230504050) | Developer / Tester; arsitektur teknis, database integration, admin/transaksi, testing, deployment plan |
+| Zahra (`zahraanissa377-wq`) | Analyst & Designer; wireframe dan rancangan basis data bersama Niluh |
 
 ## Dokumen proyek
 
+### Sprint 1 — inisiasi dan perencanaan awal
+
 | Dokumen | Isi |
 |---|---|
-| [Project Charter](docs/sprint-01/PROJECT_CHARTER.md) | Tujuan, ruang lingkup, jadwal kasar, asumsi, risiko |
-| [Stakeholder Register](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pihak terkait dan kebutuhan |
-| [WBS](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Paket kerja dan pembagian tugas usulan |
-| [Function Point](docs/sprint-01/FUNCTION_POINT.md) | Estimasi awal yang dipindahkan dari brief |
-| [Sprint 2 Schedule](docs/sprint-02/PROJECT_SCHEDULE.md) | Jadwal dan milestone usulan |
-| [Resource & Responsibility Plan](docs/sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Peran, tanggung jawab, dan sumber daya |
-| [Effort Estimation](docs/sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Estimasi usaha awal dalam manday |
-| [Project Cost Estimation](docs/sprint-02/PROJECT_COST_ESTIMATION.md) | Estimasi biaya dan asumsi |
-| [Risk Register](docs/sprint-02/RISK_REGISTER.md) | Risiko, respons, pemilik, dan status |
+| [Project Charter](docs/sprint-01/PROJECT_CHARTER.md) | Sasaran, ruang lingkup, asumsi, kriteria hasil, dan jadwal empat pekan |
+| [Stakeholder Register](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pengguna, tim, pemilik, evaluator, kebutuhan, dan komunikasi |
+| [WBS](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Paket kerja, deliverable, PIC, dependensi, dan sprint |
+| [Function Point](docs/sprint-01/FUNCTION_POINT.md) | Perhitungan ulang rincian EI/EO/EQ/ILF/EIF dan perbandingan dengan angka brief |
 
-## Tahapan proyek
+### Sprint 2 — analisis, desain, dan baseline perencanaan
 
-- [ ] Observasi/wawancara dan validasi kebutuhan.
-- [ ] Analisis kebutuhan, use case, alur proses.
-- [ ] Desain wireframe dan database.
-- [ ] Pengembangan katalog, produk, transaksi, dan dashboard.
-- [ ] Rekap penjualan, pengujian, evaluasi, dokumentasi.
+| Dokumen | Isi |
+|---|---|
+| [Project Schedule](docs/sprint-02/PROJECT_SCHEDULE.md) | Jadwal kerja, Gantt teks, dependensi, dan milestone |
+| [Resource & Responsibility Plan](docs/sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Pemilik deliverable, kapasitas rencana, serta alat/sumber daya |
+| [Effort Estimation](docs/sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Manday per aktivitas dan per anggota |
+| [Project Cost Estimation](docs/sprint-02/PROJECT_COST_ESTIMATION.md) | Anggaran kas dasar, asumsi biaya, dan opsi biaya tenaga kerja |
+| [Risk Register](docs/sprint-02/RISK_REGISTER.md) | Risiko berperingkat, mitigasi, kontingensi, dan pemilik |
 
-Urutan mengikuti jadwal kasar empat pekan dalam brief; tanggal aktual dan tenggat belum dicantumkan.
+### Dokumen kendali proyek
 
-## Tech Stack
+| Dokumen | Isi |
+|---|---|
+| [Project Backlog](docs/PROJECT_BACKLOG.md) | Cerita pengguna dan kriteria penerimaan yang dapat diperiksa |
+| [Open Questions](docs/OPEN_QUESTIONS.md) | Keputusan yang masih harus divalidasi dan pemilik konfirmasi |
+| [Sprint Tracker](docs/SPRINT_TRACKER.md) | Status deliverable dan catatan review |
+| [Evidence guidance](docs/evidence/README.md) | Cara menangani bukti observasi dan privasi |
 
-| Bagian | Teknologi | Status |
-|---|---|---|
-| Framework aplikasi | [Next.js](https://nextjs.org/) dengan App Router | Dipilih sebagai rencana awal |
-| Bahasa | TypeScript | Direncanakan |
-| UI | Tailwind CSS | Direncanakan |
-| Database dan autentikasi | [Supabase](https://supabase.com/) (PostgreSQL dan Supabase Auth) | Direncanakan |
-| Deployment aplikasi | [Vercel](https://vercel.com/) | Target deployment |
-| Version control | Git dan GitHub | Digunakan untuk kolaborasi |
+## Tech stack rencana
 
-Stack ini dipilih agar aplikasi dapat dikembangkan dan ditargetkan untuk deployment ke Vercel dengan layanan data Supabase. Ini masih keputusan perencanaan: aplikasi, skema database, akun layanan, dan deployment belum dibuat. Versi framework dan dependensi akan ditetapkan saat setup implementasi. Jangan menyimpan kunci rahasia Supabase di repository.
+| Bagian | Rencana |
+|---|---|
+| Framework dan routing | Next.js App Router |
+| Bahasa | TypeScript |
+| UI | Tailwind CSS |
+| Database dan autentikasi | Supabase PostgreSQL dan Supabase Auth |
+| Deployment | Vercel |
+| Kolaborasi | Git dan GitHub; branch per perubahan, commit dengan identitas akun sendiri, Pull Request ke `main` |
 
-## Kontribusi GitHub
+Stack adalah keputusan perencanaan, belum dibangun atau diuji. Tidak ada scaffolding aplikasi, proyek Supabase, atau deployment dalam deliverable perencanaan ini. Jangan menyimpan secret di repository.
 
-Buat repository kelompok yang baru, undang anggota dengan akun masing-masing, lalu setiap anggota bekerja pada branch tugasnya, membuat commit dengan identitas akurat, dan mengajukan Pull Request ke `main`. Jangan memakai akun bersama atau mengubah identitas commit untuk membuat kontribusi orang lain terlihat. Contoh perintah dasar: `git switch -c docs/nama-tugas`, `git add path/ke/file`, `git commit -m "docs: ringkas perubahan"`, lalu `git push -u origin nama-branch`.
+## Baseline asumsi
 
+Jadwal kerja contoh memakai Sprint 1 tanggal 19–23 Oktober 2026 dan Sprint 2 tanggal 26 Oktober–6 November 2026. Angka ini merupakan baseline usulan untuk latihan perencanaan, bukan tenggat resmi dosen. Perkiraan manday, biaya kas, durasi, dan risiko juga merupakan estimasi awal. Perbarui setelah tim dan pihak terkait memberi konfirmasi.

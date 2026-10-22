@@ -1,18 +1,22 @@
-# Pertanyaan Terbuka
+# Pertanyaan Terbuka dan Keputusan Proyek
 
-Catat keputusan hanya setelah dikonfirmasi dengan pihak terkait.
+Daftar ini berisi keputusan yang belum bersumber dari brief. Baseline di bawah dipakai sementara agar desain dapat bergerak; Nayla meminta konfirmasi pihak yang disebutkan dan memperbarui status setelah menerima jawaban.
 
-| Pertanyaan | Pihak untuk konfirmasi | Keputusan | Status |
-|---|---|---|---|
-| Siapa nama pemilik dan siapa pengguna sistem sehari-hari? | Pemilik UMKM | Belum diketahui | Terbuka |
-| Apa menu, harga, deskripsi, dan aturan ketersediaan terbaru? | Pemilik UMKM | Belum diketahui | Terbuka |
-| Bagaimana transaksi saat ini, dan apakah pelanggan memesan langsung melalui sistem? | Pemilik UMKM | Belum diketahui | Terbuka |
-| Field apa yang dicatat pada transaksi dan detail pesanan? | Pemilik dan tim | Belum diketahui | Terbuka |
-| Periode serta definisi apa yang digunakan untuk omzet/jumlah terjual? | Pemilik dan dosen | Belum diketahui | Terbuka |
-| Hapus produk berarti menghapus permanen atau menonaktifkan? | Pemilik dan tim | Belum diketahui | Terbuka |
-| Apakah tim dan dosen menyetujui stack rencana awal Next.js, TypeScript, Tailwind CSS, Supabase PostgreSQL/Auth, dan Vercel? | Tim dan dosen | Dipilih sebagai rencana awal; menunggu validasi | Perlu validasi |
-| Siapa yang boleh mengakses dashboard admin dan bagaimana akun dikelola? | Pemilik dan tim | Belum diketahui | Terbuka |
-| Apakah foto/identitas observasi boleh disimpan atau dipublikasikan? | Pemilik dan tim | Belum diketahui | Terbuka |
-| Apa tenggat, rubrik, dan format laporan yang ditetapkan dosen? | Dosen pengampu | Belum diketahui | Terbuka |
-| Apakah estimasi Function Point dan klasifikasi komponennya sesuai metode kuliah? | Dosen pengampu dan tim | Belum diketahui | Terbuka |
+| ID | Pertanyaan | Asumsi kerja untuk desain | Pihak konfirmasi | Target keputusan | Status |
+|---|---|---|---|---|---|
+| Q1 | Siapa pemilik dan siapa pengguna sehari-hari? | Pemilik mengelola katalog/laporan; satu admin operasional menginput transaksi. | Pemilik UMKM | 27 Okt 2026 | Asumsi, menunggu validasi |
+| Q2 | Apa produk dan harga final? | Empat contoh menu dari brief dipakai sebagai data contoh; bukan harga final. | Pemilik UMKM | 27 Okt 2026 | Asumsi, menunggu validasi |
+| Q3 | Pesanan dibuat pelanggan atau dicatat admin? | Sprint 2 merancang pencatatan oleh admin; katalog publik hanya menampilkan produk. | Pemilik dan dosen | 27 Okt 2026 | Asumsi kerja |
+| Q4 | Field transaksi apa yang diperlukan? | Waktu, item, kuantitas, harga snapshot, total, catatan, status; nama/telepon pelanggan opsional setelah persetujuan. | Pemilik, Niluh, Faiza | 30 Okt 2026 | Asumsi kerja |
+| Q5 | Bagaimana laporan menghitung omzet? | Omzet = jumlah harga item × kuantitas pada transaksi berstatus selesai; periode memakai tanggal transaksi lokal. | Pemilik dan dosen | 30 Okt 2026 | Usulan rumus |
+| Q6 | Produk dihapus atau dinonaktifkan? | Gunakan status aktif/nonaktif agar detail transaksi lama tetap tersimpan. | Pemilik dan tim | 30 Okt 2026 | Usulan keputusan |
+| Q7 | Siapa boleh memakai dashboard? | Satu/lebih akun admin undangan; pendaftaran publik admin ditutup. | Pemilik dan Faiza | 30 Okt 2026 | Usulan keamanan |
+| Q8 | Stack Next.js, TypeScript, Tailwind, Supabase, Vercel disetujui? | Gunakan stack tersebut untuk rencana; implementasi menunggu review tim/dosen. | Tim dan dosen | 5 Nov 2026 | Rencana, belum persetujuan final |
+| Q9 | Boleh menyimpan foto/nama pelanggan atau pemilik? | Tidak menyimpan data pribadi/foto tanpa izin eksplisit; gunakan catatan anonim. | Pemilik dan tim | Sebelum bukti diunggah | Aturan konservatif berlaku |
+| Q10 | Apa tenggat dan format dosen? | Gunakan baseline proyek 19 Okt–4 Des 2026 untuk latihan; tenggat resmi harus menggantikan baseline. | Dosen pengampu | 26 Okt 2026 | Asumsi kalender |
+| Q11 | Apakah Function Point 74 sesuai metode kelas? | Tampilkan hitung brief dan tandai ΣFi=25 untuk klarifikasi; jangan jadikan ukuran final. | Dosen dan tim | 30 Okt 2026 | Menunggu review metode |
+| Q12 | Apa identitas akademik Zahra untuk laporan? | Gunakan nama depan dan akun `zahraanissa377-wq` dalam dokumen Git sampai nama/NIM dikonfirmasi. | Zahra dan Nayla | Sebelum laporan akhir | Data belum tersedia |
 
+## Aturan perubahan
+
+Jawaban yang diterima dicatat sebagai keputusan dengan tanggal dan sumber pada PR yang memperbarui dokumen terkait. Jika target keputusan lewat, Nayla memilih apakah asumsi dipakai sementara atau fitur terkait ditunda; keputusan dan dampak jadwal ditulis di Sprint Tracker.

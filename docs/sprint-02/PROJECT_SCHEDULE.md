@@ -1,20 +1,29 @@
 # Project Schedule / Gantt Chart — Sprint 2
 
-Jadwal ini adalah baseline usulan berdasarkan WBS proyek. Tanggal kalender Sprint 2 belum diberikan, jadi durasi dan urutan dicatat tanpa mengarang tanggal. Project Manager mengisi tanggal setelah tim dan dosen mengonfirmasi periode sprint.
+**Baseline period:** Senin, 26 Oktober–Jumat, 6 November 2026 (10 hari kerja). Ini asumsi jadwal untuk perencanaan; kalender akademik/dosen dapat menggantikannya. Hari kerja Senin–Jumat, tanpa memperhitungkan hari libur yang belum diketahui.
 
-| ID | Aktivitas | Durasi kerja (hari) | Mulai | Selesai | Dependensi | Milestone / output | PIC usulan |
-|---|---|---:|---|---|---|---|---|
-| S2-01 | Konfirmasi kebutuhan dan keputusan terbuka | 2 | Belum ditetapkan | Belum ditetapkan | Sprint 1; jadwal pemilik | Kebutuhan dan keputusan tercatat | Nayla koordinasi; Niluh analisis |
-| S2-02 | Menyusun spesifikasi kebutuhan serta use case/alur | 3 | Belum ditetapkan | Belum ditetapkan | S2-01 | Review kebutuhan selesai | Niluh; Zahra review |
-| S2-03 | Menyusun wireframe halaman utama | 3 | Belum ditetapkan | Belum ditetapkan | S2-02 | Wireframe untuk ditinjau | Zahra; Niluh review |
-| S2-04 | Menyusun model data awal | 2 | Belum ditetapkan | Belum ditetapkan | S2-02 | Model data untuk ditinjau | Zahra; Faiza review teknis |
-| S2-05 | Meninjau arsitektur dan kesiapan rencana implementasi | 2 | Belum ditetapkan | Belum ditetapkan | S2-02, S2-04 | Rencana teknis disepakati | Faiza; Nayla koordinasi |
-| S2-06 | Review dokumen Sprint 2 dan persetujuan tindak lanjut | 1 | Belum ditetapkan | Belum ditetapkan | S2-03–S2-05 | Milestone: paket perencanaan Sprint 2 direview | Nayla dan seluruh tim |
+| ID | Aktivitas | PIC | Durasi kerja | Mulai | Selesai | Dependensi | Milestone / bukti selesai |
+|---|---|---|---:|---|---|---|---|
+| S2-01 | Kickoff dan validasi kebutuhan/keputusan utama | Nayla, Niluh | 2 hari | 26 Okt | 27 Okt | Charter, WBS | Catatan keputusan tentang produk, transaksi, pengguna/admin dan laporan |
+| S2-02 | Spesifikasi kebutuhan, use case dan alur proses | Niluh; Zahra meninjau | 3 hari | 28 Okt | 30 Okt | S2-01 | Requirement ber-ID, aktor dan kriteria; alur utama direview |
+| S2-03 | Wireframe katalog, detail, admin, transaksi dan laporan | Zahra; Niluh meninjau | 3 hari | 2 Nov | 4 Nov | S2-02 | Wireframe low-fidelity untuk lima area utama |
+| S2-04 | Model data produk, transaksi dan item transaksi | Zahra; Faiza meninjau | 2 hari | 2 Nov | 3 Nov | S2-02 | Entitas, atribut inti, relasi, dan aturan integritas tertulis |
+| S2-05 | Rencana arsitektur dan deployment | Faiza; Nayla koordinasi | 2 hari | 4 Nov | 5 Nov | S2-02, S2-04 | Peta Next.js–Supabase–Vercel, env, batas keamanan dan prasyarat |
+| S2-06 | Review paket perencanaan dan baseline Sprint 3 | Nayla, seluruh tim | 1 hari | 6 Nov | 6 Nov | S2-03–S2-05 | Milestone: keputusan review, backlog prioritas dan rencana Sprint 3 |
 
-## Catatan perencanaan
+## Gantt ringkas
 
-- Durasi adalah hari kerja kalender proyek yang perlu dikonfirmasi; belum termasuk estimasi manday.
-- Aktivitas dapat berjalan paralel setelah dependensinya terpenuhi.
-- Tanggal mulai/selesai, hari libur, kapasitas anggota, dan tanggal milestone harus diisi setelah jadwal sprint disetujui.
-- Gantt versi tanggal dapat dibuat dengan menambahkan kolom tanggal atau diagram setelah rentang Sprint 2 diketahui.
-- Ini dokumen perencanaan saja; tidak membuat atau mengimplementasikan aplikasi.
+| Aktivitas | 26–27 Okt | 28–30 Okt | 2–3 Nov | 4 Nov | 5 Nov | 6 Nov |
+|---|---|---|---|---|---|---|
+| S2-01 Validasi kebutuhan | ■ |  |  |  |  |  |
+| S2-02 Requirement dan alur |  | ■ |  |  |  |  |
+| S2-03 Wireframe |  |  | ■ | ■ |  |  |
+| S2-04 Model data |  |  | ■ |  |  |  |
+| S2-05 Arsitektur |  |  |  | ■ | ■ |  |
+| S2-06 Review sprint |  |  |  |  |  | ◆ |
+
+`■` pekerjaan berjalan; `◆` milestone review.
+
+## Aturan kendali jadwal
+
+Nayla mengecek status pada kickoff 26 Oktober, review 30 Oktober, dan review penutupan 6 November. Jika validasi pemilik tertunda lebih dari satu hari kerja, Niluh melanjutkan requirement yang didukung brief dan menandai asumsi; Nayla memindahkan keputusan yang bergantung pada pemilik ke daftar tindak lanjut. Aktivitas desain berjalan paralel pada 2–4 November.
