@@ -11,7 +11,7 @@ Pembagian PIC di bawah adalah usulan awal berdasarkan fokus anggota di brief. Ti
 | 2.2 | Use case dan alur proses | Diagram/alur sistem | Niluh | 2.1 |
 | 2.3 | Wireframe halaman | Mockup katalog, pemesanan, login, dashboard, laporan | Niluh | 2.1 |
 | 2.4 | Rancangan basis data | Model data produk, transaksi, detail, admin untuk Supabase PostgreSQL | Niluh dan Faiza | 2.1 |
-| 2.5 | Rencana arsitektur dan deployment | Catatan setup Next.js, Supabase, variabel lingkungan, dan target Vercel | Faiza (teknis), Nayla (koordinasi), tim | 2.1 |
+| 2.5 | Rencana arsitektur dan deployment | Dokumen rencana: Next.js App Router dengan TypeScript dan Tailwind CSS; Supabase PostgreSQL untuk data dan Supabase Auth untuk akun admin; Vercel sebagai target hosting. Catat alur katalog publik/admin, kebutuhan environment variables, dan prasyarat deployment. Tahap ini dokumentasi saja; implementasi dan deployment dilakukan pada paket 3.x setelah rancangan disetujui. | Faiza (rencana teknis), Nayla (koordinasi), tim | 2.1 |
 | 3.1 | Database dan koneksi aplikasi | Skema Supabase PostgreSQL dan koneksi aplikasi | Faiza (usulan) | 2.4, 2.5 |
 | 3.2 | Beranda dan katalog | Halaman katalog | Niluh (usulan) | 2.3 |
 | 3.3 | Detail produk | Informasi harga/ketersediaan | Niluh (usulan) | 3.2 |
