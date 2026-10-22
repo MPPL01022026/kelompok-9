@@ -11,6 +11,18 @@ Status berikut hanya menunjukkan artefak perencanaan yang tersedia di folder ini
 | Validasi kebutuhan | Catatan wawancara/observasi | Tim | Belum ada bukti tambahan | Menunggu kegiatan validasi |
 | Repository dan kontribusi | Riwayat commit kelompok | Semua anggota | Repository kelompok belum ditautkan | Ikuti alur branch, commit identitas sendiri, dan Pull Request yang dijelaskan di README |
 
+## Sprint 2 — Dokumen Perencanaan
+
+Artefak Sprint 2 berikut masih draft awal. Tanggal kalender, kapasitas, estimasi usaha, biaya, dan penilaian risiko perlu ditinjau/disepakati tim.
+
+| Aktivitas | Output | PIC usulan | Status | Bukti |
+|---|---|---|---|---|
+| Schedule / Gantt | Jadwal, dependensi, dan milestone | Nayla, tim | Draft tersedia lokal; tanggal belum ditetapkan | [Project Schedule](sprint-02/PROJECT_SCHEDULE.md) |
+| Resource & Responsibility Plan | Peran, tanggung jawab, kebutuhan sumber daya | Nayla, tim | Draft tersedia lokal; kapasitas perlu dikonfirmasi | [Resource & Responsibility Plan](sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) |
+| Effort Estimation | Manday per aktivitas | Nayla koordinasi; tiap PIC meninjau estimasinya | Draft awal; perlu validasi anggota | [Effort Estimation](sprint-02/EFFORT_ESTIMATION_MANDAY.md) |
+| Project Cost Estimation | Estimasi biaya dan asumsi | Nayla koordinasi; tim konfirmasi biaya | Draft awal; biaya aktual belum diketahui | [Project Cost Estimation](sprint-02/PROJECT_COST_ESTIMATION.md) |
+| Risk Register | Risiko, probabilitas, dampak, mitigasi | Nayla koordinasi; seluruh anggota memberi masukan | Draft awal; perlu review tim | [Risk Register](sprint-02/RISK_REGISTER.md) |
+
 ## Log review
 
 | Tanggal | Sprint/artefak | Peserta/peran | Feedback atau hambatan | Keputusan | Tindak lanjut | PIC | Status |
