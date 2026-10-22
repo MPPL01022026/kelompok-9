@@ -1,19 +1,17 @@
 # Bukti Observasi dan Privasi
 
-Gunakan folder ini untuk materi proyek yang benar-benar dikumpulkan dengan izin yang sesuai. Brief tugas menyebut observasi, tetapi tidak ada foto atau data pemilik/pelanggan yang dimasukkan dalam repository saat ini.
+Hasil observasi dan wawancara mendukung analisis kebutuhan sistem penjualan dan manajemen produk. Catat hanya temuan yang relevan untuk desain katalog, transaksi, pengelolaan produk, atau laporan.
 
-## Format bukti yang disarankan
+## Struktur pencatatan
 
-Untuk setiap sesi, simpan catatan teks berisi tanggal, tujuan, peran peserta (hindari nama pribadi bila tidak diperlukan), metode, temuan yang relevan, keputusan, pertanyaan lanjutan, dan anggota pencatat. Beri ID bukti seperti `OBS-01` dan tautkan ID itu dari requirement atau Sprint Tracker. Jangan mengunggah foto identitas, nomor telepon, alamat rumah, transaksi nyata, atau kredensial kecuali ada izin eksplisit dan kebutuhan akademik yang jelas.
+Setiap kegiatan diberi ID (misalnya `OBS-01`) dan mencatat tanggal, tujuan, peran peserta, metode, temuan bisnis, keputusan, pertanyaan lanjutan, serta nama anggota pencatat. Tautkan ID kegiatan ke requirement terkait agar keputusan dapat ditelusuri.
 
-## Aturan privasi
+## Perlindungan informasi
 
-1. Minta izin sebelum merekam, memotret, atau menerbitkan materi observasi.
-2. Simpan data minimum yang diperlukan untuk menjelaskan kebutuhan sistem.
-3. Samarkan informasi pelanggan/pemilik pada catatan yang akan berada di repository publik.
-4. Jangan masukkan kata sandi, token, kunci Supabase, atau data transaksi riil.
-5. Jika izin tidak ada atau tidak jelas, gunakan ringkasan anonim dan jangan unggah bukti mentah.
+1. Minta izin sebelum merekam, memotret, atau membagikan hasil kegiatan.
+2. Batasi catatan pada informasi yang dibutuhkan untuk merancang sistem.
+3. Anonimkan identitas pemilik/pelanggan pada materi repository.
+4. Jangan menyimpan nomor telepon, alamat pribadi, transaksi pelanggan, kata sandi, token, atau kunci layanan.
+5. Jika suatu bukti tidak diperlukan atau izinnya tidak jelas, simpan keputusan dalam ringkasan anonim tanpa mengunggah materi mentah.
 
-## Kondisi saat ini
-
-Pada 22 Oktober 2026, folder ini belum memiliki bukti observasi proyek. Isi folder hanya ditambahkan setelah tim melakukan kegiatan dan memeriksa izin; jangan membuat bukti seolah-olah wawancara telah terjadi.
+Nayla memastikan bukti yang ditautkan pada laporan telah diperiksa izin dan kerahasiaannya. Anggota yang melakukan kegiatan mencatat temuan sesuai struktur di atas.

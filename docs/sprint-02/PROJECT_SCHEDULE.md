@@ -1,4 +1,4 @@
-# Project Schedule / Gantt Chart — Sprint 2
+# Project Schedule / Gantt Chart - Sprint 2
 
 **Baseline period:** Senin, 26 Oktober–Jumat, 6 November 2026 (10 hari kerja). Baseline tim memakai hari kerja Senin–Jumat. Nayla memindahkan milestone bila kalender kuliah memuat hari nonaktif dan mencatat perubahannya di tracker.
 
@@ -26,4 +26,4 @@
 
 ## Aturan kendali jadwal
 
-Nayla mengecek status pada kickoff 26 Oktober, review 30 Oktober, dan review penutupan 6 November. Jika validasi pemilik tertunda lebih dari satu hari kerja, Niluh melanjutkan requirement yang didukung brief dan menandai asumsi; Nayla memindahkan keputusan yang bergantung pada pemilik ke daftar tindak lanjut. Aktivitas desain berjalan paralel pada 2–4 November.
+Nayla mengecek status pada kickoff 26 Oktober, review 30 Oktober, dan review penutupan 6 November. Jika validasi pemilik tertunda lebih dari satu hari kerja, Niluh melanjutkan kebutuhan yang sudah disepakati dan mencatat keputusan bisnis yang tersisa di daftar tindak lanjut. Aktivitas desain berjalan paralel pada 2–4 November.

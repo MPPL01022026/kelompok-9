@@ -1,4 +1,4 @@
-# Project Backlog — baseline usulan
+# Project Backlog - baseline usulan
 
 Prioritas memakai MoSCoW untuk menyepakati urutan, bukan komitmen fitur final. Kriteria adalah kondisi yang dapat diperiksa saat implementasi; data bisnis harus dikonfirmasi dengan pemilik.
 
