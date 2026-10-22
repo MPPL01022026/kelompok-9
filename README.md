@@ -68,9 +68,18 @@ Pembagian pekerjaan di backlog adalah usulan untuk memulai; tim dapat menyepakat
 
 Urutan mengikuti jadwal kasar empat pekan dalam brief; tanggal aktual dan tenggat belum dicantumkan.
 
-## Teknologi
+## Tech Stack
 
-Belum ditentukan di brief. Pilih framework, database, dan hosting setelah kebutuhan serta batasan mata kuliah dikonfirmasi. Jangan anggap proyek implementasi sudah dibuat: folder ini saat ini berisi dokumen perencanaan.
+| Bagian | Teknologi | Status |
+|---|---|---|
+| Framework aplikasi | [Next.js](https://nextjs.org/) dengan App Router | Dipilih sebagai rencana awal |
+| Bahasa | TypeScript | Direncanakan |
+| UI | Tailwind CSS | Direncanakan |
+| Database dan autentikasi | [Supabase](https://supabase.com/) (PostgreSQL dan Supabase Auth) | Direncanakan |
+| Deployment aplikasi | [Vercel](https://vercel.com/) | Target deployment |
+| Version control | Git dan GitHub | Digunakan untuk kolaborasi |
+
+Stack ini dipilih agar aplikasi dapat dikembangkan dan ditargetkan untuk deployment ke Vercel dengan layanan data Supabase. Ini masih keputusan perencanaan: aplikasi, skema database, akun layanan, dan deployment belum dibuat. Versi framework dan dependensi akan ditetapkan saat setup implementasi. Jangan menyimpan kunci rahasia Supabase di repository.
 
 ## Kontribusi GitHub
 

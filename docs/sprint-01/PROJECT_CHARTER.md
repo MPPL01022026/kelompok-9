@@ -11,6 +11,7 @@
 | Mata kuliah | Manajemen Proyek Perangkat Lunak (MPPL) |
 | Tahun akademik | 2026/2027 |
 | Tahap | Perencanaan awal; kebutuhan dan detail teknis perlu divalidasi |
+| Stack rencana awal | Next.js, TypeScript, Tailwind CSS, Supabase (PostgreSQL dan Auth), deployment ke Vercel |
 
 Sumber: `Tugas MPPL 1.docx` yang diberikan untuk proyek ini.
 
@@ -50,7 +51,7 @@ Ini jadwal estimasi dari brief, bukan tanggal yang sudah disepakati.
 - Nama pemilik, proses transaksi yang berjalan, menu final, dan harga belum disediakan; validasi diperlukan.
 - Data transaksi historis dan aturan penghitungan statistik belum diketahui.
 - Kebutuhan alur pemesanan belum jelas (pemesanan pelanggan atau pencatatan oleh admin); putuskan bersama pemilik.
-- Stack dan platform aplikasi belum dipilih.
+- Stack di atas merupakan pilihan teknis awal tim untuk mendukung deployment ke Vercel dan penggunaan Supabase; validasi kesesuaiannya dengan kebutuhan serta ketentuan mata kuliah sebelum implementasi.
 - Perhitungan Function Point adalah estimasi awal, bukan ukuran final.
 - Materi dokumentasi observasi pada DOCX tidak otomatis disalin ke repository; pastikan izin dan privasi sebelum menambahkan foto atau identitas.
 
@@ -63,4 +64,6 @@ Dokumen perencanaan, hasil analisis dan desain, aplikasi sesuai kebutuhan terkon
 Persetujuan pemilik UMKM: belum dikonfirmasi.  
 Persetujuan dosen pengampu: belum dikonfirmasi.  
 Tanggal: belum tersedia.
+
+Rincian stack dan status implementasi dicatat pada bagian [Tech Stack](../../README.md#tech-stack).
 
