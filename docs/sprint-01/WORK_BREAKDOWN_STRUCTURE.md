@@ -1,6 +1,6 @@
 # Work Breakdown Structure (WBS)
 
-WBS berikut memecah proyek menjadi pekerjaan yang dapat ditinjau. Sprint 1 dan 2 berisi perencanaan; Sprint 3–4 adalah rencana implementasi dan review, bukan pekerjaan yang sudah dilaksanakan. Tanggal Sprint 2 mengikuti baseline asumsi 26 Oktober–6 November 2026.
+WBS ini membagi proyek menjadi deliverable yang dapat diperiksa. Tanggal adalah baseline tim: Sprint 1 (19–23 Okt), Sprint 2 (26 Okt–6 Nov), Sprint 3 (9–20 Nov), Sprint 4 (23 Nov–4 Des 2026). Pemilik paket kerja memperbarui status setelah hasil nyata tersedia.
 
 | ID | Sprint | Paket kerja / aktivitas | Deliverable dan kriteria selesai | PIC utama | Dependensi |
 |---|---|---|---|---|---|
@@ -13,8 +13,8 @@ WBS berikut memecah proyek menjadi pekerjaan yang dapat ditinjau. Sprint 1 dan 2
 | 2.1 | 2 | Kickoff dan konfirmasi kebutuhan | Catatan keputusan untuk pengguna, produk, pesanan, stok, admin, dan laporan | Nayla (fasilitasi), Niluh (catat) | 1.2–1.4 |
 | 2.2 | 2 | Spesifikasi fungsional/nonfungsional | Setiap kebutuhan punya ID, aktor, prioritas, dan kriteria penerimaan | Niluh | 2.1 |
 | 2.3 | 2 | Use case dan alur proses | Alur katalog, kelola produk, catat transaksi, dan lihat laporan ditinjau | Niluh; Zahra review | 2.2 |
-| 2.4 | 2 | Wireframe halaman | Draft beranda/katalog, detail, admin, produk, transaksi, dan laporan | Zahra; Niluh review | 2.2–2.3 |
-| 2.5 | 2 | Model data konseptual | Entitas Product, Transaction, TransactionItem, Admin/User beserta relasi dan aturan | Zahra; Faiza review | 2.2–2.3 |
+| 2.4 | 2 | Wireframe halaman | Wireframe beranda/katalog, detail, admin, produk, transaksi, dan laporan yang ditinjau | Zahra; Niluh review | 2.2–2.3 |
+| 2.5 | 2 | Model data konseptual | Entitas Product, Transaction, TransactionItem, Admin/User beserta relasi dan aturan integritas | Zahra; Faiza review | 2.2–2.3 |
 | 2.6 | 2 | Rencana arsitektur dan deployment | Peta Next.js/TypeScript/Tailwind, Supabase PostgreSQL/Auth, Vercel, env dan batas keamanan | Faiza; Nayla koordinasi | 2.2, 2.5 |
 | 2.7 | 2 | Baseline jadwal, effort, cost, risiko | Lima dokumen Sprint 2 direview dan keputusan dicatat | Nayla; semua PIC | 2.1–2.6 |
 | 3.1 | 3 | Setup aplikasi dan konfigurasi lingkungan | Aplikasi dapat dijalankan lokal; konfigurasi rahasia di env lokal | Faiza | 2.6 disetujui |
@@ -25,7 +25,7 @@ WBS berikut memecah proyek menjadi pekerjaan yang dapat ditinjau. Sprint 1 dan 2
 | 4.1 | 4 | Rekap dan statistik | Filter periode dan definisi metrik sesuai keputusan pemilik | Niluh, Faiza | 3.5 |
 | 4.2 | 4 | Pengujian penerimaan dan perbaikan | Skenario katalog, akses, CRUD, transaksi, dan laporan lulus/temuan dicatat | Faiza; tim | 3.3–4.1 |
 | 4.3 | 4 | Deployment dan dokumentasi akhir | Aplikasi target Vercel terhubung aman ke Supabase; panduan dan demo siap | Faiza; Nayla koordinasi | 4.2 |
-| 4.4 | 4 | Review dan presentasi | Feedback dosen/pemilik dan keputusan tindak lanjut terdokumentasi | Nayla; tim | 4.3 |
+| 4.4 | 4 | Review akhir dan daftar tindak lanjut | Feedback dosen/pemilik serta keputusan perbaikan tercatat dengan PIC | Nayla; tim | 4.3 |
 
 ## Baseline sprint
 
@@ -34,4 +34,4 @@ WBS berikut memecah proyek menjadi pekerjaan yang dapat ditinjau. Sprint 1 dan 2
 - Sprint 3: 9–20 November 2026 (10 hari kerja), implementasi awal sesuai desain.
 - Sprint 4: 23 November–4 Desember 2026 (10 hari kerja), laporan, pengujian, deployment dan evaluasi.
 
-Tanggal dan durasi merupakan asumsi latihan; tenggat mata kuliah dan hari nonaktif harus diperiksa sebelum komitmen.
+Nayla memeriksa benturan tanggal dengan kalender kuliah pada kickoff. Bila ada hari nonaktif, milestone digeser dengan menjaga urutan dependensi dan mencatat perubahan pada tracker.

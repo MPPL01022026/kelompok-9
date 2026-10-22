@@ -1,30 +1,41 @@
-# Project Cost Estimation — Sprint 2
+# Project Cost Estimation — baseline proyek
 
-Estimasi menggunakan Rupiah dan membedakan **biaya kas** dari **nilai ekonomi tenaga kerja**. Sprint 2 hanya menyiapkan dokumen; akun atau layanan Vercel/Supabase tidak dibuat. Semua tarif di bawah adalah asumsi latihan untuk membuat estimasi yang terhitung, bukan harga pasar atau tarif resmi.
+Anggaran mencakup empat sprint dari inisiasi sampai demo akhir (19 Oktober–4 Desember 2026). Perhitungan memisahkan biaya kas dari nilai ekonomi tenaga kerja. Nilai menjadi baseline pengendalian; Nayla membandingkan pengeluaran aktual setiap akhir sprint.
 
-## Estimasi dasar
+## Rincian baseline biaya
 
-| Komponen | Kuantitas dan tarif asumsi | Biaya dasar | Jenis |
+| Komponen | Basis hitung | Nilai baseline | Kategori |
 |---|---|---:|---|
-| Usaha tim mahasiswa | 13.5 manday × Rp100.000/manday (tarif bayangan untuk latihan) | Rp1.350.000 | Nilai ekonomi; tidak dibayarkan |
-| GitHub | 1 repository yang sudah tersedia × Rp0 biaya tambahan | Rp0 | Kas |
-| Editor/diagram/wireframe | 4 anggota × alat/perangkat yang tersedia × Rp0 pembelian baru | Rp0 | Kas |
-| Supabase dan Vercel | Tidak dipakai dalam sprint dokumentasi | Rp0 | Kas sprint ini; bukan estimasi biaya implementasi nanti |
-| Komunikasi | 3 sesi daring × koneksi/perangkat tersedia, tanpa pembelian tambahan | Rp0 | Kas tambahan |
-| **Total biaya kas** | Tanpa pembelian/layanan baru | **Rp0** | Anggaran kas Sprint 2 |
-| **Total nilai ekonomi termasuk tenaga kerja** | Rp1.350.000 tenaga kerja + Rp0 biaya kas | **Rp1.350.000** | Estimasi ekonomi |
+| Tenaga kerja tim | 71.5 manday × Rp100.000/manday | Rp7.150.000 | Nilai ekonomi; bukan pembayaran kepada anggota |
+| Supabase Pro | US$25/bulan × 2 bulan × Rp16.000/US$ | Rp800.000 | Biaya kas layanan database/auth |
+| Vercel Pro | US$20/bulan × 2 bulan × Rp16.000/US$ | Rp640.000 | Biaya kas deployment komersial; satu pemilik akun |
+| Kuota internet koordinasi | 4 anggota × Rp25.000/bulan × 2 bulan | Rp200.000 | Biaya kas |
+| Cetak laporan dan materi review | 1 paket × Rp100.000 | Rp100.000 | Biaya kas |
+| GitHub | Repository kolaborasi yang sudah tersedia | Rp0 | Biaya tambahan |
+| Domain khusus | Tidak dibeli; gunakan subdomain Vercel | Rp0 | Di luar baseline belanja |
+| Overhead kantor/perjalanan | Koordinasi daring dan alat tersedia | Rp0 | Tidak ada belanja terpisah |
+| **Subtotal biaya kas** | Layanan + kuota + cetak | **Rp1.740.000** |  |
+| Cadangan biaya | 10% × Rp1.740.000 | Rp174.000 | Penggunaan dengan persetujuan PM |
+| **Total anggaran kas** | Subtotal + cadangan | **Rp1.914.000** |  |
+| **Total nilai ekonomi proyek** | Tenaga kerja Rp7.150.000 + biaya kas Rp1.914.000 | **Rp9.064.000** | Nilai penuh |
 
-## Skenario sensitivitas tarif tenaga kerja
+## Distribusi biaya kas per sprint
 
-| Tarif bayangan per manday | Biaya tenaga kerja untuk 13.5 manday | Total ekonomi dengan biaya kas Rp0 |
-|---:|---:|---:|
-| Rp0 (tugas tidak dinilai dengan tarif) | Rp0 | Rp0 |
-| Rp100.000 (baseline latihan) | Rp1.350.000 | Rp1.350.000 |
-| Rp150.000 (skenario tinggi) | Rp2.025.000 | Rp2.025.000 |
+| Periode | Supabase | Vercel | Kuota | Cetak | Cadangan | Total kas |
+|---|---:|---:|---:|---:|---:|---:|
+| Sprint 1 (19–23 Okt) | Rp0 | Rp0 | Rp0 | Rp0 | Rp0 | Rp0 |
+| Sprint 2 (26 Okt–6 Nov) | Rp0 | Rp0 | Rp100.000 | Rp0 | Rp10.000 | Rp110.000 |
+| Sprint 3 (9–20 Nov) | Rp400.000 | Rp320.000 | Rp50.000 | Rp0 | Rp77.000 | Rp847.000 |
+| Sprint 4 (23 Nov–4 Des) | Rp400.000 | Rp320.000 | Rp50.000 | Rp100.000 | Rp87.000 | Rp957.000 |
+| **Total** | **Rp800.000** | **Rp640.000** | **Rp200.000** | **Rp100.000** | **Rp174.000** | **Rp1.914.000** |
 
-## Dasar, pengecualian, dan kontrol
+## Dasar dan kontrol biaya
 
-- Biaya pribadi internet/listrik tidak dihitung terpisah agar tidak mengarang pemakaian; diasumsikan termasuk fasilitas anggota yang sudah tersedia.
-- Tidak ada overhead atau cadangan kas pada baseline karena tidak ada pembelian yang direncanakan. Jika pengeluaran baru disetujui, Nayla catat vendor, bukti, tanggal, dan penanggung jawab sebelum memperbarui total.
-- Nilai ekonomi tenaga kerja adalah perangkat estimasi tugas, bukan janji pembayaran atau gaji.
-- Biaya layanan ketika implementasi dimulai harus diestimasi ulang dari paket yang dipilih. Target stack saja tidak berarti layanan telah dibeli/dibuat.
+- Kurs internal anggaran ditetapkan Rp16.000 per US$ untuk perencanaan; Nayla memperbarui nilai Rupiah saat pembelian berdasarkan kurs/tagihan aktual.
+- Supabase Pro diasumsikan US$25/bulan dan Vercel Pro US$20/bulan berdasarkan halaman harga resmi yang diperiksa 22 Oktober 2026. Anggaran mencakup dua bulan dan satu pemilik akun Vercel; seat tambahan, pajak, overage, dan domain khusus tidak termasuk.
+- Vercel Hobby ditujukan untuk penggunaan personal/nonkomersial; karena target sistem digunakan UMKM, baseline memilih Pro untuk deployment customer-facing. Rujuk [ketentuan paket Hobby Vercel](https://vercel.com/legal/terms) sebelum aktivasi.
+- Tarif tenaga kerja Rp100.000/manday adalah shadow rate untuk valuasi effort, bukan upah atau komitmen pembayaran.
+- Cadangan 10% tidak dibelanjakan otomatis. Nayla menyetujui biaya tambahan dan menyimpan bukti transaksi.
+- Jika penggunaan dapat dibatasi secara sah pada paket gratis atau durasi layanan kurang dari dua bulan, PM mencatat penghematan aktual; jangan mengaktifkan layanan berbayar sebelum tim menyetujui anggaran.
+
+Referensi harga resmi: [Supabase Pricing](https://supabase.com/pricing) dan [Vercel Pricing](https://vercel.com/pricing).
