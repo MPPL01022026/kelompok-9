@@ -58,6 +58,11 @@ Pembagian Zahra dan Niluh mengikuti klarifikasi tim. Nama lengkap dan nomor maha
 | [Stakeholder Register](docs/sprint-01/STAKEHOLDER_REGISTER.md) | Pihak terkait dan kebutuhan |
 | [WBS](docs/sprint-01/WORK_BREAKDOWN_STRUCTURE.md) | Paket kerja dan pembagian tugas usulan |
 | [Function Point](docs/sprint-01/FUNCTION_POINT.md) | Estimasi awal yang dipindahkan dari brief |
+| [Sprint 2 Schedule](docs/sprint-02/PROJECT_SCHEDULE.md) | Jadwal dan milestone usulan |
+| [Resource & Responsibility Plan](docs/sprint-02/RESOURCE_RESPONSIBILITY_PLAN.md) | Peran, tanggung jawab, dan sumber daya |
+| [Effort Estimation](docs/sprint-02/EFFORT_ESTIMATION_MANDAY.md) | Estimasi usaha awal dalam manday |
+| [Project Cost Estimation](docs/sprint-02/PROJECT_COST_ESTIMATION.md) | Estimasi biaya dan asumsi |
+| [Risk Register](docs/sprint-02/RISK_REGISTER.md) | Risiko, respons, pemilik, dan status |
 
 ## Tahapan proyek
 
