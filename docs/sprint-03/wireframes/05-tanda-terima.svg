@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1160" viewBox="0 0 1800 1160">
+<rect x="0" y="0" width="1800" height="1160" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
+<text x="56" y="46" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#505050" text-anchor="start">AYAM GUNTING MALAYSIA  /  SPRINT 3  /  WIREFRAME</text>
+<text x="56" y="91" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#111111" text-anchor="start">05  Tanda terima pesanan</text>
+<text x="56" y="121" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#505050" text-anchor="start">/orders/received/[id]   |   konfirmasi dan kode pengambilan</text>
+<line x1="56" y1="143" x2="1744" y2="143" stroke="#111111" stroke-width="2"/>
+<text x="56" y="169" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#505050" text-anchor="start">DESKTOP 1440 x 900   |   SKALA 86%</text>
+<g transform="translate(56 186) scale(0.86)">
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#f3f3f3" stroke="#f3f3f3" stroke-width="0"/><rect x="292" y="132" width="856" height="636" rx="0" fill="#ffffff" stroke="#929292" stroke-width="1"/><rect x="688" y="184" width="64" height="64" rx="0" fill="#dedede" stroke="#111111" stroke-width="1"/><text x="720" y="226" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111111" text-anchor="middle">OK</text><text x="720" y="308" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#111111" text-anchor="middle">Terima kasih sudah memesan.</text><text x="720" y="352" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#505050" text-anchor="middle">Pesanan menunggu diproses. Tunjukkan kode saat mengambil.</text><rect x="352" y="396" width="736" height="136" rx="0" fill="#eeeeee" stroke="#929292" stroke-width="1"/><text x="380" y="438" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#111111" text-anchor="start">Atas nama pemesan</text><text x="380" y="476" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#111111" text-anchor="start">2 x Ayam Gunting</text><text x="380" y="512" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111111" text-anchor="start">Total Rp 30.000</text><rect x="352" y="550" width="736" height="96" rx="0" fill="#202020" stroke="#111111" stroke-width="1"/><text x="720" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">KODE PESANAN</text><text x="720" y="620" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">XXXXXXXX-XXXX-XXXX</text><rect x="548" y="670" width="344" height="52" rx="0" fill="#dedede" stroke="#111111" stroke-width="1"/><text x="720.0" y="701.0" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">Kembali ke katalog</text>
+</g>
+<line x1="1304" y1="186" x2="1304" y2="960" stroke="#111111" stroke-width="1"/>
+<text x="1340" y="210" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="start">SPESIFIKASI LAYAR</text>
+<rect x="1340" y="230" width="30" height="30" rx="15" fill="#ffffff" stroke="#111111" stroke-width="1"/>
+<text x="1355" y="250" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#111111" text-anchor="middle">1</text>
+<text x="1385" y="252" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Konfirmasi</text>
+<text x="1385" y="276" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Status pesanan ditampilkan.</text>
+<text x="1385" y="295" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Nama dan ringkasan item ditampilkan.</text>
+<rect x="1340" y="342" width="30" height="30" rx="15" fill="#ffffff" stroke="#111111" stroke-width="1"/>
+<text x="1355" y="362" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#111111" text-anchor="middle">2</text>
+<text x="1385" y="364" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Kode</text>
+<text x="1385" y="388" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Kode membantu pencocokan pesanan.</text>
+<text x="1385" y="407" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Nomor asli tidak dicantumkan wireframe.</text>
+<rect x="1340" y="454" width="30" height="30" rx="15" fill="#ffffff" stroke="#111111" stroke-width="1"/>
+<text x="1355" y="474" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#111111" text-anchor="middle">3</text>
+<text x="1385" y="476" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Akses</text>
+<text x="1385" y="500" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Aksi utama kembali ke katalog.</text>
+<text x="1385" y="519" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Ringkasan tetap terbaca di ponsel.</text>
+<line x1="56" y1="1010" x2="1744" y2="1010" stroke="#111111" stroke-width="1"/>
+<text x="56" y="1042" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#505050" text-anchor="start">Monokrom menunjukkan struktur, hierarki, dan kontrol. Area media ditandai sebagai placeholder gambar.</text>
+<text x="56" y="1071" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#505050" text-anchor="start">Wireframe untuk review implementasi, bukan pengesahan kebutuhan bisnis.</text>
+<text x="1744" y="1071" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#505050" text-anchor="end">KELOMPOK 9  |  31 OKT 2026</text>
+</svg>

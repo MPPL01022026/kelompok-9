@@ -10,40 +10,65 @@
 
 ## Tampilan aplikasi
 
-![Katalog produk Ayam Gunting Malaysia](docs/sprint-03/screenshots/01-katalog.png)
+Screenshot berikut diambil dari aplikasi lokal pada 31 Oktober 2026. Data pesanan pada contoh adalah data demonstrasi. Foto menu merupakan ilustrasi.
 
-![Halaman detail produk](docs/sprint-03/screenshots/02-detail-produk.png)
-
-![Halaman login admin](docs/sprint-03/screenshots/03-login-admin.png)
-
-![Keranjang dalam keadaan kosong](docs/sprint-03/screenshots/04-keranjang-kosong.png)
+<table>
+  <tr>
+    <td width="50%"><strong>Beranda etalase</strong><br><img src="docs/sprint-03/screenshots/01-beranda.png" alt="Beranda dengan hero foto ayam dan aksi menuju menu" width="100%"></td>
+    <td width="50%"><strong>Katalog desktop</strong><br><img src="docs/sprint-03/screenshots/02-katalog.png" alt="Katalog dengan pencarian, kategori, foto, harga, dan tautan detail" width="100%"></td>
+  </tr>
+  <tr>
+    <td><strong>Katalog pada ponsel</strong><br><img src="docs/sprint-03/screenshots/10-katalog-mobile.png" alt="Katalog pada viewport ponsel" width="100%"></td>
+    <td><strong>Detail produk</strong><br><img src="docs/sprint-03/screenshots/03-detail-produk.png" alt="Detail produk dengan foto dan aksi tambah ke keranjang" width="100%"></td>
+  </tr>
+  <tr>
+    <td><strong>Keranjang kosong</strong><br><img src="docs/sprint-03/screenshots/04-keranjang-kosong.png" alt="State keranjang kosong" width="100%"></td>
+    <td><strong>Keranjang berisi</strong><br><img src="docs/sprint-03/screenshots/05-keranjang-berisi.png" alt="Keranjang dengan jumlah, subtotal, dan formulir pemesanan" width="100%"></td>
+  </tr>
+  <tr>
+    <td><strong>Tanda terima</strong><br><img src="docs/sprint-03/screenshots/06-tanda-terima.png" alt="Konfirmasi pesanan dengan kode pengambilan" width="100%"></td>
+    <td><strong>Login admin</strong><br><img src="docs/sprint-03/screenshots/07-login-admin.png" alt="Login admin dengan pengantar dan form autentikasi" width="100%"></td>
+  </tr>
+  <tr>
+    <td><strong>Dashboard admin</strong><br><img src="docs/sprint-03/screenshots/08-dashboard-admin.png" alt="Ringkasan dashboard dan tabel produk" width="100%"></td>
+    <td><strong>Antrean admin</strong><br><img src="docs/sprint-03/screenshots/09-antrean-admin.png" alt="Antrean pesanan dan tindakan status" width="100%"></td>
+  </tr>
+</table>
 
 ## Wireframe
 
-Wireframe low-fidelity mendokumentasikan struktur katalog, detail produk, login admin, keranjang, dan dashboard. Sumber SVG dapat disunting; PNG merupakan pratinjau.
+Wireframe grayscale mencakup beranda, katalog, detail, keranjang, tanda terima, login admin, dan dashboard. Sumber SVG dapat disunting; PNG merupakan pratinjau.
 
 <details>
   <summary>Lihat wireframe</summary>
 
-### Katalog
+### 1. Beranda katalog
 
-![Wireframe katalog](docs/sprint-03/wireframes/01-katalog.png)
+![Wireframe beranda katalog](docs/sprint-03/wireframes/01-beranda-katalog.png)
 
-### Detail produk
+### 2. Katalog produk
 
-![Wireframe detail produk](docs/sprint-03/wireframes/02-detail-produk.png)
+![Wireframe katalog produk](docs/sprint-03/wireframes/02-katalog-produk.png)
 
-### Login admin
+### 3. Detail produk
 
-![Wireframe login admin](docs/sprint-03/wireframes/03-login-admin.png)
+![Wireframe detail produk](docs/sprint-03/wireframes/03-detail-produk.png)
 
-### Keranjang dan pesanan
+### 4. Keranjang dan pesanan
 
 ![Wireframe keranjang dan pesanan](docs/sprint-03/wireframes/04-keranjang-pesanan.png)
 
-### Dashboard admin
+### 5. Tanda terima
 
-![Wireframe dashboard admin](docs/sprint-03/wireframes/05-dashboard-admin.png)
+![Wireframe tanda terima](docs/sprint-03/wireframes/05-tanda-terima.png)
+
+### 6. Login admin
+
+![Wireframe login admin](docs/sprint-03/wireframes/06-login-admin.png)
+
+### 7. Dashboard admin
+
+![Wireframe dashboard admin](docs/sprint-03/wireframes/07-dashboard-admin.png)
 
 </details>
 
@@ -97,6 +122,7 @@ Perubahan MVP tersedia pada PR #14 sampai #17. Lihat [riwayat Pull Request](http
 - [Laporan Sprint 3 (PDF)](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.pdf)
 - [Rencana Sprint 3](docs/sprint-03/SPRINT_PLAN.md)
 - [Catatan eksekusi Sprint 3](docs/sprint-03/SPRINT_EXECUTION.md)
+- [Serah terima implementasi MVP](docs/sprint-03/IMPLEMENTATION_HANDOFF.md)
 - [Project backlog](docs/PROJECT_BACKLOG.md)
 - [Sprint tracker](docs/SPRINT_TRACKER.md)
 - [Pertanyaan terbuka](docs/OPEN_QUESTIONS.md)

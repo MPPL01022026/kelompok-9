@@ -1,33 +1,44 @@
-# Catatan Eksekusi Sprint 3
+# Catatan Eksekusi Proyek Sprint 3
 
-## Batas pencatatan
+## Periode pencatatan
 
-Baseline Sprint 3 adalah 9–20 November 2026. Catatan ini diperbarui pada 31 Oktober 2026 dan merangkum prototipe MVP lokal yang dikerjakan sebelum periode tersebut. Isinya tidak menyatakan bahwa kickoff, rapat review, persetujuan stakeholder, atau Sprint 3 telah berlangsung.
+Baseline Sprint 3 dijadwalkan pada 9-20 November 2026. Catatan ini diperbarui 31 Oktober 2026 untuk merangkum kondisi MVP dan bukti repository yang tersedia sebelum periode sprint. Catatan ini bukan notulen kickoff, review sprint, atau persetujuan stakeholder.
 
-## Kontribusi yang sudah digabung ke `main`
+## Kontribusi MVP yang sudah digabung
 
-| Anggota | Hasil persiapan | Bukti GitHub |
+| Anggota | Hasil kontribusi | Bukti |
 |---|---|---|
-| Faiza Rahmatika | Fondasi aplikasi Next.js, konfigurasi, Supabase client, login awal, dan migrasi dasar | [PR #10](https://github.com/MPPL01022026/kelompok-9/pull/10), commit `8e1f53a` |
-| Niluh Naswa Salfa Adlian Lubis | Katalog dan halaman detail produk | [PR #11](https://github.com/MPPL01022026/kelompok-9/pull/11), commit `a48933a` |
-| Zahra, NIM 230504047 | Navigasi mobile, fokus papan ketik, dan reduced motion | [PR #12](https://github.com/MPPL01022026/kelompok-9/pull/12), commit `f766632` |
+| Faiza Rahmatika | Penyimpanan lokal, validasi server, operasi admin, dan skema Supabase | [PR #14](https://github.com/MPPL01022026/kelompok-9/pull/14) |
+| Niluh Naswa Salfa Adlian Lubis | Katalog pelanggan, detail, keranjang, dan pemesanan untuk pengambilan | [PR #15](https://github.com/MPPL01022026/kelompok-9/pull/15) |
+| Zahra, NIM 230504047 | Antarmuka responsif, aksesibilitas, dan wireframe | [PR #16](https://github.com/MPPL01022026/kelompok-9/pull/16) |
+| Nayla Salsabila Awika | Koordinasi dan dokumentasi MVP | [PR #17](https://github.com/MPPL01022026/kelompok-9/pull/17) |
 
-## Status prototipe lokal pada 31 Oktober
+Perubahan tampilan dan dokumentasi yang terlihat pada lingkungan kerja saat ini perlu diperiksa terhadap status Git sebelum dinyatakan telah dikirim ke GitHub. Tangkapan layar laporan merepresentasikan aplikasi lokal pada 31 Oktober 2026.
 
-| Area | Kondisi kode | Pemeriksaan/batas |
+## Kondisi MVP lokal
+
+| Area | Kondisi yang terdokumentasi | Batas |
 |---|---|---|
-| PB-01/PB-02 | Katalog, pencarian, kategori, detail, serta keranjang | Menggunakan penyimpanan JSON lokal saat Supabase tidak tersedia |
-| PB-03 | Login dan logout admin lokal; mode hosted tetap mendukung Supabase Auth | Kredensial lokal berasal dari environment |
-| PB-04/PB-05 | Admin dapat menambah, mengubah, dan mengaktifkan/nonaktifkan produk | Perlu uji manual pada browser setelah setup lokal |
-| PB-06 | Pesanan untuk diambil di kedai, snapshot harga/item, tanda terima, dan antrean admin | Tidak meminta nomor telepon, alamat, atau pembayaran daring |
-| Migrasi hosted | File impor gabungan dan dua migrasi terpisah | Belum diterapkan ke project Supabase |
-| Dokumentasi | Laporan Markdown/PDF dan lima wireframe | Review stakeholder serta keputusan bisnis belum dicatat |
+| Katalog | Beranda, pencarian, kategori, detail produk, gambar ilustratif, dan state kosong | Data produk dan harga contoh |
+| Keranjang | Kuantitas, hapus item, subtotal, nama pemesan, dan pengambilan di kedai | Tidak ada pembayaran daring atau pengantaran |
+| Pesanan | Snapshot item/harga, waktu, status, total, dan tanda terima berkode | Mode lokal hanya menyimpan di satu komputer |
+| Admin | Login/logout, CRUD produk, ketersediaan, dan antrean status pesanan | Kredensial lokal berasal dari environment |
+| Tampilan | Tangkapan layar desktop dan ponsel tersedia untuk halaman publik dan admin | Gambar ilustratif, bukan foto resmi usaha |
+| Wireframe | Tujuh layar grayscale dengan sumber SVG dan pratinjau PNG | Digunakan sebagai dokumentasi struktur, bukan persetujuan requirement |
+| Supabase | Berkas impor gabungan tersedia | Belum diterapkan pada project Supabase |
 
-## Bukti dan tindak lanjut
+## Pemeriksaan dokumentasi
 
-- [Laporan Sprint 3](LAPORAN_PELAKSANAAN_SPRINT_3.md) mencatat ruang lingkup dan batas verifikasi.
-- [Impor Supabase](../../app/supabase/IMPORT_TO_SUPABASE.sql) memuat migrasi awal dan MVP dalam satu berkas.
-- Data toko dan aturan retensi tetap menunggu validasi pemilik usaha. Lihat [Pertanyaan Terbuka](../OPEN_QUESTIONS.md).
-- Sebelum penggunaan hosted, uji alur Supabase, tinjau RLS dan RPC, serta tambahkan mitigasi spam endpoint pemesanan.
-- Catat hasil lint, typecheck, build, dan uji lokal setelah perubahan final. Hasil tidak boleh disamakan dengan uji penerimaan stakeholder.
-- PR perubahan MVP belum dibuat atau digabung pada tanggal pencatatan ini.
+- Peninjauan visual dilakukan pada beranda, katalog, detail, keranjang kosong dan berisi, tanda terima, login admin, dashboard, antrean, serta katalog ponsel.
+- Navigasi halaman dan login lokal digunakan untuk menyiapkan screenshot. Ini tidak menggantikan pengujian end-to-end ataupun UAT.
+- Pemeriksaan lint, TypeScript, dan build tidak diulang saat pembaruan dokumentasi ini.
+- Rincian, tangkapan layar, wireframe, dan batas verifikasi ada pada [laporan Sprint 3](LAPORAN_PELAKSANAAN_SPRINT_3.md).
+
+## Tindak lanjut
+
+1. Tinjau kebutuhan dan isi katalog dengan pemilik usaha sebelum memakai data selain contoh.
+2. Periksa alur pemesanan dan perubahan status dari awal sampai akhir menggunakan data lokal uji.
+3. Tinjau kebijakan RLS, fungsi transaksi, akses admin, serta mitigasi spam sebelum menyalakan mode hosted.
+4. Catat tanggal, peserta, keputusan, bukti review, dan isu hanya setelah kegiatan terkait benar-benar berlangsung.
+
+Rencana, PIC, baseline, dan Definition of Done tetap dicatat dalam [Sprint Plan](SPRINT_PLAN.md). Data bisnis yang belum diputuskan berada di [Open Questions](../OPEN_QUESTIONS.md).

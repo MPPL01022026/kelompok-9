@@ -25,9 +25,9 @@ export async function saveProduct(formData: FormData) {
   const name = String(formData.get("name") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
   const category = String(formData.get("category") ?? "").trim();
-  const emoji = String(formData.get("emoji") ?? "").trim();
+  const emoji = "";
   const price = Number(formData.get("price"));
-  if (!name || name.length > 100 || description.length > 500 || !category || category.length > 40 || !emoji || emoji.length > 12 || !Number.isSafeInteger(price) || price <= 0) {
+  if (!name || name.length > 100 || description.length > 500 || !category || category.length > 40 || !Number.isSafeInteger(price) || price <= 0) {
     redirect(`/admin?form=invalid${id ? `&edit=${encodeURIComponent(id)}` : ""}`);
   }
 
