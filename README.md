@@ -2,7 +2,7 @@
 
 ### Sistem Informasi Penjualan dan Manajemen Produk UMKM
 
-**Tujuan:** merencanakan sistem untuk menampilkan katalog, mengelola produk, mencatat transaksi, dan menyajikan ringkasan penjualan UMKM Ayam Gunting Malaysia.
+**Tujuan:** membangun sistem untuk menampilkan katalog, mengelola produk, mencatat transaksi, dan menyajikan ringkasan penjualan UMKM Ayam Gunting Malaysia.
 
 ## Ringkasan proyek
 
@@ -49,6 +49,13 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 | [Project Cost Estimation](docs/sprint-02/PROJECT_COST_ESTIMATION.md) | Anggaran kas dasar, asumsi biaya, dan opsi biaya tenaga kerja |
 | [Risk Register](docs/sprint-02/RISK_REGISTER.md) | Risiko berperingkat, mitigasi, kontingensi, dan pemilik |
 
+### Sprint 3 - eksekusi proyek
+
+| Dokumen | Isi |
+|---|---|
+| [Sprint 3 Plan](docs/sprint-03/SPRINT_PLAN.md) | Sasaran, urutan kerja, PIC, kesiapan, kriteria selesai, dan risiko eksekusi |
+| [Implementation Handoff](docs/sprint-03/IMPLEMENTATION_HANDOFF.md) | Pemetaan backlog ke area implementasi, dependensi, data, dan catatan review |
+
 ### Dokumen kendali proyek
 
 | Dokumen | Isi |
@@ -69,8 +76,23 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 | Deployment | Vercel |
 | Kolaborasi | Git dan GitHub; branch per perubahan, commit dengan identitas akun sendiri, Pull Request ke `main` |
 
-Arsitektur implementasi menggunakan Next.js dan TypeScript pada Vercel dengan Supabase untuk PostgreSQL dan autentikasi. Faiza menyiapkan konfigurasi deployment pada Sprint 3–4 setelah model data dan kebutuhan akses disetujui. Simpan credential di environment variable dan jangan masukkan secret ke repository.
+Arsitektur implementasi menggunakan Next.js dan TypeScript dengan Supabase untuk PostgreSQL dan autentikasi. Vercel menjadi target deployment. Simpan credential di environment variable dan jangan masukkan secret ke repository.
+
+## Menjalankan aplikasi lokal
+
+Prasyarat: Node.js 20.9+ dan pnpm 9+.
+
+```powershell
+Set-Location app
+pnpm install
+Copy-Item .env.example .env.local
+pnpm dev
+```
+
+Buka `http://localhost:3000`. Tanpa konfigurasi Supabase, katalog memakai data contoh lokal. Untuk menghubungkan database, isi URL dan anon key Supabase di `app/.env.local`, lalu jalankan SQL pada `app/supabase/migrations/0001_initial_schema.sql` di SQL Editor project. Buat akun admin melalui Supabase Auth Dashboard; kebijakan database hanya mengizinkan admin yang terdaftar di tabel `admin_users`.
 
 ## Baseline kerja proyek
 
 Jadwal proyek berjalan dalam empat sprint: Sprint 1 (19–23 Oktober 2026), Sprint 2 (26 Oktober–6 November), Sprint 3 (9–20 November), dan Sprint 4 (23 November–4 Desember). Nayla mengelola perubahan jadwal, effort, anggaran, dan risiko berdasarkan keputusan tim, pemilik, serta dosen.
+
+Implementasi aplikasi berada di folder `app/`. Jalankan perintah aplikasi dari folder tersebut. Data menu contoh perlu diganti dengan data yang disetujui pemilik; keputusan alur transaksi dan metrik laporan tetap mengikuti [Open Questions](docs/OPEN_QUESTIONS.md).
