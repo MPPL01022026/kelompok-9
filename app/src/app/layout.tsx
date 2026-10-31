@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "./CartProvider";
 
 export const metadata: Metadata = {
   title: "Ayam Gunting Malaysia — Renyahnya Bikin Balik Lagi",
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="id"><body>{children}</body></html>;
+  return <html lang="id"><body><CartProvider>{children}</CartProvider></body></html>;
 }
