@@ -1,54 +1,50 @@
-# Sprint 3 — Implementation Handoff
+# Serah Terima Implementasi MVP
 
-Dokumen ini menerjemahkan baseline proyek menjadi urutan implementasi lanjutan. Bootstrap Next.js, katalog/detail awal, sign-in admin dan skema Supabase telah dibuat; operasi CRUD produk dan transaksi masih menunggu desain serta keputusan yang diperlukan. Dokumen ini bukan pengganti requirement, wireframe, model data, atau persetujuan stakeholder.
+Dokumen ini merangkum implementasi lokal MVP dan jalur menuju database Supabase. Baseline Sprint 3 dijadwalkan pada 9–20 November 2026. Status berikut merupakan kondisi repository per 31 Oktober 2026, bukan catatan bahwa Sprint 3 telah berlangsung.
 
-## Peta backlog ke area implementasi
+## Peta alur dan implementasi
 
-| Cerita | Area aplikasi | Ketergantungan |
+| Cerita | Area aplikasi | Kriteria operasional |
 |---|---|---|
-| PB-01, PB-02 | Katalog publik dan detail produk | Data/field produk, status aktif, wireframe, aturan harga dan deskripsi |
-| PB-03 | Autentikasi dan route admin | Penyedia auth yang disetujui, proses provisioning admin, aturan proteksi route |
-| PB-04, PB-05 | Form dan daftar produk admin | Skema produk, validasi nama/harga, aturan arsip/nonaktif dan gambar |
-| PB-06 | Form transaksi dan penyimpanan item | Cara pesanan masuk, status/metode, timezone, snapshot harga, aturan total |
+| PB-01/PB-02 | Katalog, kategori, pencarian, detail, keranjang | Produk aktif dapat dilihat dan dimasukkan ke keranjang |
+| PB-03 | Login/logout dan proteksi admin | Mode lokal memakai kredensial environment; mode hosted memakai Supabase Auth dan `admin_users` |
+| PB-04/PB-05 | Form produk dan ketersediaan | Nama, kategori, ikon, dan harga divalidasi; nonaktif mempertahankan snapshot item lama |
+| PB-06 | Checkout dan antrean pesanan | Pelanggan mengirim nama, item, dan kuantitas untuk pengambilan di kedai; status awal menunggu |
 
-## Urutan implementasi yang disarankan
+## Mode lokal
 
-1. Bootstrap aplikasi dan dokumentasikan versi runtime, perintah setup, dan konfigurasi environment.
-2. Buat skema/migrasi berdasarkan model data Sprint 2; review constraint dan foreign key sebelum menghubungkan UI.
-3. Sambungkan data produk ke katalog publik, detail, empty state, dan status nonaktif.
-4. Lindungi area admin dengan autentikasi; pastikan tidak ada pendaftaran publik jika keputusan akses tetap memakai undangan admin.
-5. Implementasikan operasi tambah/ubah/nonaktif dengan validasi server dan pesan kesalahan yang jelas.
-6. Implementasikan transaksi dengan snapshot harga per item agar perubahan harga menu tidak mengubah penjualan terdahulu.
-7. Lakukan pemeriksaan alur dasar, integrasi, akses, dan data; catat bukti, isu, serta pekerjaan yang dibawa ke Sprint 4.
+- Tanpa URL dan anon key Supabase, katalog membaca `app/.local-data/store.json`.
+- Berkas dibuat otomatis dari katalog contoh dan dikecualikan dari Git.
+- `LOCAL_ADMIN_EMAIL` dan `LOCAL_ADMIN_PASSWORD` di `.env.local` mengatur login admin lokal.
+- Penggunaan data lokal dibatasi pada satu komputer. Sediakan pencadangan manual dan jangan menjalankan layanan publik dari mode ini.
 
-## Data minimum untuk ditinjau terhadap model Sprint 2
+## Integrasi Supabase
 
-Nama kolom berikut adalah checklist konsep, bukan skema final. Gunakan nama, tipe, constraint, dan aturan aktual dari model yang disetujui.
+1. Buat project development Supabase dan siapkan credential lokal.
+2. Tinjau `app/supabase/IMPORT_TO_SUPABASE.sql`, lalu impor melalui SQL Editor. File menggabungkan migrasi `0001_initial_schema.sql` dan `0002_mvp_operations.sql` dalam urutan yang benar.
+3. Buat akun admin melalui Supabase Auth dan masukkan UUID-nya ke `public.admin_users`.
+4. Uji kebijakan RLS, fungsi `place_order`, dan `set_order_status` pada project pengembangan menggunakan produk data uji.
+5. Terapkan rate limit atau CAPTCHA dan tinjau kebijakan retensi sebelum endpoint pesanan dibuka untuk umum.
 
-| Entitas | Informasi yang perlu dipetakan |
+## Data MVP
+
+| Entitas | Field yang disimpan |
 |---|---|
-| Product | ID, nama, deskripsi, harga, status aktif, waktu dibuat/diubah; foto hanya bila disetujui dan ada kebutuhan |
-| Transaction | ID, waktu transaksi, total, status, metode jika dikonfirmasi, catatan minimum yang disetujui |
-| TransactionItem | ID, transaksi, produk, kuantitas, harga satuan saat transaksi, subtotal |
-| Admin/User | ID identitas auth dan relasi/peran hanya sesuai rancangan akses |
+| Produk | ID, nama, deskripsi, kategori, harga, ikon, status aktif |
+| Pesanan | ID, nama pemesan, waktu UTC, status, total |
+| Item pesanan | ID produk bila masih tersedia, snapshot nama produk, kuantitas, snapshot harga satuan, subtotal |
+| Admin | ID pengguna Auth dan waktu pendaftaran pada daftar admin |
 
-Pastikan penghapusan/nonaktif produk mempertahankan referensi transaksi lama. Hitung total pada sisi tepercaya dari item dan snapshot harga; validasi kuantitas positif serta konsistensi transaksi sesuai aturan bisnis.
+Waktu ditampilkan dalam zona Asia/Jakarta. MVP tidak mengumpulkan telepon/alamat dan tidak menangani pembayaran daring maupun pengantaran. Validasi harga produk, cara pengambilan, dan retensi nama pemesan masih perlu dicatat setelah pemilik usaha meninjau.
 
-## Environment dan keamanan
+## Pencatatan verifikasi
 
-- Sediakan `.env.example` hanya dengan nama variabel dan nilai dummy, tanpa kunci nyata.
-- Simpan nilai rahasia di environment lokal/hosting yang sesuai; jangan commit file env berisi secret.
-- Hanya variabel publik yang memang aman untuk browser yang boleh diberi prefiks publik framework.
-- Akses database harus memakai kebijakan dan otorisasi sesuai desain; jangan mengandalkan penyembunyian tombol sebagai kontrol akses.
-- Batasi data transaksi/pelanggan pada informasi yang disetujui dan diperlukan.
+| Pemeriksaan | Kondisi pada tanggal laporan | Tindak lanjut |
+|---|---|---|
+| ESLint dan TypeScript | Executable langsung tersedia; pemeriksaan terakhir perlu diulang setelah perubahan lokal final | Jalankan dari folder `app/` dan catat hasil |
+| Production build dan route smoke | Perlu dijalankan ulang pada versi mode JSON | Catat tanggal, browser, rute, dan hasil |
+| Local order end-to-end | Belum dicatat pada saat berkas ini dibuat | Buat pesanan uji, cocokkan receipt dan antrean admin, lalu ubah status |
+| Supabase migration/RLS | Belum diterapkan | Review pada project development dan catat temuan |
+| UAT/persetujuan pemilik | Belum dicatat | Jadwalkan review dan rekam keputusan yang sebenarnya |
 
-## Catatan review Sprint 3
-
-| Cerita | PR/commit | Pemeriksaan dan hasil | Isu / tindak lanjut | PIC | Status |
-|---|---|---|---|---|---|
-| PB-01/PB-02 | Belum tersedia | Belum dikerjakan | Menunggu Sprint 3 | Niluh | Belum mulai |
-| PB-03 | Belum tersedia | Belum dikerjakan | Menunggu keputusan akses dan setup | Faiza | Belum mulai |
-| PB-04/PB-05 | Belum tersedia | Belum dikerjakan | Menunggu skema dan aturan produk | Faiza | Belum mulai |
-| PB-06 | Belum tersedia | Belum dikerjakan | Menunggu keputusan alur transaksi | Faiza | Belum mulai |
-
-Perbarui tabel setelah implementasi nyata dimulai; jangan mengisi hasil pemeriksaan sebelum dijalankan.
+Tautan kontribusi MVP ditambahkan setelah setiap perubahan dikirim melalui PR dan riwayat GitHub tersedia.
