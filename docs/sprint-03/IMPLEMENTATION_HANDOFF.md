@@ -1,50 +1,56 @@
 # Serah Terima Implementasi MVP
 
-Dokumen ini merangkum implementasi lokal MVP dan jalur menuju database Supabase. Baseline Sprint 3 dijadwalkan pada 9–20 November 2026. Status berikut merupakan kondisi repository per 31 Oktober 2026, bukan catatan bahwa Sprint 3 telah berlangsung.
+Status berikut merangkum prototipe dan dokumentasi pada 31 Oktober 2026. Baseline Sprint 3 berlangsung 9-20 November 2026. Perubahan tampilan pada lingkungan kerja lokal harus diperiksa melalui Git sebelum dianggap telah masuk ke cabang bersama.
 
-## Peta alur dan implementasi
+## Peta alur aplikasi
 
-| Cerita | Area aplikasi | Kriteria operasional |
+| Langkah | Halaman | Hasil yang diharapkan |
 |---|---|---|
-| PB-01/PB-02 | Katalog, kategori, pencarian, detail, keranjang | Produk aktif dapat dilihat dan dimasukkan ke keranjang |
-| PB-03 | Login/logout dan proteksi admin | Mode lokal memakai kredensial environment; mode hosted memakai Supabase Auth dan `admin_users` |
-| PB-04/PB-05 | Form produk dan ketersediaan | Nama, kategori, ikon, dan harga divalidasi; nonaktif mempertahankan snapshot item lama |
-| PB-06 | Checkout dan antrean pesanan | Pelanggan mengirim nama, item, dan kuantitas untuk pengambilan di kedai; status awal menunggu |
+| 1 | Beranda dan katalog (`/`, `/#menu`) | Pelanggan menemukan produk melalui foto, kategori, pencarian, dan kartu menu |
+| 2 | Detail produk (`/products/[id]`) | Pelanggan meninjau informasi dan menambahkan produk ke keranjang |
+| 3 | Keranjang (`/cart`) | Pelanggan meninjau jumlah, subtotal, dan mengisi nama untuk pengambilan |
+| 4 | Tanda terima (`/orders/received/[id]`) | Aplikasi menampilkan ringkasan dan kode pesanan |
+| 5 | Login admin (`/admin/login`) | Pengelola terautentikasi masuk ke dashboard |
+| 6 | Dashboard admin (`/admin`) | Pengelola memperbarui produk dan memproses antrean pesanan |
 
-## Mode lokal
+## Penyimpanan lokal
 
-- Tanpa URL dan anon key Supabase, katalog membaca `app/.local-data/store.json`.
-- Berkas dibuat otomatis dari katalog contoh dan dikecualikan dari Git.
-- `LOCAL_ADMIN_EMAIL` dan `LOCAL_ADMIN_PASSWORD` di `.env.local` mengatur login admin lokal.
-- Penggunaan data lokal dibatasi pada satu komputer. Sediakan pencadangan manual dan jangan menjalankan layanan publik dari mode ini.
+- Tanpa kredensial Supabase, katalog dan pesanan menggunakan `app/.local-data/store.json`.
+- Berkas data dibuat otomatis dari katalog contoh dan dikecualikan dari Git.
+- Atur `LOCAL_ADMIN_EMAIL` dan `LOCAL_ADMIN_PASSWORD` di `app/.env.local` untuk masuk sebagai admin lokal.
+- Keranjang disimpan pada browser pelanggan. Pesanan menyimpan nama pemesan, waktu, status, snapshot produk/harga, kuantitas, dan total.
+- Mode ini hanya sesuai untuk demonstrasi pada satu komputer. Tidak tersedia sinkronisasi perangkat atau pencadangan cloud.
+
+## Alur pelanggan
+
+1. Pilih produk pada katalog dan tinjau halaman detail.
+2. Atur kuantitas pada keranjang, isi nama pemesan, kemudian kirim pesanan.
+3. Server mengambil ulang produk aktif dan harga, lalu menghitung total dan menyimpan snapshot item.
+4. Pelanggan menunjukkan kode pada tanda terima ketika mengambil pesanan di kedai.
+
+MVP tidak meminta nomor telepon atau alamat dan tidak menangani pembayaran daring maupun pengantaran. Gambar produk saat ini merupakan ilustrasi.
+
+## Operasi admin
+
+- Mode lokal memakai akun yang disetel melalui environment.
+- Admin dapat menambah dan mengubah informasi produk, mengubah ketersediaan, serta menandai pesanan menunggu sebagai selesai atau dibatalkan.
+- Waktu transaksi ditampilkan dalam zona Asia/Jakarta.
+- Jangan mengisi data usaha atau transaksi pelanggan sungguhan untuk screenshot dokumentasi.
 
 ## Integrasi Supabase
 
-1. Buat project development Supabase dan siapkan credential lokal.
-2. Tinjau `app/supabase/IMPORT_TO_SUPABASE.sql`, lalu impor melalui SQL Editor. File menggabungkan migrasi `0001_initial_schema.sql` dan `0002_mvp_operations.sql` dalam urutan yang benar.
-3. Buat akun admin melalui Supabase Auth dan masukkan UUID-nya ke `public.admin_users`.
-4. Uji kebijakan RLS, fungsi `place_order`, dan `set_order_status` pada project pengembangan menggunakan produk data uji.
-5. Terapkan rate limit atau CAPTCHA dan tinjau kebijakan retensi sebelum endpoint pesanan dibuka untuk umum.
+1. Siapkan project development dan credential lokal.
+2. Tinjau `app/supabase/IMPORT_TO_SUPABASE.sql` sebelum menjalankan migrasi.
+3. Terapkan migrasi, konfigurasi Supabase Auth, lalu daftarkan akun admin yang disetujui pada `public.admin_users`.
+4. Uji RLS serta fungsi `place_order` dan `set_order_status` menggunakan produk dan pelanggan uji.
+5. Tinjau perlindungan spam dan retensi nama pemesan sebelum membuka pemesanan kepada publik.
 
-## Data MVP
+Migrasi belum diterapkan pada project Supabase. Keputusan produk, harga, aturan pemesanan, dan retensi data menunggu validasi yang tercatat dalam [Open Questions](../OPEN_QUESTIONS.md).
 
-| Entitas | Field yang disimpan |
-|---|---|
-| Produk | ID, nama, deskripsi, kategori, harga, ikon, status aktif |
-| Pesanan | ID, nama pemesan, waktu UTC, status, total |
-| Item pesanan | ID produk bila masih tersedia, snapshot nama produk, kuantitas, snapshot harga satuan, subtotal |
-| Admin | ID pengguna Auth dan waktu pendaftaran pada daftar admin |
+## Screenshot dan wireframe
 
-Waktu ditampilkan dalam zona Asia/Jakarta. MVP tidak mengumpulkan telepon/alamat dan tidak menangani pembayaran daring maupun pengantaran. Validasi harga produk, cara pengambilan, dan retensi nama pemesan masih perlu dicatat setelah pemilik usaha meninjau.
+Screenshot aplikasi mencakup semua rute MVP, state keranjang kosong dan berisi, antrean admin, serta viewport katalog ponsel. Wireframe grayscale memiliki sumber SVG dan pratinjau PNG untuk tujuh layar utama. Daftar lengkap tersedia pada [laporan Sprint 3](LAPORAN_PELAKSANAAN_SPRINT_3.md).
 
-## Pencatatan verifikasi
+## Pemeriksaan dan penerimaan
 
-| Pemeriksaan | Kondisi pada tanggal laporan | Tindak lanjut |
-|---|---|---|
-| ESLint dan TypeScript | Executable langsung tersedia; pemeriksaan terakhir perlu diulang setelah perubahan lokal final | Jalankan dari folder `app/` dan catat hasil |
-| Production build dan route smoke | Perlu dijalankan ulang pada versi mode JSON | Catat tanggal, browser, rute, dan hasil |
-| Local order end-to-end | Belum dicatat pada saat berkas ini dibuat | Buat pesanan uji, cocokkan receipt dan antrean admin, lalu ubah status |
-| Supabase migration/RLS | Belum diterapkan | Review pada project development dan catat temuan |
-| UAT/persetujuan pemilik | Belum dicatat | Jadwalkan review dan rekam keputusan yang sebenarnya |
-
-Tautan kontribusi MVP ditambahkan setelah setiap perubahan dikirim melalui PR dan riwayat GitHub tersedia.
+Peninjauan visual dilakukan pada 31 Oktober 2026. Pemeriksaan lint, TypeScript, build, end-to-end, migrasi hosted, uji perangkat, dan penerimaan stakeholder tidak dijalankan sebagai bagian dari pembaruan dokumentasi ini. Catat hasil tersebut setelah pemeriksaan yang sesuai dilakukan dan bukti tersedia.

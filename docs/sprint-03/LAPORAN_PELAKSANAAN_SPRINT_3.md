@@ -7,139 +7,174 @@
 | Nama proyek | Sistem Informasi Penjualan dan Manajemen Produk UMKM Ayam Gunting Malaysia |
 | Mata kuliah | Manajemen Proyek Perangkat Lunak |
 | Kelompok | 9 |
-| Periode Sprint 3 pada baseline | 9–20 November 2026 |
-| Tanggal pemeriksaan dokumen | 31 Oktober 2026 |
+| Periode Sprint 3 | 9-20 November 2026 |
+| Tanggal pembaruan laporan | 31 Oktober 2026 |
 | Repository | [MPPL01022026/kelompok-9](https://github.com/MPPL01022026/kelompok-9) |
 
 ## Ringkasan
 
-Pada 31 Oktober 2026, repository berisi prototipe lokal MVP yang menghubungkan katalog produk, keranjang, pengiriman pesanan untuk diambil di kedai, serta dashboard operasional admin. Mode lokal menyimpan katalog, pesanan, item, dan status pada berkas JSON di komputer pengembang. Pengelola dapat menambah, mengubah, dan menonaktifkan produk, kemudian menandai pesanan sebagai selesai atau batal. Zona waktu tampilan operasional menggunakan WIB.
+Laporan ini mencatat kondisi MVP yang tersedia pada repository dan lingkungan kerja per 31 Oktober 2026 sebagai bahan awal pelaksanaan Sprint 3. Periode Sprint 3 dijadwalkan pada 9-20 November 2026. Oleh karena itu, dokumen ini tidak mengatasnamakan kegiatan sprint, rapat, persetujuan stakeholder, atau uji penerimaan yang belum berlangsung.
 
-Prototipe mencatat nama pemesan sebagai satu-satunya identitas pelanggan. Sistem tidak meminta nomor telepon, alamat, ataupun pembayaran daring. Harga dan nama produk disalin ke setiap item pesanan pada saat pemesanan, sedangkan total dihitung ulang di sisi server. Sumber data lokal belum disinkronkan antarperangkat dan tidak ditujukan untuk operasional publik.
+MVP menyediakan etalase produk, katalog dengan pencarian dan kategori, detail produk, keranjang, pesanan untuk diambil di kedai, tanda terima berkode, login admin, pengelolaan menu, dan antrean pesanan. Mode demonstrasi lokal menyimpan data di berkas JSON pada satu komputer. Pengelola dapat menambah, mengubah, mengaktifkan, dan menonaktifkan produk serta mengubah status pesanan. Waktu operasional ditampilkan dalam zona Asia/Jakarta.
 
-Tanggal pemeriksaan dokumen mendahului periode Sprint 3 pada baseline proyek. Karena itu, isi berikut merupakan laporan kondisi implementasi prototipe saat ini, bukan klaim bahwa kegiatan sprint, rapat, persetujuan pemilik usaha, atau uji penerimaan telah berlangsung. Koneksi Supabase belum dikonfigurasi dan migrasi SQL belum dijalankan pada proyek Supabase.
+Pelanggan hanya diminta mengisi nama. Aplikasi tidak menangani pembayaran daring, alamat, nomor telepon, ataupun pengantaran. Data katalog pada tangkapan layar merupakan data contoh. Validasi katalog dan aturan usaha dengan pemilik tetap diperlukan sebelum penggunaan operasional.
+
+<!-- pagebreak -->
 
 ## 1. Tujuan dan ruang lingkup MVP
 
-MVP memusatkan pekerjaan pada alur pelanggan dan operasi kedai berikut.
+MVP mencakup alur pemilihan produk, pemesanan untuk pengambilan di kedai, dan pengelolaan dasar oleh admin.
 
-| Area | Lingkup implementasi |
+| Area | Cakupan yang tersedia |
 |---|---|
-| Katalog | Menampilkan produk aktif, pencarian, filter kategori, dan halaman detail |
-| Keranjang | Menambah produk, memperbarui jumlah, menghapus item, serta melihat subtotal |
-| Pemesanan | Mengirim pesanan dengan nama pemesan untuk pengambilan di kedai |
-| Data pesanan | Mencatat nama, waktu, status, item, kuantitas, snapshot nama dan harga produk, serta total |
-| Operasi admin | Login lokal berbasis kredensial lingkungan, CRUD produk, perubahan ketersediaan, dan pengelolaan antrean |
-| Status pesanan | Status awal menunggu, kemudian dapat diubah menjadi selesai atau dibatalkan |
-| Waktu | Waktu sistem disimpan dalam ISO UTC dan ditampilkan dalam zona Asia/Jakarta |
-| Di luar lingkup | Pembayaran daring, pengantaran, laporan analitik, serta penyimpanan nomor telepon atau alamat |
+| Katalog publik | Daftar produk aktif, pencarian, filter kategori, informasi produk, dan halaman detail |
+| Keranjang | Tambah produk, ubah kuantitas, hapus item, tampilkan subtotal, dan state keranjang kosong |
+| Pemesanan | Kirim nama pemesan dan daftar item untuk pengambilan di kedai |
+| Data transaksi | Nama, waktu, status, item, kuantitas, snapshot nama dan harga produk, serta total |
+| Operasi admin | Login, logout, tambah dan ubah produk, pengaturan ketersediaan, serta antrean pesanan |
+| Status pesanan | Status awal menunggu dan tindakan untuk menyelesaikan atau membatalkan pesanan |
+| Di luar cakupan | Pembayaran daring, pengantaran, alamat, nomor telepon, analitik, dan sinkronisasi data lokal antarperangkat |
 
-## 2. Hasil implementasi yang tersedia
+## 2. Hasil implementasi
 
-| Kode backlog | Hasil pada prototipe lokal | Status pemeriksaan kode |
+| Cerita/backlog | Hasil implementasi yang tersedia | Batas yang diketahui |
 |---|---|---|
-| PB-01 | Katalog, pencarian, kategori, state kosong, dan data produk lokal | Implementasi tersedia; pemeriksaan otomatis tercatat pada Bagian 6 |
-| PB-02 | Detail produk, penambahan ke keranjang, dan penyimpanan keranjang pada browser | Implementasi tersedia; alur database hosted belum diperiksa |
-| PB-03 | Login/logout admin menggunakan kredensial pada `.env.local` | Implementasi mode lokal tersedia; pengujian alur sesi belum dicatat |
-| PB-04/PB-05 | Tambah, ubah, aktifkan, dan nonaktifkan produk | Implementasi lokal tersedia |
-| PB-06 | Pemesanan lokal, snapshot produk/harga, total server, tanda terima, dan status antrean | Implementasi lokal tersedia |
-| Migrasi hosted | Berkas SQL gabungan untuk skema awal dan operasi MVP | Disiapkan untuk ditinjau dan diimpor ke Supabase; belum dijalankan |
+| PB-01 | Etalase dan katalog dengan pencarian, kategori, data produk, serta state kosong | Isi katalog dan harga masih data contoh |
+| PB-02 | Detail produk dan keranjang browser dengan pengelolaan kuantitas | Harga diperiksa kembali dari sumber data saat pesanan dibuat |
+| PB-03 | Login dan logout admin lokal berbasis kredensial environment | Kredensial lokal hanya untuk penggunaan development |
+| PB-04/PB-05 | Form tambah/ubah produk dan pengaturan aktif/nonaktif | Proses bisnis tetap perlu ditinjau pemilik |
+| PB-06 | Pembuatan pesanan, snapshot harga/item, tanda terima, dan antrean admin | Pemesanan lokal hanya tersimpan di komputer yang menjalankan aplikasi |
+| Integrasi hosted | Migrasi SQL gabungan tersedia untuk ditinjau dan diimpor ke Supabase | Migrasi belum diterapkan pada project Supabase |
 
-Data awal katalog adalah data contoh aplikasi. Nama produk dan harga perlu diverifikasi pemilik usaha sebelum dipakai sebagai katalog resmi.
+Produk contoh yang terlihat pada katalog adalah Ayam Gunting, Kentang Goreng, Chicken Ball, dan Fire Chicken Wings. Nama serta harga pada contoh tidak dinyatakan sebagai daftar harga resmi.
 
 ## 3. Arsitektur dan pengelolaan data
 
-Aplikasi menggunakan Next.js, TypeScript, dan Supabase client untuk jalur integrasi hosted. Dalam mode tanpa konfigurasi Supabase, aplikasi membaca dan memperbarui `app/.local-data/store.json`. Berkas data lokal dikecualikan dari Git. Sesi admin lokal menggunakan cookie `HttpOnly` dan kata sandi dari environment. Keranjang menyimpan ID produk dan jumlah pada penyimpanan browser; nama pelanggan hanya dikirim ketika pesanan dibuat.
+Aplikasi dibangun menggunakan Next.js dan TypeScript. Jika Supabase belum dikonfigurasi, data katalog dan pesanan dibaca serta diperbarui melalui `app/.local-data/store.json`. Berkas tersebut dikecualikan dari Git. Keranjang pelanggan menyimpan ID produk dan jumlah di browser. Server mengambil ulang harga dan nama produk ketika pesanan dibuat, lalu menyimpan snapshot item transaksi.
 
-Untuk menyiapkan aplikasi lokal, salin `app/.env.example` ke `app/.env.local`, ubah `LOCAL_ADMIN_PASSWORD`, jalankan dependensi dengan pnpm, kemudian jalankan server pengembangan dari folder `app/`. Kredensial contoh pada `.env.example` tidak boleh dipakai untuk deployment.
+Login admin lokal memakai `LOCAL_ADMIN_EMAIL` dan `LOCAL_ADMIN_PASSWORD` dari `app/.env.local`. Berkas tersebut tidak disertakan dalam laporan. Untuk menjalankan aplikasi, salin `app/.env.example` ke `app/.env.local`, atur kata sandi lokal, pasang dependensi dari folder `app/`, lalu jalankan server development.
 
-Untuk integrasi hosted, berkas [IMPORT_TO_SUPABASE.sql](../../app/supabase/IMPORT_TO_SUPABASE.sql) berisi migrasi awal dan migrasi MVP dalam urutan yang diperlukan. Terapkan hanya pada project Supabase yang tepat setelah meninjau skema, kebijakan akses, serta prosedur pemulihan. Setelah impor, isi URL dan anon key di environment aplikasi, buat akun melalui Supabase Auth, lalu daftarkan ID pengguna pada `admin_users`.
+Berkas [IMPORT_TO_SUPABASE.sql](../../app/supabase/IMPORT_TO_SUPABASE.sql) menggabungkan skema awal dan operasi MVP. Sebelum dipakai, tinjau kebijakan Row Level Security, fungsi transaksi, akun admin, dan prosedur pemulihan pada project development yang tepat. Endpoint pemesanan hosted juga memerlukan perlindungan spam sebelum digunakan oleh publik.
 
-Mode JSON lokal sesuai untuk demonstrasi pada satu komputer. Mode ini tidak memiliki sinkronisasi, pencadangan terjadwal, kontrol akses multi-admin, atau perlindungan tulis yang dirancang untuk lingkungan produksi. Penerapan publik harus menggunakan database terkelola dan mitigasi spam pada endpoint pemesanan.
+## 4. Kontribusi dan riwayat repository
 
-## 4. Bukti kontribusi yang tercatat
+Riwayat Git mencatat empat pull request MVP telah digabung ke `main`. Tangkapan layar dan wireframe dalam laporan ini diambil dari aplikasi pada lingkungan kerja lokal setelah penyesuaian antarmuka terbaru. Penyesuaian lokal yang belum masuk ke riwayat Git tidak dianggap sebagai perubahan yang telah digabung.
 
-Riwayat repository mencatat pekerjaan persiapan yang telah digabung sebelum prototipe MVP ini.
-
-| Anggota | Kontribusi pada riwayat `main` | Bukti |
+| Anggota | Kontribusi tercatat | Bukti riwayat |
 |---|---|---|
-| Faiza Rahmatika | Fondasi Next.js, konfigurasi, klien Supabase, halaman awal, login admin, dan migrasi awal | [PR #10](https://github.com/MPPL01022026/kelompok-9/pull/10), commit [`8e1f53a`](https://github.com/MPPL01022026/kelompok-9/commit/8e1f53a) |
-| Niluh Naswa Salfa Adlian Lubis | Katalog dan detail produk dengan sumber Supabase dan data contoh | [PR #11](https://github.com/MPPL01022026/kelompok-9/pull/11), commit [`a48933a`](https://github.com/MPPL01022026/kelompok-9/commit/a48933a) |
-| Zahra, NIM 230504047 | Navigasi mobile, fokus papan ketik, dan preferensi pengurangan gerakan | [PR #12](https://github.com/MPPL01022026/kelompok-9/pull/12), commit [`f766632`](https://github.com/MPPL01022026/kelompok-9/commit/f766632) |
-| Nayla Salsabila Awika | Koordinasi dan dokumentasi proyek | Dokumen kendali pada `docs/` |
+| Faiza Rahmatika | Penyimpanan lokal, validasi server, operasi admin, dan skema Supabase | [PR #14](https://github.com/MPPL01022026/kelompok-9/pull/14) |
+| Niluh Naswa Salfa Adlian Lubis | Katalog pelanggan, detail produk, keranjang, dan alur pemesanan | [PR #15](https://github.com/MPPL01022026/kelompok-9/pull/15) |
+| Zahra, NIM 230504047 | Antarmuka responsif, aksesibilitas, dan penyempurnaan wireframe | [PR #16](https://github.com/MPPL01022026/kelompok-9/pull/16) |
+| Nayla Salsabila Awika | Koordinasi dan dokumentasi MVP | [PR #17](https://github.com/MPPL01022026/kelompok-9/pull/17) |
 
-Perubahan MVP dan laporan terbaru masih berada di lingkungan kerja lokal ketika dokumen ini disusun. Tabel ini tidak menyatakan bahwa perubahan MVP sudah dikirim, ditinjau, atau digabung ke GitHub.
+## 5. Tangkapan layar aplikasi
 
-## 5. Tampilan aplikasi dan wireframe
+Gambar diambil dari aplikasi lokal pada 31 Oktober 2026. Isi katalog dan antrean merupakan data contoh untuk memperlihatkan tampilan. Gambar menunjukkan halaman aktual, bukan hasil uji penerimaan stakeholder. Foto makanan adalah ilustrasi dan bukan dokumentasi produk dari kedai.
 
-Tangkapan layar aplikasi lokal memperlihatkan data katalog contoh dan status halaman pada saat pengambilan. Gambar ini merupakan bukti tampilan, bukan hasil uji penerimaan. Pratinjau keranjang berikut menunjukkan keadaan kosong; tangkapan layar dasbor operasional belum dibuat.
+### 5.1 Beranda dan katalog
 
-### 5.1 Katalog dan detail produk
+#### Beranda etalase
 
-![Tampilan katalog lokal](screenshots/01-katalog.png)
+![Beranda etalase dengan foto hero dan tautan ke menu](screenshots/01-beranda.png)
 
-![Tampilan detail produk lokal](screenshots/02-detail-produk.png)
+#### Katalog produk
 
-### 5.2 Login admin
+![Katalog produk dengan pencarian, kategori, foto, nama, harga, dan tautan detail](screenshots/02-katalog.png)
 
-![Tampilan login admin lokal](screenshots/03-login-admin.png)
+#### Katalog pada layar ponsel
 
-### 5.3 Keranjang kosong
+![Katalog pada viewport ponsel 390 piksel](screenshots/10-katalog-mobile.png)
 
-![Pratinjau keranjang lokal dalam keadaan kosong](screenshots/04-keranjang-kosong.png)
+### 5.2 Detail produk
 
-### 5.3 Wireframe
+![Halaman detail Ayam Gunting dengan foto, deskripsi, harga, dan aksi keranjang](screenshots/03-detail-produk.png)
 
-Wireframe menggunakan frame desktop 1440 × 900, grid 12 kolom, margin 28 piksel, gutter 16 piksel, dan sistem jarak kelipatan 8 piksel. Setiap halaman dilengkapi anotasi hierarki, interaksi, state, responsivitas 390 piksel, dan aksesibilitas. SVG merupakan sumber yang dapat disunting; PNG merupakan pratinjau.
+### 5.3 Keranjang dan konfirmasi
 
-#### Katalog publik
+#### State kosong
 
-![Wireframe katalog](wireframes/01-katalog.png)
+![Keranjang kosong dengan tautan untuk kembali ke menu](screenshots/04-keranjang-kosong.png)
 
-#### Detail produk
+#### Keranjang berisi
 
-![Wireframe detail produk](wireframes/02-detail-produk.png)
+![Keranjang berisi dua produk dengan ringkasan, pengambilan di kedai, dan field nama](screenshots/05-keranjang-berisi.png)
+
+#### Tanda terima
+
+![Tanda terima contoh lokal dengan ringkasan produk, total, dan kode pesanan](screenshots/06-tanda-terima.png)
+
+### 5.4 Operasi admin
 
 #### Login admin
 
-![Wireframe login admin](wireframes/03-login-admin.png)
+![Halaman login admin dengan panel pengantar dan form autentikasi](screenshots/07-login-admin.png)
 
-#### Keranjang dan pesanan
+#### Dashboard dan produk
 
-![Wireframe keranjang dan pemesanan](wireframes/04-keranjang-pesanan.png)
+![Dashboard admin dengan ringkasan, tabel produk, dan akses form](screenshots/08-dashboard-admin.png)
 
-#### Dashboard admin
+#### Antrean pesanan
 
-![Wireframe dashboard admin](wireframes/05-dashboard-admin.png)
+![Dashboard admin pada bagian antrean pesanan contoh](screenshots/09-antrean-admin.png)
 
-## 6. Pemeriksaan teknis
+## 6. Wireframe
 
-| Pemeriksaan | Hasil | Batas pemeriksaan |
+Wireframe diperbarui agar mengikuti struktur dan navigasi yang tampil pada aplikasi. Dokumen menggunakan frame desktop 1440 x 900, skala 86 persen untuk lembar anotasi, tampilan grayscale, serta area media placeholder. Wireframe menggambarkan tujuh layar atau state utama. SVG adalah sumber yang dapat disunting; PNG adalah pratinjau.
+
+#### 6.1 Beranda katalog
+
+![Wireframe beranda dengan hero, aksi pilih menu, dan awal bagian katalog](wireframes/01-beranda-katalog.png)
+
+#### 6.2 Katalog produk
+
+![Wireframe katalog dengan pencarian, kategori, dan kartu produk](wireframes/02-katalog-produk.png)
+
+#### 6.3 Detail produk
+
+![Wireframe detail produk dengan media, informasi, dan aksi keranjang](wireframes/03-detail-produk.png)
+
+#### 6.4 Keranjang dan pesanan
+
+![Wireframe keranjang berisi dengan kontrol jumlah dan formulir checkout](wireframes/04-keranjang-pesanan.png)
+
+#### 6.5 Tanda terima
+
+![Wireframe tanda terima dengan status pesanan, ringkasan, kode, dan tautan kembali](wireframes/05-tanda-terima.png)
+
+#### 6.6 Login admin
+
+![Wireframe login admin dengan form email dan kata sandi](wireframes/06-login-admin.png)
+
+#### 6.7 Dashboard admin
+
+![Wireframe dashboard dengan navigasi, ringkasan, tabel produk, dan antrean](wireframes/07-dashboard-admin.png)
+
+## 7. Pemeriksaan dan status verifikasi
+
+| Pemeriksaan | Catatan per 31 Oktober 2026 |
+|---|---|
+| Peninjauan visual | Halaman beranda, katalog desktop dan ponsel, detail, dua state keranjang, tanda terima, login admin, dashboard, serta antrean ditangkap dari aplikasi lokal dan ditinjau secara visual |
+| Pemeriksaan interaksi browser | Navigasi halaman dan autentikasi admin lokal digunakan untuk memperoleh tangkapan layar; dokumentasi ini bukan laporan uji end-to-end |
+| TypeScript, lint, dan build | Tidak dijalankan ulang pada pembaruan dokumentasi ini; hasil sebelumnya tidak dijadikan klaim atas perubahan lokal terbaru |
+| Database lokal | Data contoh tersedia pada komputer pengembangan; tidak disinkronkan antarperangkat |
+| Migrasi Supabase | Belum diterapkan pada project Supabase |
+| Uji perangkat dan penerimaan stakeholder | Belum dicatat |
+
+## 8. Risiko dan tindak lanjut
+
+| Tindak lanjut | Tujuan | Pemilik usulan |
 |---|---|---|
-| ESLint langsung melalui executable lokal | Lulus | Lint kode; tidak menguji perilaku browser |
-| TypeScript `tsc --noEmit` | Lulus | Pemeriksaan tipe; tidak menguji database |
-| Next.js production build | Lulus setelah perubahan mode penyimpanan JSON pada 31 Oktober 2026 | Build memeriksa kompilasi, bukan integrasi Supabase |
-| Route smoke check | Katalog, detail, keranjang, login admin, dan tanda terima memberi HTTP 200 pada 31 Oktober 2026 | Pemeriksaan respons halaman; belum menjalankan submit pesanan lewat browser |
-| pnpm lint/build | Terhenti sebelum script karena wrapper pnpm menunggu persetujuan build `unrs-resolver@1.12.2` | Tidak mengubah kebijakan persetujuan paket |
-| Migrasi pada Supabase | Belum dijalankan | Tidak ada environment Supabase pada mesin pemeriksaan |
-| Alur JSON lokal end-to-end | Belum dicatat | Perlu uji browser atas submit pesanan dan perubahan status admin |
-| Pengujian perangkat dan penerimaan stakeholder | Belum dicatat | Jadwalkan pada kegiatan review yang sebenarnya |
+| Tinjau nama produk, deskripsi, harga, dan aturan pengambilan dengan pemilik usaha | Mengganti data contoh dengan informasi yang disetujui | Nayla dan pemilik usaha |
+| Jalankan pemeriksaan fungsional pada alur pesanan dan perubahan status admin | Memastikan perilaku aplikasi sesuai acceptance criteria | Faiza dan Niluh |
+| Review dan terapkan migrasi pada project Supabase development | Memeriksa skema, RLS, RPC, dan akses admin | Faiza; Zahra meninjau model |
+| Tambahkan rate limit atau CAPTCHA untuk pemesanan hosted | Mengurangi spam pada endpoint yang dapat diakses publik | Faiza |
+| Catat kickoff, keputusan, review, dan persetujuan setelah kegiatan berlangsung | Menjaga bukti pelaksanaan tetap sesuai kejadian | Nayla dan seluruh anggota |
 
-## 7. Risiko dan tindak lanjut
+## 9. Referensi proyek
 
-| Tindak lanjut | Alasan | Pemilik usulan |
-|---|---|---|
-| Jalankan ulang lint, pemeriksaan tipe, production build, dan smoke test setelah perubahan lokal final | Memastikan mode file JSON dan autentikasi lokal terintegrasi | Faiza |
-| Coba alur pemesanan lokal dari katalog sampai dashboard | Membuktikan penyimpanan dan perubahan status pada satu komputer | Niluh dan Faiza |
-| Tinjau migrasi gabungan pada project Supabase development | Mengonfirmasi sintaks, RLS, fungsi RPC, dan kecocokan schema | Faiza; Zahra meninjau model |
-| Konfirmasi daftar produk, harga, masa simpan nama pemesan, dan aturan pengambilan | Data dan aturan bisnis tetap memerlukan validasi pemilik usaha | Nayla dan pemilik usaha |
-| Tambahkan perlindungan spam sebelum endpoint hosted dibuka untuk publik | RPC pemesanan publik saat ini belum menerapkan rate limit atau CAPTCHA | Faiza |
-| Catat rapat Sprint 3, hasil review, PR, dan keputusan dosen setelah kegiatan berlangsung | Bukti tersebut belum tersedia pada tanggal laporan | Nayla dan seluruh tim |
-
-## 8. Referensi repository
-
-- [Pelacak Sprint](../SPRINT_TRACKER.md)
-- [Tumpukan pekerjaan proyek](../PROJECT_BACKLOG.md)
-- [Pertanyaan terbuka](../OPEN_QUESTIONS.md)
 - [Rencana Sprint 3](SPRINT_PLAN.md)
+- [Catatan eksekusi proyek](SPRINT_EXECUTION.md)
 - [Serah terima implementasi](IMPLEMENTATION_HANDOFF.md)
+- [Sprint tracker](../SPRINT_TRACKER.md)
+- [Project backlog](../PROJECT_BACKLOG.md)
+- [Pertanyaan terbuka](../OPEN_QUESTIONS.md)

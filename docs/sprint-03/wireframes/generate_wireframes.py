@@ -1,235 +1,219 @@
-"""Generate editable, grayscale handoff wireframes and PNG previews."""
+"""Generate grayscale desktop wireframes for all customer and admin routes."""
 
-from pathlib import Path
 from html import escape
-
+from pathlib import Path
 
 OUT = Path(__file__).parent
-W, H = 1800, 1200
-INK = "#111111"
-MID = "#555555"
-LIGHT = "#d8d8d8"
-PALE = "#f3f3f3"
-WHITE = "#ffffff"
+INK, MID, LINE, LIGHT, WHITE = "#111111", "#505050", "#929292", "#d9d9d9", "#ffffff"
+W, H = 1800, 1160
+SX, SY, SCALE = 56, 186, 0.86
 
 
-def rect(x, y, w, h, label="", fill=WHITE, stroke=INK, radius=0, sw=2, dash=""):
-    if label.startswith("#"):
-        label, fill, stroke, radius, sw = "", label, fill, stroke, radius
-    d = f' stroke-dasharray="{dash}"' if dash else ""
-    s = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{d}/>'
-    if label:
-        s += text(x + w / 2, y + h / 2 + 5, label, 13, MID, "middle", 700)
-    return s
+def text(x, y, value, size=15, color=INK, weight=400, anchor="start"):
+    return f'<text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="{size}" font-weight="{weight}" fill="{color}" text-anchor="{anchor}">{escape(str(value))}</text>'
 
 
-def text(x, y, value, size=16, color=INK, anchor="start", weight=400):
-    return f'<text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="{size}" font-weight="{weight}" fill="{color}" text-anchor="{anchor}">{escape(value)}</text>'
+def rect(x, y, w, h, fill=WHITE, stroke=LINE, sw=1, radius=0):
+    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
 
 
-def line(x1, y1, x2, y2, color=LIGHT, sw=1, dash=""):
-    d = f' stroke-dasharray="{dash}"' if dash else ""
-    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{sw}"{d}/>'
+def line(x1, y1, x2, y2, color=LIGHT, sw=1):
+    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{sw}"/>'
 
 
-def circle(cx, cy, r, label, fill=WHITE):
-    return f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill}" stroke="{INK}" stroke-width="2"/>' + text(cx, cy + 5, label, 13, INK, "middle", 700)
+def block(x, y, w, h, label, fill=LIGHT, size=13):
+    return rect(x, y, w, h, fill, LINE) + text(x + w / 2, y + h / 2 + size * .34, label, size, MID, 600, "middle")
 
 
-def label(x, y, value):
-    return text(x, y, value.upper(), 12, MID, "start", 700)
+def button(x, y, w, h, label, solid=False):
+    return rect(x, y, w, h, "#dedede" if solid else WHITE, INK, 1) + text(x + w / 2, y + h / 2 + 5, label, 14, INK, 700, "middle")
 
 
-def start(title, screen, subtitle):
+def frame(title, route, purpose, notes, content):
     a = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
-         f'<rect width="{W}" height="{H}" fill="{WHITE}"/>',
-         text(60, 52, "AYAM GUNTING MALAYSIA  /  SPRINT 3  /  WIREFRAME", 15, MID, weight=700),
-         text(60, 100, title, 30, INK, weight=700),
-         text(60, 130, subtitle, 15, MID),
-         line(60, 150, 1740, 150, INK, 2),
-         text(60, 178, screen.upper(), 13, INK, weight=700),
-         text(1340, 178, "SPESIFIKASI DAN CATATAN", 13, INK, weight=700),
-         rect(60, 195, 1240, 775, fill=WHITE, stroke=INK, radius=2, sw=2),
-         text(75, 190, "FRAME DESKTOP 1440 x 900, SKALA 0,86", 11, MID)]
-    # A 12-column layout grid, intentionally faint so content remains readable.
-    gx, gy, gw, gh, gap = 84, 220, 1192, 725, 16
-    cw = (gw - 11 * gap) / 12
-    for i in range(12):
-        x = gx + i * (cw + gap)
-        a.append(f'<rect x="{x:.1f}" y="{gy}" width="{cw:.1f}" height="{gh}" fill="none" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="5 6"/>')
-    a += [line(1320, 195, 1320, 970, INK, 1),
-          text(60, 1008, "GRID 12 KOLOM  |  MARGIN 28  |  GUTTER 16  |  SPACING 8 PX", 13, MID, weight=700),
-          text(60, 1034, "Abu-abu menunjukkan area konten. Garis putus-putus menunjukkan grid, bukan elemen antarmuka.", 13, MID),
-          line(60, 1050, 1740, 1050, LIGHT, 1),
-          text(60, 1080, "STATUS: RANCANGAN LOW-FIDELITY UNTUK REVIEW, BELUM MENJADI SPESIFIKASI BISNIS FINAL", 12, MID, weight=700),
-          text(1740, 1080, "KELOMPOK 9  |  31 OKT 2026", 12, MID, "end", 700)]
-    return a
+         rect(0, 0, W, H, WHITE, WHITE, 0),
+         text(56, 46, "AYAM GUNTING MALAYSIA  /  SPRINT 3  /  WIREFRAME", 14, MID, 700),
+         text(56, 91, title, 29, INK, 700),
+         text(56, 121, f"{route}   |   {purpose}", 15, MID),
+         line(56, 143, 1744, 143, INK, 2),
+         text(56, 169, "DESKTOP 1440 x 900   |   SKALA 86%", 12, MID, 700),
+         f'<g transform="translate({SX} {SY}) scale({SCALE})">',
+         rect(0, 0, 1440, 900, WHITE, INK, 2), content, "</g>",
+         line(1304, 186, 1304, 960, INK, 1),
+         text(1340, 210, "SPESIFIKASI LAYAR", 14, INK, 700)]
+    y = 252
+    for index, note in enumerate(notes, 1):
+        heading, body = note
+        a += [rect(1340, y - 22, 30, 30, WHITE, INK, 1, 15), text(1355, y - 2, index, 13, INK, 700, "middle"), text(1385, y, heading, 15, INK, 700)]
+        for row, value in enumerate(body):
+            a.append(text(1385, y + 24 + row * 19, value, 13, MID))
+        y += 112 if len(body) < 4 else 132
+    a += [line(56, 1010, 1744, 1010, INK, 1),
+          text(56, 1042, "Monokrom menunjukkan struktur, hierarki, dan kontrol. Area media ditandai sebagai placeholder gambar.", 13, MID),
+          text(56, 1071, "Wireframe untuk review implementasi, bukan pengesahan kebutuhan bisnis.", 13, MID, 700),
+          text(1744, 1071, "KELOMPOK 9  |  31 OKT 2026", 13, MID, 700, "end"),
+          "</svg>"]
+    return "\n".join(a)
 
 
-def note(a, n, y, heading, body, extra=None):
-    a.append(circle(1360, y - 4, 16, str(n), PALE))
-    a.append(text(1390, y, heading, 15, INK, weight=700))
-    for j, row in enumerate(body):
-        a.append(text(1390, y + 24 + j * 19, row, 13, MID))
-    if extra:
-        for j, row in enumerate(extra):
-            a.append(text(1390, y + 24 + (len(body) + j) * 19, row, 12, INK, weight=700))
+def brand_header(active="Menu", cart=False):
+    a = [rect(0, 0, 1440, 78, "#eeeeee", INK), rect(58, 19, 42, 42, "#d9d9d9", INK),
+         text(79, 46, "AG", 16, INK, 700, "middle"), text(116, 34, "AYAM GUNTING", 17, INK, 700),
+         text(116, 56, "MALAYSIA  /  KEDAI", 11, MID, 700)]
+    if cart:
+        a += [text(1284, 47, "KERANJANG", 14, INK, 700, "end")]
+    else:
+        a += [text(1070, 47, "MENU", 14, INK, 700 if active == "Menu" else 400),
+              text(1160, 47, "CARA PESAN", 14, MID), button(1260, 18, 126, 42, "Keranjang", True)]
+    return "".join(a)
 
 
-def header(a, active="Menu"):
-    a.extend([rect(85, 225, 1190, 55, WHITE, LIGHT, 4, 1),
-              circle(112, 252, 13, "AG", PALE), text(136, 249, "Ayam Gunting", 15, INK, weight=700),
-              text(136, 266, "MALAYSIA  /  STREET BITES", 9, MID),
-              text(880, 257, "Menu", 13, INK if active == "Menu" else MID, weight=700 if active == "Menu" else 400),
-              text(965, 257, "Cerita kami", 13, MID),
-              rect(1081, 238, 169, 30, "Masuk admin", PALE, INK, 15, 1)])
+def home():
+    s = brand_header()
+    s += rect(0, 78, 662, 742, "#eeeeee", INK) + text(72, 300, "Ayam", 64, INK, 700) + text(72, 370, "gunting.", 64, INK, 700)
+    s += text(72, 421, "Ayam goreng khas Malaysia.", 24, MID, 700)
+    s += text(72, 468, "Pilih ayam gunting atau camilan lain, pesan lewat", 17, INK)
+    s += text(72, 494, "katalog, lalu ambil langsung di kedai.", 17, INK)
+    s += button(72, 548, 154, 54, "Pilih menu", True) + button(244, 548, 205, 54, "Lihat keranjang")
+    s += text(72, 650, "Pesanan untuk diambil di kedai", 15, MID)
+    s += block(662, 78, 778, 742, "FOTO HERO PRODUK", "#dedede", 18)
+    s += rect(0, 820, 1440, 80, WHITE, WHITE, 0) + text(60, 875, "Menu favorit", 38, INK, 700)
+    return frame("01  Beranda katalog", "/  +  #menu", "etalase utama dan akses katalog", [
+        ("Navigasi", ["Menu mengarah ke #menu.", "Keranjang membuka ringkasan pesanan.", "Ruang admin ada di footer."]),
+        ("Hero", ["Judul dan pesan utama.", "CTA menuju daftar menu.", "Foto produk memakai rasio lebar."]),
+        ("Perilaku", ["Hero memenuhi lebar viewport.", "Menu berlanjut setelah hero.", "Layout ditumpuk pada ponsel."]),
+    ], s)
 
 
 def catalog():
-    a = start("01  Katalog produk", "K-01  /  Katalog publik", "Tujuan: membantu pelanggan menemukan produk dan membuka informasi produk.")
-    header(a)
-    a += [rect(85, 298, 1190, 250, WHITE, LIGHT, 4, 1),
-          label(115, 337, "Intro katalog"), text(115, 385, "Temukan camilan favorit", 29, INK, weight=700),
-          text(115, 414, "Deskripsi singkat usaha atau katalog.", 14, MID),
-          rect(115, 452, 150, 38, "Lihat menu", PALE, INK, 4, 1),
-          rect(920, 330, 285, 190, "Placeholder media utama", PALE, MID, 4, 1),
-          label(85, 590, "Daftar produk"), text(85, 624, "Pilihan menu", 23, INK, weight=700),
-          rect(935, 600, 315, 34, "Cari produk", WHITE, MID, 4, 1),
-          rect(85, 653, 1190, 38, WHITE, LIGHT, 4, 1),
-          rect(98, 659, 85, 26, "Semua", PALE, INK, 13, 1),
-          text(208, 677, "Kategori A", 12, MID), text(319, 677, "Kategori B", 12, MID),
-          text(430, 677, "Kategori lain", 12, MID)]
-    for idx, x in enumerate((85, 389, 693, 997), start=1):
-        a += [rect(x, 710, 278, 205, WHITE, MID, 4, 1),
-              rect(x + 1, 711, 276, 103, PALE, LIGHT, 4, 1),
-              text(x + 14, 837, "Nama produk", 15, INK, weight=700),
-              text(x + 14, 858, "Rp 00.000", 13, INK, weight=700),
-              text(x + 14, 880, "Deskripsi singkat", 12, MID),
-              line(x + 14, 890, x + 264, 890, LIGHT, 1),
-              text(x + 14, 908, "Lihat detail  >", 12, INK, weight=700)]
-    note(a, 1, 235, "Navigasi", ["Logo kembali ke katalog.", "Menu mengikuti anchor halaman.", "Admin menjadi aksi sekunder."])
-    note(a, 2, 340, "Hero", ["Judul dan penjelasan singkat.", "Aksi utama menuju daftar menu.", "Media bersifat dekoratif."])
-    note(a, 3, 470, "Temukan produk", ["Judul, pencarian, kategori.", "Pencarian dan kategori mengubah daftar.", "Kontrol tetap terlihat di ponsel."])
-    note(a, 4, 600, "Kartu produk", ["Gambar, nama, harga, ringkasan.", "Kartu membuka halaman detail.", "Target interaksi minimal 44 px."])
-    note(a, 5, 748, "State yang dirancang", ["Memuat: skeleton kartu.", "Kosong: penjelasan dan aksi ulang.", "Error: pesan dan coba lagi.", "Banyak hasil: tambah halaman."])
-    note(a, 6, 890, "Responsif dan akses", ["390 px: grid satu kolom.", "Pencarian dan filter dapat digulir.", "Urutan fokus mengikuti urutan baca.", "Fokus papan ketik terlihat."])
-    return "01-katalog", a
+    s = text(58, 96, "Menu favorit", 58, INK, 700) + text(940, 54, "Pilih camilan dan jumlahnya.", 17, MID)
+    s += text(940, 78, "Kami siapkan untuk pengambilan di kedai.", 17, MID)
+    s += rect(58, 129, 530, 48, WHITE, INK) + text(75, 159, "Cari nama menu", 16, MID)
+    for x, label in zip((1080, 1172, 1260, 1350), ("Semua", "Favorit", "Camilan", "Pedas")):
+        s += text(x, 158, label, 14, INK, 700 if label == "Semua" else 400)
+    names = [("Ayam Gunting", "Rp 15.000"), ("Kentang Goreng", "Rp 10.000"), ("Chicken Ball", "Rp 12.000"), ("Fire Chicken Wings", "Rp 18.000")]
+    for i, (name, price) in enumerate(names):
+        x = 58 + i * 336
+        s += rect(x, 202, 317, 420, WHITE, INK, 1) + block(x, 203, 315, 236, "FOTO PRODUK", "#e5e5e5")
+        s += text(x + 18, 476, name, 17, INK, 700) + text(x + 18, 510, price, 15, INK, 700)
+        s += text(x + 18, 546, "Ringkasan deskripsi produk", 14, MID) + button(x + 18, 570, 278, 38, "Lihat menu  >")
+    s += text(58, 666, "Menampilkan produk aktif sesuai hasil pencarian dan kategori.", 14, MID)
+    return frame("02  Katalog produk", "/#menu", "pencarian dan pemilihan menu", [
+        ("Cari dan saring", ["Input pencarian di atas kartu.", "Kategori menyaring daftar produk.", "Hasil berubah sesuai kontrol."]),
+        ("Kartu produk", ["Foto, nama, harga, deskripsi.", "Aksi membuka detail produk.", "Jumlah kolom menyesuaikan lebar."]),
+        ("State", ["Katalog kosong memberi arahan.", "Foto hanya ilustrasi produk.", "Gambar memiliki teks alternatif."]),
+    ], s)
 
 
 def detail():
-    a = start("02  Detail produk", "P-01  /  Detail produk", "Tujuan: menyampaikan informasi produk dan menyediakan jalan kembali ke katalog.")
-    header(a, "Detail")
-    a += [rect(85, 300, 65, 30, "< Kembali", WHITE, LIGHT, 4, 1),
-          rect(85, 348, 545, 495, PALE, MID, 4, 1),
-          text(357, 585, "Placeholder gambar produk", 16, MID, "middle", 700),
-          label(675, 368, "Kategori produk"), text(675, 414, "Nama produk", 32, INK, weight=700),
-          text(675, 458, "Rp 00.000", 21, INK, weight=700),
-          line(675, 480, 1235, 480, LIGHT, 1),
-          label(675, 518, "Deskripsi"), text(675, 550, "Penjelasan produk dalam beberapa baris.", 15, MID),
-          text(675, 578, "Sertakan komposisi atau informasi lain bila disetujui.", 13, MID),
-          label(675, 635, "Ketersediaan"), rect(675, 652, 160, 31, "Status produk", PALE, MID, 15, 1),
-          rect(675, 716, 335, 48, "Tambah ke keranjang", PALE, INK, 4, 1),
-          text(675, 797, "Pelanggan meninjau pesanan di keranjang.", 12, MID),
-          rect(85, 873, 1190, 42, "Informasi pendukung / rekomendasi", WHITE, LIGHT, 4, 1)]
-    note(a, 1, 236, "Breadcrumb", ["Kembali ke katalog.", "Mendukung orientasi dan recovery."])
-    note(a, 2, 335, "Identitas produk", ["Nama, kategori, harga.", "Label harga memakai format Rupiah."])
-    note(a, 3, 445, "Media dan isi", ["Rasio area media 1:1.", "Deskripsi dapat bertambah baris.", "Teks tetap terbaca tanpa gambar."])
-    note(a, 4, 565, "Ketersediaan", ["Tampilkan status bila relevan.", "Produk nonaktif tidak ditawarkan.", "Teks menyertai indikator visual."])
-    note(a, 5, 710, "Pemesanan", ["Tambah item ke keranjang.", "Tinjau jumlah dan subtotal.", "Server memeriksa harga terkini."])
-    note(a, 6, 870, "State dan responsif", ["Memuat, tidak ditemukan, error.", "390 px: media di atas informasi.", "Aksi selebar kontainer.", "Kembali tetap mudah dijangkau."])
-    return "02-detail-produk", a
-
-
-def login():
-    a = start("03  Masuk admin", "A-01  /  Autentikasi admin", "Tujuan: memberi admin akses terautentikasi ke area pengelolaan.")
-    a += [rect(85, 225, 1190, 55, WHITE, LIGHT, 4, 1),
-          circle(112, 252, 13, "AG", PALE), text(136, 249, "Ayam Gunting", 15, INK, weight=700),
-          text(136, 266, "MALAYSIA  /  ADMIN", 9, MID),
-          rect(352, 302, 656, 610, WHITE, LIGHT, 8, 2),
-          circle(430, 373, 23, "AG", PALE), text(472, 369, "Masuk ke dashboard", 24, INK, weight=700),
-          text(472, 396, "Gunakan akun admin yang telah diaktifkan.", 13, MID),
-          label(407, 455, "Email admin"), rect(407, 470, 546, 48, "nama@contoh.id", WHITE, MID, 4, 1),
-          label(407, 551, "Kata sandi"), rect(407, 566, 546, 48, "Masukkan kata sandi", WHITE, MID, 4, 1),
-          text(407, 635, "State error tampil di sini dan diumumkan teknologi bantu.", 11, MID),
-          rect(407, 670, 546, 50, "Masuk ke dashboard", PALE, INK, 4, 1),
-          rect(407, 752, 546, 45, "Kembali ke katalog", WHITE, LIGHT, 4, 1),
-          text(407, 846, "Akun admin dibuat atau diundang, bukan melalui pendaftaran publik.", 12, MID)]
-    note(a, 1, 236, "Konteks", ["Logo menjadi tautan katalog.", "Judul menjelaskan tujuan form."])
-    note(a, 2, 340, "Form", ["Email bertipe email.", "Kata sandi bertipe password.", "Label terlihat, bukan placeholder saja."])
-    note(a, 3, 490, "Validasi dan feedback", ["Field wajib diperiksa.", "Kredensial keliru: alert + koreksi.", "Setup gagal: instruksi admin.", "Jangan hilangkan nilai email."])
-    note(a, 4, 654, "Aksi", ["Tombol utama punya status memuat.", "Cegah submit ganda.", "Tautan katalog adalah aksi sekunder."])
-    note(a, 5, 790, "Aksesibilitas", ["Fokus: email, sandi, masuk, kembali.", "Error tertaut pada form.", "Target sentuh minimal 44 px."])
-    note(a, 6, 922, "Responsif", ["390 px: kartu selebar layar.", "Padding kartu 24 px minimum.", "Tidak ada scroll horizontal."])
-    return "03-login-admin", a
+    s = brand_header(cart=True)
+    s += block(0, 78, 792, 822, "FOTO PRODUK  /  1:1", "#e1e1e1", 19)
+    s += text(872, 248, "<  Kembali ke menu", 15, INK, 700)
+    s += text(872, 346, "FAVORIT", 15, MID, 700)
+    s += text(872, 432, "Ayam Gunting", 58, INK, 700)
+    s += text(872, 496, "Deskripsi singkat produk dan sajian.", 18, MID)
+    s += text(872, 565, "Rp 15.000", 30, INK, 700)
+    s += button(872, 615, 286, 54, "Tambah ke keranjang", True) + button(1174, 615, 190, 54, "Lihat menu lain")
+    s += text(872, 713, "Foto menu merupakan ilustrasi sajian.", 14, MID)
+    return frame("03  Detail produk", "/products/[id]", "informasi produk dan aksi keranjang", [
+        ("Foto produk", ["Area media memenuhi sisi kiri.", "Rasio gambar mengikuti viewport.", "Teks produk tetap berdiri sendiri."]),
+        ("Informasi", ["Kategori, nama, deskripsi, harga.", "Harga ditampilkan sebelum aksi."]),
+        ("Aksi", ["Tambah item tanpa meninggalkan halaman.", "Navigasi kembali ke katalog tersedia."]),
+    ], s)
 
 
 def cart():
-    a = start("04  Keranjang dan pesanan", "K-02  /  Keranjang pelanggan", "Tujuan: meninjau jumlah dan subtotal, lalu mengirim pesanan ambil di kedai.")
-    header(a, "Keranjang")
-    a += [rect(85, 305, 735, 60, WHITE, LIGHT, 4, 1), text(110, 342, "< Kembali ke menu", 13, MID),
-          text(85, 416, "Keranjang Anda", 28, INK, weight=700),
-          rect(85, 450, 735, 126, WHITE, LIGHT, 4, 1), rect(103, 467, 92, 92, PALE, LIGHT, 4, 1),
-          text(218, 489, "Nama produk", 16, INK, weight=700), text(218, 516, "Rp 00.000 per produk", 13, MID),
-          rect(560, 485, 104, 34, "−     1     +", WHITE, MID, 4, 1), text(690, 506, "Rp 00.000", 14, INK, weight=700),
-          text(778, 506, "×", 18, MID, "middle", 700),
-          rect(85, 590, 735, 126, WHITE, LIGHT, 4, 1), rect(103, 607, 92, 92, PALE, LIGHT, 4, 1),
-          text(218, 629, "Nama produk", 16, INK, weight=700), text(218, 656, "Rp 00.000 per produk", 13, MID),
-          rect(560, 625, 104, 34, "−     2     +", WHITE, MID, 4, 1), text(690, 646, "Rp 00.000", 14, INK, weight=700),
-          text(778, 646, "×", 18, MID, "middle", 700),
-          rect(850, 400, 400, 416, WHITE, INK, 4, 1), text(880, 444, "Ringkasan pesanan", 20, INK, weight=700),
-          line(880, 466, 1220, 466, LIGHT, 1), text(880, 503, "Subtotal", 14, MID), text(1220, 503, "Rp 00.000", 14, INK, "end", 700),
-          text(880, 532, "Total dihitung ulang saat dikirim.", 11, MID),
-          rect(880, 565, 340, 70, PALE, LIGHT, 4, 1), text(898, 592, "Pengambilan di kedai", 14, INK, weight=700),
-          text(898, 616, "Tunjukkan kode pesanan saat mengambil.", 11, MID),
-          label(880, 674, "Nama pemesan"), rect(880, 690, 340, 42, "Nama lengkap", WHITE, MID, 4, 1),
-          rect(880, 750, 340, 46, "Kirim pesanan", PALE, INK, 4, 1),
-          text(880, 812, "Data yang disimpan: nama, item, waktu, total, status.", 11, MID)]
-    note(a, 1, 236, "Item pesanan", ["Nama, harga, kuantitas, subtotal.", "Perubahan jumlah memperbarui total.", "Item nonaktif harus dihapus."])
-    note(a, 2, 375, "Ringkasan", ["Subtotal dihitung dari data terkini.", "Server menghitung ulang saat kirim.", "Harga snapshot disimpan di pesanan."])
-    note(a, 3, 520, "Pemenuhan", ["Pesanan untuk diambil di kedai.", "Tidak meminta alamat atau telepon.", "Kode membantu pencocokan pesanan."])
-    note(a, 4, 667, "Identitas dan kirim", ["Nama wajib, 2–80 karakter.", "Kesalahan terkait ke kolom/form.", "Tombol menampilkan status memuat."])
-    note(a, 5, 829, "State dan akses", ["Kosong: tautan kembali ke menu.", "Gagal: data tetap dapat dikoreksi.", "Kontrol jumlah punya label aksesibel."])
-    note(a, 6, 930, "Responsif", ["390 px: item di atas ringkasan.", "Ringkasan menjadi satu kolom.", "Tombol memenuhi lebar konten."])
-    return "04-keranjang-pesanan", a
+    s = brand_header(cart=True) + text(58, 170, "Keranjang", 48, INK, 700) + text(58, 205, "Periksa pilihan menu dan jumlahnya.", 16, MID)
+    s += rect(58, 264, 808, 104, WHITE, LINE) + text(88, 313, "Ayam Gunting", 20, INK, 700) + text(88, 343, "Rp 15.000 per produk", 14, MID)
+    s += rect(565, 292, 120, 42, WHITE, INK) + text(625, 319, "-      2      +", 15, INK, 700, "middle")
+    s += text(744, 320, "Rp 30.000", 16, INK, 700) + text(844, 320, "X", 15, MID, 700)
+    s += text(80, 424, ">  Tambah menu lain", 15, INK, 700)
+    s += rect(924, 250, 458, 554, "#eeeeee", LINE) + text(960, 302, "Ringkasan", 30, INK, 700)
+    s += text(960, 350, "Subtotal", 16, MID) + text(1345, 350, "Rp 30.000", 16, INK, 700, "end")
+    s += line(960, 370, 1345, 370, LINE, 1) + text(960, 405, "Total dihitung kembali saat pesanan dikirim.", 14, MID)
+    s += text(960, 465, "Pengambilan di kedai", 15, INK, 700) + text(960, 495, "Tunjukkan kode saat mengambil pesanan.", 14, MID)
+    s += text(960, 555, "Nama pemesan", 14, INK, 700) + rect(960, 574, 385, 48, WHITE, INK) + text(977, 604, "Nama lengkap", 15, MID)
+    s += button(960, 644, 385, 52, "Kirim pesanan", True) + text(960, 739, "Keranjang kosong: ajak kembali ke katalog.", 13, MID)
+    return frame("04  Keranjang dan pesanan", "/cart", "tinjau item lalu kirim untuk ambil di kedai", [
+        ("Item", ["Nama, harga dan jumlah.", "Jumlah dapat ditambah atau dikurangi.", "Item dapat dihapus."]),
+        ("Ringkasan", ["Subtotal dari harga produk aktif.", "Server menghitung ulang total."]),
+        ("Checkout", ["Nama pemesan wajib diisi.", "Tidak meminta alamat atau telepon.", "State kosong dan error perlu jelas."]),
+    ], s)
 
 
-def admin():
-    a = start("05  Dashboard admin", "A-02  /  Operasional toko", "Tujuan: mengelola ketersediaan menu dan memproses antrean pesanan.")
-    a += [rect(85, 225, 1190, 55, WHITE, LIGHT, 4, 1), circle(112, 252, 13, "AG", PALE),
-          text(136, 249, "Ayam Gunting", 15, INK, weight=700), text(136, 266, "MALAYSIA  /  RUANG ADMIN", 9, MID),
-          text(995, 257, "admin@contoh.id", 12, MID), rect(1150, 238, 100, 30, "Keluar", WHITE, MID, 4, 1),
-          rect(85, 296, 190, 650, PALE, LIGHT, 4, 1), text(105, 336, "PENGELOLAAN TOKO", 10, MID, weight=700),
-          rect(100, 355, 160, 42, "Produk", WHITE, MID, 4, 1), rect(100, 408, 160, 42, "Pesanan", WHITE, MID, 4, 1),
-          text(310, 338, "Dashboard", 25, INK, weight=700), text(310, 364, "Kelola menu dan proses pesanan katalog.", 13, MID),
-          rect(1010, 315, 240, 38, "31 Okt 2026, 12.00 WIB", WHITE, MID, 4, 1),
-          rect(310, 390, 290, 84, WHITE, LIGHT, 4, 1), text(332, 420, "Produk aktif", 12, MID), text(332, 455, "12", 25, INK, weight=700),
-          rect(620, 390, 290, 84, WHITE, LIGHT, 4, 1), text(642, 420, "Pesanan menunggu", 12, MID), text(642, 455, "4", 25, INK, weight=700),
-          rect(930, 390, 320, 84, WHITE, LIGHT, 4, 1), text(952, 420, "Jumlah menu", 12, MID), text(952, 455, "15", 25, INK, weight=700),
-          text(310, 520, "Produk", 19, INK, weight=700), rect(1110, 492, 140, 34, "Tambah produk", PALE, INK, 4, 1),
-          rect(310, 538, 940, 152, WHITE, LIGHT, 4, 1),
-          rect(325, 550, 910, 32, PALE, LIGHT, 2, 1), text(338, 571, "PRODUK", 10, MID, weight=700), text(730, 571, "KATEGORI", 10, MID, weight=700), text(865, 571, "HARGA", 10, MID, weight=700), text(985, 571, "STATUS", 10, MID, weight=700),
-          text(338, 612, "Ayam Gunting", 12), text(730, 612, "Favorit", 12), text(865, 612, "Rp 15.000", 12), text(985, 612, "Aktif", 12), text(1080, 612, "Ubah  Nonaktifkan", 11, MID),
-          line(325, 630, 1235, 630, LIGHT, 1), text(338, 660, "Kentang Goreng", 12), text(730, 660, "Camilan", 12), text(865, 660, "Rp 10.000", 12), text(985, 660, "Aktif", 12), text(1080, 660, "Ubah  Nonaktifkan", 11, MID),
-          text(310, 735, "Antrean pesanan", 19, INK, weight=700),
-          rect(310, 752, 940, 155, WHITE, LIGHT, 4, 1), text(330, 780, "Nama pemesan  ·  31 Okt 2026, 11.45 WIB  ·  KODE1234", 12, INK, weight=700),
-          text(330, 810, "2 x Ayam Gunting (Rp 15.000)", 12, MID), text(330, 834, "Total", 12, MID), text(1218, 834, "Rp 30.000", 13, INK, "end", 700),
-          rect(330, 850, 125, 34, "Menandai selesai", WHITE, MID, 4, 1), rect(468, 850, 112, 34, "Batalkan", WHITE, MID, 4, 1),
-          text(760, 870, "MENUNGGU", 10, MID, weight=700)]
-    note(a, 1, 236, "Akses admin", ["Membutuhkan sesi terautentikasi.", "Peran diverifikasi sebelum data tampil.", "Keluar mengakhiri sesi."])
-    note(a, 2, 375, "Ringkasan", ["Jumlah produk aktif.", "Pesanan menunggu, dari 50 terbaru.", "Waktu diformat dalam WIB."])
-    note(a, 3, 505, "Manajemen produk", ["Tambah, ubah, aktif/nonaktif.", "Validasi harga positif di server.", "Produk nonaktif hilang dari katalog."])
-    note(a, 4, 665, "Antrean", ["Nama dan kode pesanan.", "Item dan snapshot harga.", "Total berasal dari transaksi."])
-    note(a, 5, 820, "Tindakan status", ["Pesanan menunggu: selesai/batal.", "Status terminal tidak diubah lagi.", "Konfirmasi sebelum membatalkan."])
-    note(a, 6, 940, "Responsif dan akses", ["Tabel dapat digulir horizontal.", "Kartu pesanan ditumpuk di ponsel.", "Aksi punya label yang jelas."])
-    return "05-dashboard-admin", a
+def receipt():
+    s = rect(0, 0, 1440, 900, "#f3f3f3", "#f3f3f3", 0)
+    s += rect(292, 132, 856, 636, WHITE, LINE) + rect(688, 184, 64, 64, "#dedede", INK)
+    s += text(720, 226, "OK", 20, INK, 700, "middle") + text(720, 308, "Terima kasih sudah memesan.", 42, INK, 700, "middle")
+    s += text(720, 352, "Pesanan menunggu diproses. Tunjukkan kode saat mengambil.", 16, MID, 400, "middle")
+    s += rect(352, 396, 736, 136, "#eeeeee", LINE) + text(380, 438, "Atas nama pemesan", 16, INK)
+    s += text(380, 476, "2 x Ayam Gunting", 16, INK) + text(380, 512, "Total Rp 30.000", 16, INK, 700)
+    s += rect(352, 550, 736, 96, "#202020", INK) + text(720, 586, "KODE PESANAN", 14, WHITE, 700, "middle")
+    s += text(720, 620, "XXXXXXXX-XXXX-XXXX", 18, WHITE, 700, "middle") + button(548, 670, 344, 52, "Kembali ke katalog", True)
+    return frame("05  Tanda terima pesanan", "/orders/received/[id]", "konfirmasi dan kode pengambilan", [
+        ("Konfirmasi", ["Status pesanan ditampilkan.", "Nama dan ringkasan item ditampilkan."]),
+        ("Kode", ["Kode membantu pencocokan pesanan.", "Nomor asli tidak dicantumkan wireframe."]),
+        ("Akses", ["Aksi utama kembali ke katalog.", "Ringkasan tetap terbaca di ponsel."]),
+    ], s)
 
 
-def write(name, elements):
-    svg = "\n".join(elements + ["</svg>"])
-    path = OUT / f"{name}.svg"
-    path.write_text(svg, encoding="utf-8")
+def login():
+    s = rect(0, 0, 720, 900, "#202020", "#202020", 0) + rect(720, 0, 720, 900, "#f3f3f3", "#f3f3f3", 0)
+    s += rect(58, 35, 42, 42, WHITE, WHITE) + text(79, 63, "AG", 16, INK, 700, "middle")
+    s += text(116, 53, "AYAM GUNTING", 17, WHITE, 700) + text(116, 75, "MALAYSIA / ADMIN", 11, WHITE, 700)
+    s += text(58, 438, "Kelola", 88, WHITE, 700) + text(58, 536, "pesanan.", 88, WHITE, 700)
+    s += text(58, 820, "Atur menu dan pantau pesanan untuk diambil.", 16, WHITE)
+    s += text(840, 356, "Masuk ke dashboard", 30, INK, 700) + text(840, 389, "Gunakan akun admin toko.", 16, MID)
+    s += text(840, 440, "Email admin", 14, INK, 700) + rect(840, 456, 492, 50, WHITE, LINE) + text(855, 488, "nama@contoh.id", 15, MID)
+    s += text(840, 552, "Kata sandi", 14, INK, 700) + rect(840, 568, 492, 50, WHITE, LINE) + text(855, 600, "Masukkan kata sandi", 15, MID)
+    s += button(840, 646, 492, 54, "Masuk ke dashboard", True) + text(840, 746, "<  Kembali ke katalog", 15, MID)
+    return frame("06  Login admin", "/admin/login", "autentikasi pengelola", [
+        ("Form", ["Email dan kata sandi.", "Label berada di luar input.", "Nilai tidak disimpan wireframe."]),
+        ("Feedback", ["Kesalahan tampil dekat form.", "Pesan tidak mengungkap rahasia."]),
+        ("Responsif", ["Panel menjadi satu kolom.", "Kembali ke katalog tetap tersedia."]),
+    ], s)
 
 
-for maker in (catalog, detail, login, cart, admin):
-    name, elements = maker()
-    write(name, elements)
+def dashboard():
+    s = rect(0, 0, 1440, 78, "#202020", "#202020") + rect(58, 18, 42, 42, "#dedede", WHITE)
+    s += text(79, 45, "AG", 16, INK, 700, "middle") + text(116, 34, "AYAM GUNTING", 16, WHITE, 700)
+    s += text(116, 56, "MALAYSIA / ADMIN", 11, WHITE, 700) + text(1285, 46, "Admin  |  Keluar", 14, WHITE, 700, "end")
+    s += rect(0, 78, 250, 822, "#e8e8e8", LINE) + text(28, 120, "PENGELOLAAN TOKO", 13, INK, 700)
+    s += text(42, 174, "Produk", 16, INK, 700) + text(42, 226, "Pesanan", 16, INK) + text(42, 278, "Lihat katalog", 15, MID)
+    s += text(302, 145, "Dashboard", 34, INK, 700) + text(302, 176, "Kelola menu dan proses pesanan katalog.", 16, MID)
+    for i, (label, value) in enumerate((("Produk aktif", "4"), ("Pesanan menunggu", "1"), ("Jumlah menu", "4"))):
+        x = 302 + i * 350
+        s += rect(x, 212, 322, 115, WHITE, LINE) + text(x + 24, 248, label, 14, MID) + text(x + 24, 300, value, 33, INK, 700)
+    s += rect(302, 360, 1036, 278, WHITE, LINE) + text(332, 402, "Produk", 25, INK, 700) + button(1160, 376, 150, 42, "Tambah produk", True)
+    s += rect(322, 428, 996, 38, "#eeeeee", LINE) + text(340, 453, "PRODUK", 13, INK, 700) + text(800, 453, "KATEGORI", 13, INK, 700)
+    s += text(1010, 453, "HARGA", 13, INK, 700) + text(1120, 453, "STATUS", 13, INK, 700)
+    for i, name in enumerate(("Ayam Gunting", "Kentang Goreng", "Chicken Ball", "Fire Chicken Wings")):
+        y = 506 + i * 34
+        s += text(340, y, name, 14, INK) + text(800, y, "Kategori", 14, MID) + text(1010, y, "Rp ...", 14, INK)
+        s += text(1120, y, "Aktif", 14, INK, 700) + text(1240, y, "Ubah", 13, MID)
+    s += rect(302, 664, 1036, 202, WHITE, LINE) + text(332, 706, "Antrean pesanan", 25, INK, 700)
+    s += text(332, 750, "Nama pemesan  |  Waktu WIB  |  Kode pesanan", 15, INK, 700)
+    s += text(332, 782, "Item dan kuantitas", 14, MID) + text(1238, 782, "Total", 14, INK, 700, "end")
+    s += button(332, 806, 168, 40, "Tandai selesai") + button(516, 806, 120, 40, "Batalkan")
+    return frame("07  Dashboard admin", "/admin", "kelola menu dan antrean transaksi", [
+        ("Ringkasan", ["Produk aktif, pesanan menunggu, total menu.", "Angka bersumber dari data aplikasi."]),
+        ("Produk", ["Tambah, ubah, aktif/nonaktif.", "Form produk berada sesudah tabel."]),
+        ("Antrean", ["Item, total dan waktu WIB.", "Pesanan pending dapat diselesaikan/batal."]),
+        ("Responsif", ["Navigasi menyempit pada ponsel.", "Tabel dan kartu menyesuaikan lebar."]),
+    ], s)
+
+
+SCREENS = [
+    ("01-beranda-katalog", home),
+    ("02-katalog-produk", catalog),
+    ("03-detail-produk", detail),
+    ("04-keranjang-pesanan", cart),
+    ("05-tanda-terima", receipt),
+    ("06-login-admin", login),
+    ("07-dashboard-admin", dashboard),
+]
+
+for filename, builder in SCREENS:
+    (OUT / f"{filename}.svg").write_text(builder(), encoding="utf-8")
+
+print(f"Generated {len(SCREENS)} grayscale wireframe SVGs in {OUT}")

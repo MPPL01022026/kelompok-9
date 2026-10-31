@@ -1,4 +1,4 @@
-# Sprint 3 — Project Execution
+# Sprint 3 - Project Execution
 
 **Baseline:** 9–20 November 2026 (10 hari kerja, Senin–Jumat)
 **Tujuan sprint:** menghasilkan aplikasi development yang menjalankan alur katalog, akses admin, pengelolaan produk, dan pencatatan transaksi sesuai desain Sprint 2 yang disetujui.
