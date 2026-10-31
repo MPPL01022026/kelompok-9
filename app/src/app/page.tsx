@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Clock3, Sparkles } from "lucide-react";
-import { sampleProducts, formatRupiah } from "@/lib/products";
+import { formatRupiah, getPublicProducts } from "@/lib/products";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { products, source } = await getPublicProducts();
+
   return (
     <main className="site-shell">
       <header className="container topbar">
@@ -26,13 +28,13 @@ export default function HomePage() {
       </section>
 
       <section className="container section" id="menu">
-        <div className="section-head"><div><div className="section-kicker">Dari dapur kami</div><h2>Temukan favoritmu</h2><p className="section-sub">Pilihan hangat untuk menemani hari.</p></div><span className="catalog-note"><span className="eyebrow-dot" />Menu contoh</span></div>
-        <div className="menu-grid">{sampleProducts.filter((product) => product.isActive).map((product) => <article className="product-card" key={product.id}>
+        <div className="section-head"><div><div className="section-kicker">Dari dapur kami</div><h2>Temukan favoritmu</h2><p className="section-sub">Pilihan hangat untuk menemani hari.</p></div><span className="catalog-note"><span className="eyebrow-dot" />{source === "sample" ? "Menu contoh" : "Menu tersedia"}</span></div>
+        <div className="menu-grid">{products.map((product) => <article className="product-card" key={product.id}>
           <Link href={`/products/${product.id}`} aria-label={`Lihat ${product.name}`}>
             <div className="product-image"><span className="product-tag">{product.category}</span><span className="product-emoji">{product.emoji}</span></div>
             <div className="product-info"><div className="product-row"><h3>{product.name}</h3><span className="price">{formatRupiah(product.price)}</span></div><p>{product.description}</p><div className="product-link"><span>Lihat detail</span><span><ArrowRight size={13} /></span></div></div>
           </Link>
-        </article>)}</div>
+        </article>)}{products.length === 0 && <p className="empty-state">Belum ada produk yang tersedia. Silakan kembali lagi nanti.</p>}</div>
       </section>
 
       <section className="container story-band" id="cerita"><div><h2>Sederhana, hangat, selalu bikin rindu.</h2><p>Ayam Gunting Malaysia — camilan favorit untuk dinikmati bersama.</p></div><a href="#menu" className="button-primary">Jelajahi menu <ArrowRight size={14} /></a></section>
