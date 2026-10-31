@@ -44,6 +44,19 @@ Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Catat sebagai f
 | Katalog publik dan detail produk membaca produk aktif dari Supabase, dengan data contoh untuk setup lokal | Niluh | [PR #11](https://github.com/MPPL01022026/kelompok-9/pull/11) | Tinjau terhadap data, requirement, dan wireframe yang disetujui; lanjutkan penyempurnaan saat Sprint 3 |
 | Penyempurnaan navigasi mobile, fokus keyboard, dan preferensi reduced motion | Zahra | [PR #12](https://github.com/MPPL01022026/kelompok-9/pull/12) | Tinjau bersama wireframe pada kickoff dan catat revisi yang diperlukan |
 
+## Prototipe MVP lokal (31 Oktober 2026)
+
+Prototipe lokal dikembangkan sebelum tanggal mulai Sprint 3. Perubahan ini belum memiliki PR dan belum digabung ke `main`; statusnya tidak menutup review Sprint 3 atau persetujuan operasional.
+
+| Bagian kontribusi yang disiapkan | PIC | Cakupan |
+|---|---|---|
+| Penyimpanan lokal dan skema hosted | Faiza | File JSON lokal, validasi/operasi server, mode autentikasi lokal, dan berkas impor SQL Supabase |
+| Alur pelanggan | Niluh | Katalog, detail, keranjang, checkout nama saja, dan tanda terima pesanan ambil di kedai |
+| Antarmuka dan wireframe | Zahra | Polesan responsif/aksesibel serta wireframe katalog, detail, login, keranjang, dan dashboard |
+| Laporan dan kendali proyek | Nayla | README, backlog, pertanyaan terbuka, tracker, bukti, dan laporan Markdown/PDF |
+
+Setiap anggota meninjau dan mendorong perubahan dari akun GitHub masing-masing. Urutan branch/PR dicatat saat kontribusi siap dikirim.
+
 ## Sprint 3 - Eksekusi proyek (9–20 November 2026)
 
 | Aktivitas | Deliverable | PIC usulan | Target | Status saat rencana dibuat |
@@ -56,7 +69,7 @@ Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Catat sebagai f
 | Pencatatan transaksi (PB-06) | Transaksi dan item tersimpan dengan snapshot harga | Faiza | 17–19 Nov | Belum mulai |
 | Integrasi dan review sprint | Demo internal, temuan, daftar pekerjaan Sprint 4 | Nayla, seluruh tim | 20 Nov | Direncanakan |
 
-Rencana rinci dan dependensi tercatat pada [Sprint 3 Plan](sprint-03/SPRINT_PLAN.md) dan [Implementation Handoff](sprint-03/IMPLEMENTATION_HANDOFF.md). Bootstrap aplikasi, katalog, detail produk, login admin, dan skema awal telah dibuat sebagai fondasi; data menu masih contoh dan operasi CRUD/transaksi belum selesai.
+Rencana rinci dan dependensi tercatat pada [Sprint 3 Plan](sprint-03/SPRINT_PLAN.md) dan [Implementation Handoff](sprint-03/IMPLEMENTATION_HANDOFF.md). Bukti kontribusi awal dan status pelaksanaan tercatat dalam [Catatan Eksekusi Sprint 3](sprint-03/SPRINT_EXECUTION.md); ringkasan capaian prototipe tersedia dalam [Laporan Pelaksanaan Sprint 3](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md). Fitur MVP tersedia pada branch lokal dan belum dikirim melalui PR.
 
 | Tanggal | Kegiatan | Peserta | Keputusan/hasil | Tindak lanjut | Status |
 |---|---|---|---|---|---|

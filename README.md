@@ -6,13 +6,13 @@
 
 ## Ringkasan proyek
 
-UMKM Ayam Gunting Malaysia menyediakan ayam gunting, kentang goreng, chicken ball, dan fire chicken wings. Sistem ini membantu pemilik mengelola informasi produk dan transaksi secara terstruktur. Pada Sprint 2, tim mengonfirmasi daftar produk dan harga, alur transaksi saat ini, serta aturan operasional langsung dengan pemilik.
+Proyek ini mengembangkan aplikasi untuk menampilkan katalog dan membantu admin mengelola produk serta pesanan UMKM Ayam Gunting Malaysia. Data awal produk dan harga dalam aplikasi masih berupa contoh dan perlu dikonfirmasi pemilik.
 
 | Masalah yang dituju | Fitur rencana | Pengguna utama |
 |---|---|---|
 | Informasi produk sulit dilihat dan diperbarui | Katalog dengan nama, harga, deskripsi, dan ketersediaan | Pelanggan dan admin |
 | Data menu perlu dirawat | Tambah, ubah, dan nonaktifkan produk | Admin |
-| Penjualan perlu dicatat | Transaksi dan item pesanan | Admin |
+| Pesanan pelanggan perlu dicatat | Keranjang dan pesanan ambil di kedai | Pelanggan dan admin |
 | Pemilik perlu melihat hasil penjualan | Riwayat, rekap, dan grafik per periode | Pemilik/admin |
 
 ## Batas ruang lingkup
@@ -55,6 +55,9 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 |---|---|
 | [Sprint 3 Plan](docs/sprint-03/SPRINT_PLAN.md) | Sasaran, urutan kerja, PIC, kesiapan, kriteria selesai, dan risiko eksekusi |
 | [Implementation Handoff](docs/sprint-03/IMPLEMENTATION_HANDOFF.md) | Pemetaan backlog ke area implementasi, dependensi, data, dan catatan review |
+| [Catatan Eksekusi Sprint 3](docs/sprint-03/SPRINT_EXECUTION.md) | Kontribusi persiapan, prototipe lokal, dan batas bukti |
+| [Laporan pelaksanaan Sprint 3 - Markdown](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md) | Capaian yang tercatat dan bukti repository hingga 31 Oktober 2026 |
+| [Laporan pelaksanaan Sprint 3 - PDF](docs/sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.pdf) | Versi PDF laporan dengan tabel dan wireframe hitam putih |
 
 ### Dokumen kendali proyek
 
@@ -72,9 +75,12 @@ Termasuk katalog, detail produk, pencatatan/pemesanan sederhana, login admin, ma
 | Framework dan routing | Next.js App Router |
 | Bahasa | TypeScript |
 | UI | Tailwind CSS |
-| Database dan autentikasi | Supabase PostgreSQL dan Supabase Auth |
+| Penyimpanan lokal sementara | Berkas JSON lokal di `app/.local-data/store.json` |
+| Database hosted target | Supabase PostgreSQL dan Supabase Auth |
 | Deployment | Vercel |
 | Kolaborasi | Git dan GitHub; branch per perubahan, commit dengan identitas akun sendiri, Pull Request ke `main` |
+
+MVP menyediakan katalog dengan pencarian dan kategori, detail produk, keranjang, pesanan ambil di kedai, login admin, manajemen produk, dan antrean pesanan. Mode lokal menyimpan pesanan dalam berkas JSON. Integrasi Supabase menyimpan pesanan dengan snapshot harga pada waktu pengiriman. Laporan rekap, pembayaran daring, dan pengiriman tidak termasuk MVP.
 
 Arsitektur implementasi menggunakan Next.js dan TypeScript dengan Supabase untuk PostgreSQL dan autentikasi. Vercel menjadi target deployment. Simpan credential di environment variable dan jangan masukkan secret ke repository.
 
@@ -89,7 +95,47 @@ Copy-Item .env.example .env.local
 pnpm dev
 ```
 
-Buka `http://localhost:3000`. Tanpa konfigurasi Supabase, katalog memakai data contoh lokal. Untuk menghubungkan database, isi URL dan anon key Supabase di `app/.env.local`, lalu jalankan SQL pada `app/supabase/migrations/0001_initial_schema.sql` di SQL Editor project. Buat akun admin melalui Supabase Auth Dashboard; kebijakan database hanya mengizinkan admin yang terdaftar di tabel `admin_users`.
+Buka `http://localhost:3000`. Tanpa konfigurasi Supabase, aplikasi memakai katalog contoh dan penyimpanan lokal di `app/.local-data/store.json`. Berkas dibuat otomatis dan tidak disertakan ke Git. Salin `.env.example` ke `.env.local` dan ubah `LOCAL_ADMIN_PASSWORD` untuk mengaktifkan login admin lokal. Kredensial mode lokal hanya untuk pengembangan pada satu komputer.
+
+Untuk menyiapkan Supabase:
+
+1. Salin URL project dan anon key ke `app/.env.local`.
+2. Tinjau lalu impor [`app/supabase/IMPORT_TO_SUPABASE.sql`](app/supabase/IMPORT_TO_SUPABASE.sql) melalui SQL Editor. Berkas tersebut menggabungkan migrasi 0001 dan 0002 secara berurutan.
+3. Buat akun admin melalui Supabase Auth Dashboard.
+4. Daftarkan UUID akun itu pada `public.admin_users` melalui Table Editor. Jangan membuka pendaftaran admin untuk umum.
+5. Masuk ke `/admin`, lalu masukkan produk dan harga yang sudah dikonfirmasi pemilik.
+
+Migrasi MVP membatasi pesanan publik pada fungsi database yang memeriksa produk aktif dan menghitung ulang subtotal, snapshot harga, serta total. Tabel pesanan dan nama pemesan hanya dapat dibaca admin.
+
+## Tampilan aplikasi dan wireframe
+
+Tangkapan layar berikut diambil dari aplikasi lokal pada 31 Oktober 2026. Katalog memakai data contoh pada penyimpanan lokal. Gambar menunjukkan tampilan saat ini; gambar bukan bukti QA atau uji penerimaan.
+
+### Katalog produk
+
+![Tampilan lokal katalog Ayam Gunting Malaysia](docs/sprint-03/screenshots/01-katalog.png)
+
+### Detail produk
+
+![Tampilan lokal detail produk Ayam Gunting](docs/sprint-03/screenshots/02-detail-produk.png)
+
+### Login admin
+
+![Tampilan lokal login admin](docs/sprint-03/screenshots/03-login-admin.png)
+
+### Wireframe low-fidelity untuk handoff
+
+Wireframe sumber SVG memakai frame desktop 1440 x 900, grid 12 kolom, anotasi komponen, state antarmuka, dan catatan responsif. PNG menjadi pratinjau untuk review. Aturan operasional serta retensi nama pemesan tercatat pada [Open Questions](docs/OPEN_QUESTIONS.md).
+
+![Wireframe 16:9 katalog publik](docs/sprint-03/wireframes/01-katalog.png)
+
+![Wireframe 16:9 detail produk](docs/sprint-03/wireframes/02-detail-produk.png)
+
+![Wireframe login admin](docs/sprint-03/wireframes/03-login-admin.png)
+
+![Wireframe keranjang dan pesanan](docs/sprint-03/wireframes/04-keranjang-pesanan.png)
+
+![Wireframe dashboard admin](docs/sprint-03/wireframes/05-dashboard-admin.png)
 
 ## Baseline kerja proyek
 
