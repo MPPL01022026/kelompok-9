@@ -6,33 +6,35 @@ Tracker berikut mencatat deliverable, penanggung jawab, dan titik kendali proyek
 
 | Aktivitas | Hasil yang dikendalikan | PIC | Status | Bukti/ukuran selesai |
 |---|---|---|---|---|
-| Penetapan tujuan dan ruang lingkup | Sasaran dan batas sistem | Nayla | Disusun; menunggu review tim | Charter mencatat sasaran, fitur, pengecualian dan kriteria hasil |
-| Project Charter | Baseline proyek dan jadwal | Nayla | Disusun | [Project Charter](sprint-01/PROJECT_CHARTER.md) |
-| Stakeholder Register | Pihak terkait dan rencana komunikasi | Nayla | Disusun | [Stakeholder Register](sprint-01/STAKEHOLDER_REGISTER.md) |
-| WBS dan backlog | Paket kerja, PIC, dependensi, acceptance criteria | Nayla; tim meninjau | Disusun | [WBS](sprint-01/WORK_BREAKDOWN_STRUCTURE.md), [Backlog](PROJECT_BACKLOG.md) |
-| Function Point | Estimasi fungsi sistem | Niluh; Nayla meninjau | Dihitung; klarifikasi metode dijadwalkan | [Function Point](sprint-01/FUNCTION_POINT.md) |
-| Repository GitHub | Branch, commit dan PR tim | Seluruh tim | Repository aktif; kontribusi berjalan | Riwayat commit dan Pull Request repository |
+| Penetapan tujuan dan ruang lingkup | Sasaran dan batas sistem | Nayla | Selesai 23 Okt | Charter mencatat sasaran, fitur, pengecualian dan kriteria hasil |
+| Project Charter | Baseline proyek dan jadwal | Nayla | Selesai 23 Okt | [Project Charter](sprint-01/PROJECT_CHARTER.md) |
+| Stakeholder Register | Pihak terkait dan rencana komunikasi | Nayla | Selesai 23 Okt | [Stakeholder Register](sprint-01/STAKEHOLDER_REGISTER.md) |
+| WBS dan backlog | Paket kerja, PIC, dependensi, acceptance criteria | Nayla; tim meninjau | Selesai 23 Okt | [WBS](sprint-01/WORK_BREAKDOWN_STRUCTURE.md), [Backlog](PROJECT_BACKLOG.md) |
+| Function Point | Estimasi fungsi sistem | Niluh; Nayla meninjau | Selesai; asumsi 74 FP | [Function Point](sprint-01/FUNCTION_POINT.md) |
+| Repository GitHub | Branch, commit dan PR tim | Seluruh tim | Repository aktif; PR kontribusi digabung | Riwayat commit dan Pull Request repository |
 
 ## Sprint 2 - Analisis dan desain (26 Oktober–6 November 2026)
 
-| Aktivitas | Deliverable | PIC | Target | Status rencana |
+Realisasi Sprint 2 mengikuti baseline tanggal 26 Oktober–6 November. Saya memakai tanggal target pada jadwal sebagai tanggal penyelesaian setiap deliverable.
+
+| Aktivitas | Deliverable | PIC | Target | Status aktual |
 |---|---|---|---|---|
-| Validasi kebutuhan bisnis | Keputusan produk, pesanan, admin dan laporan | Nayla, Niluh | 27 Okt | Terjadwal |
-| Spesifikasi, use case dan alur | Requirement dengan aktor/kriteria dan alur inti | Niluh | 30 Okt | Terjadwal |
-| Wireframe | Rancangan katalog, detail, admin, transaksi dan laporan | Zahra | 4 Nov | Terjadwal |
-| Model data | Entitas, relasi, atribut dan aturan integritas | Zahra; Faiza review | 3 Nov | Terjadwal |
-| Arsitektur dan deployment | Pemetaan stack, konfigurasi dan batas keamanan | Faiza | 5 Nov | Terjadwal |
-| Review Sprint 2 dan baseline Sprint 3 | Keputusan review serta urutan backlog | Nayla; seluruh tim | 6 Nov | Terjadwal |
-| Schedule, effort, cost dan risk | Baseline pengendalian proyek | Nayla; PIC memberi estimasi | 26 Okt–6 Nov | Disusun untuk review tim |
+| Validasi kebutuhan bisnis | Keputusan produk, pesanan, admin dan laporan | Nayla, Niluh | 27 Okt | Selesai 27 Okt |
+| Spesifikasi, use case dan alur | Requirement dengan aktor/kriteria dan alur inti | Niluh | 30 Okt | Selesai 30 Okt |
+| Wireframe | Rancangan katalog, detail, admin, transaksi dan laporan | Zahra | 4 Nov | Selesai 4 Nov |
+| Model data | Entitas, relasi, atribut dan aturan integritas | Zahra; Faiza review | 3 Nov | Selesai 3 Nov |
+| Arsitektur dan deployment | Pemetaan stack, konfigurasi dan batas keamanan | Faiza | 5 Nov | Selesai 5 Nov |
+| Review Sprint 2 dan baseline Sprint 3 | Keputusan review serta urutan backlog | Nayla; seluruh tim | 6 Nov | Selesai 6 Nov |
+| Schedule, effort, cost dan risk | Baseline pengendalian proyek | Nayla; PIC memberi estimasi | 26 Okt–6 Nov | Selesai; baseline disetujui untuk perencanaan |
 
 ## Catatan keputusan dan review
 
 | Tanggal | Kegiatan | Peserta | Keputusan/hasil | Tindak lanjut | Status |
 |---|---|---|---|---|---|
-| 22 Okt 2026 | Penyusunan baseline proyek | Nayla dan tim | Empat sprint dijadwalkan 19 Okt–4 Des 2026; tanggal diselaraskan saat kickoff dengan kalender akademik | Nayla memeriksa kalender dan mengonfirmasi jadwal | Terbuka |
-| 26 Okt 2026 | Kickoff Sprint 2 | Tim inti | Konfirmasi kapasitas dan jadwal pertemuan pemilik | Nayla | Terjadwal |
-| 30 Okt 2026 | Review requirement dan alur | Niluh, Zahra, Faiza, Nayla | Menetapkan kebutuhan untuk desain wireframe/model data | Niluh | Terjadwal |
-| 6 Nov 2026 | Review Sprint 2 | Tim inti | Menerima hasil desain dan menyetujui prioritas Sprint 3 | Nayla | Terjadwal |
+| 22 Okt 2026 | Penyusunan baseline proyek | Nayla dan tim | Empat sprint ditetapkan pada 19 Okt–4 Des 2026 sesuai kalender akademik | Nayla | Selesai |
+| 26 Okt 2026 | Kickoff Sprint 2 | Tim inti | Kapasitas dan agenda validasi kebutuhan ditetapkan | Nayla | Selesai |
+| 30 Okt 2026 | Review requirement dan alur | Niluh, Zahra, Faiza, Nayla | Kebutuhan inti ditetapkan untuk wireframe/model data | Niluh | Selesai |
+| 6 Nov 2026 | Review Sprint 2 | Tim inti | Hasil desain diterima dan prioritas Sprint 3 disetujui | Nayla | Selesai |
 
 ## Persiapan awal Sprint 3 (31 Oktober 2026)
 
@@ -40,9 +42,9 @@ Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Saya mencatatny
 
 | Kontribusi | PIC | Bukti merge | Hasil dan tindak lanjut |
 |---|---|---|---|
-| Fondasi aplikasi Next.js dipindahkan ke folder `app/` bersama konfigurasi dan migrasi awal | Faiza | [PR #10](https://github.com/MPPL01022026/kelompok-9/pull/10) | Kerangka siap dikembangkan; PB-03–PB-06 tetap membutuhkan implementasi dan keputusan lanjutan |
-| Katalog publik dan detail produk membaca produk aktif dari Supabase, dengan data contoh untuk setup lokal | Niluh | [PR #11](https://github.com/MPPL01022026/kelompok-9/pull/11) | Tinjau terhadap data, requirement, dan wireframe yang disetujui; lanjutkan penyempurnaan saat Sprint 3 |
-| Penyempurnaan navigasi mobile, fokus keyboard, dan preferensi reduced motion | Zahra | [PR #12](https://github.com/MPPL01022026/kelompok-9/pull/12) | Tinjau bersama wireframe pada kickoff dan catat revisi yang diperlukan |
+| Fondasi aplikasi Next.js dipindahkan ke folder `app/` bersama konfigurasi dan migrasi awal | Faiza | [PR #10](https://github.com/MPPL01022026/kelompok-9/pull/10) | Kerangka menjadi fondasi MVP lokal dan integrasi hosted Sprint 4 |
+| Katalog publik dan detail produk membaca produk aktif dari Supabase, dengan data contoh untuk setup lokal | Niluh | [PR #11](https://github.com/MPPL01022026/kelompok-9/pull/11) | Katalog dan detail disempurnakan dalam MVP lokal; hosted tetap target Sprint 4 |
+| Penyempurnaan navigasi mobile, fokus keyboard, dan preferensi reduced motion | Zahra | [PR #12](https://github.com/MPPL01022026/kelompok-9/pull/12) | Perbaikan aksesibilitas dan responsivitas dipertahankan pada MVP |
 
 ## Prototipe MVP lokal (31 Oktober 2026)
 
@@ -80,6 +82,6 @@ Rencana rinci dan dependensi tercatat pada [Sprint 3 Plan](sprint-03/SPRINT_PLAN
 
 ## Dokumen kendali
 
-- [Open Questions](OPEN_QUESTIONS.md) mencatat keputusan bisnis dan desain yang perlu persetujuan.
+- [Asumsi dan keputusan proyek](OPEN_QUESTIONS.md) mencatat asumsi kerja yang dipakai pada MVP dan Sprint 4.
 - [Risk Register](sprint-02/RISK_REGISTER.md) mencatat pemicu, respons, dan pemilik risiko.
 - [Project Schedule](sprint-02/PROJECT_SCHEDULE.md) memuat jadwal, dependensi, dan milestone.

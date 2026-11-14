@@ -1,6 +1,6 @@
 # Serah Terima Implementasi MVP
 
-Status berikut merangkum prototipe dan dokumentasi pada 31 Oktober 2026. Baseline Sprint 3 berlangsung 9-20 November 2026. Perubahan tampilan pada lingkungan kerja lokal harus diperiksa melalui Git sebelum dianggap telah masuk ke cabang bersama.
+Snapshot berikut merangkum prototipe pada 31 Oktober 2026. Pembaruan status per 14 November: Sprint 3 ditutup dengan MVP lokal; migrasi hosted, laporan, UAT, dan deployment menjadi target Sprint 4. PR #14–#17 membawa kontribusi MVP ke main.
 
 ## Peta alur aplikasi
 
@@ -45,7 +45,7 @@ MVP tidak meminta nomor telepon atau alamat dan tidak menangani pembayaran darin
 4. Uji RLS serta fungsi `place_order` dan `set_order_status` menggunakan produk dan pelanggan uji.
 5. Tinjau perlindungan spam dan retensi nama pemesan sebelum membuka pemesanan kepada publik.
 
-Migrasi belum diterapkan pada project Supabase. Keputusan produk, harga, aturan pemesanan, dan retensi data menunggu validasi yang tercatat dalam [Open Questions](../OPEN_QUESTIONS.md).
+Migrasi Supabase dijadwalkan pada Sprint 4. Keputusan produk, harga, aturan pemesanan, akses admin, dan retensi data mengikuti [Asumsi dan Keputusan Proyek](../OPEN_QUESTIONS.md) sebagai baseline kerja.
 
 ## Screenshot dan wireframe
 

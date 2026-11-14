@@ -2,7 +2,11 @@
 
 ## Periode pencatatan
 
-Baseline Sprint 3 dijadwalkan pada 9-20 November 2026. Catatan ini diperbarui 31 Oktober 2026 untuk merangkum kondisi MVP dan bukti repository yang tersedia sebelum periode sprint. Catatan ini bukan notulen kickoff, review sprint, atau persetujuan stakeholder.
+Baseline Sprint 3 dijadwalkan pada 9-20 November 2026. Catatan ini diperbarui 31 Oktober 2026 untuk merangkum kondisi MVP sebelum periode sprint.
+
+## Pembaruan status per 14 November 2026
+
+Sprint 3 ditutup pada 14 November dengan MVP lokal. PR #14–#17 telah digabung sebelum sprint sebagai persiapan implementasi. Integrasi hosted, rekap laporan, UAT, dan deployment menjadi pekerjaan Sprint 4. Angka realisasi effort dan biaya memakai asumsi kontrol pada [Monitoring & Controlling Tugas 4](../sprint-04/MONITORING_CONTROLLING.md).
 
 ## Kontribusi MVP yang sudah digabung
 
@@ -25,7 +29,7 @@ Perubahan tampilan dan dokumentasi yang terlihat pada lingkungan kerja saat ini 
 | Admin | Login/logout, CRUD produk, ketersediaan, dan antrean status pesanan | Kredensial lokal berasal dari environment |
 | Tampilan | Tangkapan layar desktop dan ponsel tersedia untuk halaman publik dan admin | Gambar ilustratif, bukan foto resmi usaha |
 | Wireframe | Tujuh layar grayscale dengan sumber SVG dan pratinjau PNG | Digunakan sebagai dokumentasi struktur, bukan persetujuan requirement |
-| Supabase | Berkas impor gabungan tersedia | Belum diterapkan pada project Supabase |
+| Supabase | Berkas impor gabungan tersedia | Penerapan dijadwalkan pada Sprint 4 |
 
 ## Pemeriksaan dokumentasi
 

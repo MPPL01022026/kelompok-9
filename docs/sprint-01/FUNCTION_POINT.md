@@ -1,6 +1,6 @@
 # Estimasi Function Point
 
-Estimasi ini menghitung fungsi sistem katalog, pengelolaan produk, transaksi, dan laporan. Klasifikasi transaksi dan kompleksitas ditetapkan dari kebutuhan proyek yang tersedia dan perlu diselaraskan dengan keputusan pemilik serta metode penilaian mata kuliah.
+Estimasi ini menghitung fungsi sistem katalog, pengelolaan produk, transaksi, dan laporan. Klasifikasi transaksi dan kompleksitas menggunakan asumsi kerja yang sama dengan dokumen [Asumsi dan Keputusan Proyek](../OPEN_QUESTIONS.md).
 
 | Jenis fungsi | Low (jumlah × bobot) | Average (jumlah × bobot) | High (jumlah × bobot) | UFP |
 |---|---:|---:|---:|---:|
@@ -22,6 +22,6 @@ Perhitungan awal menggunakan `ΣFi = 25`. Dengan rumus `VAF = 0,65 + (0,01 × Σ
 - EQ mencakup pencarian katalog dan penelusuran riwayat.
 - ILF mencakup data produk serta transaksi/item transaksi.
 - EIF bernilai nol karena rancangan saat ini tidak memerlukan berkas dari sistem eksternal.
-- Hasil aritmetika tabel adalah 82 UFP. `ΣFi = 25` perlu ditinjau dengan dosen karena metode yang memakai 14 karakteristik umum berskala 0–5 memiliki rentang maksimum 70.
+- Hasil aritmetika tabel adalah 82 UFP. Saya memakai `ΣFi = 25` sebagai nilai asumsi; nilai tersebut berada pada rentang 0–70 untuk 14 karakteristik umum berskala 0–5.
 
-Nilai 74 FP dipakai sebagai estimasi awal proyek. Nilai ini akan diperbarui jika pemetaan fungsi atau metode dosen berubah; perubahan dicatat bersama dasar perhitungannya.
+Nilai **74 FP** menjadi estimasi baseline proyek. Saya memakai nilai ini untuk perencanaan effort sampai ada perubahan ruang lingkup yang dicatat pada tracker.

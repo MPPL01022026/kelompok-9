@@ -123,12 +123,13 @@ Perubahan MVP tersedia pada PR #14 sampai #17. Lihat [riwayat Pull Request](http
 - [Rencana Sprint 3](docs/sprint-03/SPRINT_PLAN.md)
 - [Catatan eksekusi Sprint 3](docs/sprint-03/SPRINT_EXECUTION.md)
 - [Serah terima implementasi MVP](docs/sprint-03/IMPLEMENTATION_HANDOFF.md)
+- [Monitoring & Controlling (Tugas 4)](docs/sprint-04/MONITORING_CONTROLLING.md)
 - [Project backlog](docs/PROJECT_BACKLOG.md)
 - [Sprint tracker](docs/SPRINT_TRACKER.md)
-- [Pertanyaan terbuka](docs/OPEN_QUESTIONS.md)
+- [Asumsi dan keputusan proyek](docs/OPEN_QUESTIONS.md)
 
 Dokumen Sprint 1 dan Sprint 2 tersedia di folder [`docs/`](docs/).
 
 ## Batas prototipe
 
-Mode lokal hanya menyimpan data pada komputer yang menjalankan aplikasi. Belum ada sinkronisasi perangkat, pencadangan cloud, pembayaran daring, pengantaran, atau laporan analitik. Data awal katalog dan aturan operasional perlu dikonfirmasi pemilik sebelum penggunaan nyata.
+Mode lokal hanya menyimpan data pada komputer yang menjalankan aplikasi. Sinkronisasi perangkat, pencadangan cloud, pembayaran daring, dan pengantaran berada di luar cakupan MVP. Katalog contoh dan aturan operasional mengikuti asumsi kerja pada [Asumsi dan keputusan proyek](docs/OPEN_QUESTIONS.md); integrasi hosted dan laporan menjadi sasaran Sprint 4.

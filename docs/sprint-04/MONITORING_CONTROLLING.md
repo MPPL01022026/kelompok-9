@@ -17,7 +17,7 @@
 
 ## 2. Perbandingan rencana dan realisasi waktu
 
-Tanggal baseline berasal dari [WBS](sprint-01/WORK_BREAKDOWN_STRUCTURE.md), [Project Schedule](sprint-02/PROJECT_SCHEDULE.md), dan [Sprint Plan](sprint-03/SPRINT_PLAN.md). Tanggal PR berasal dari riwayat Git yang tersedia di main.
+Tanggal baseline berasal dari [WBS](../sprint-01/WORK_BREAKDOWN_STRUCTURE.md), [Project Schedule](../sprint-02/PROJECT_SCHEDULE.md), dan [Sprint Plan](../sprint-03/SPRINT_PLAN.md). Tanggal PR berasal dari riwayat Git yang tersedia di main.
 
 | Tahap | Rencana | Realisasi / proyeksi | Varians jadwal |
 |---|---|---|---|
@@ -30,7 +30,7 @@ Varians jadwal = tanggal selesai − tanggal selesai baseline. Nilai positif ber
 
 ## 3. Perbandingan estimasi manday dan aktual
 
-Estimasi baseline diambil dari [Effort Estimation](sprint-02/EFFORT_ESTIMATION_MANDAY.md). Saya mengelompokkan paket WBS 3.6–3.7 pada Sprint 3 dan WBS 5.1–5.3 pada pekerjaan akhir Sprint 4.
+Estimasi baseline diambil dari [Effort Estimation](../sprint-02/EFFORT_ESTIMATION_MANDAY.md). Saya mengelompokkan paket WBS 3.6–3.7 pada Sprint 3 dan WBS 5.1–5.3 pada pekerjaan akhir Sprint 4.
 
 | Lingkup | Baseline MD | Realisasi MD s.d. 14 Nov | Sisa estimasi MD | EAC MD | Varians EAC |
 |---|---:|---:|---:|---:|---:|
@@ -47,7 +47,7 @@ EAC (estimate at completion) = realisasi sampai tanggal tinjauan + sisa estimasi
 
 ## 4. Perbandingan anggaran dan biaya aktual
 
-Angka baseline berasal dari [Project Cost Estimation](sprint-02/PROJECT_COST_ESTIMATION.md). Proyeksi menempatkan penggunaan biaya layanan pada Sprint 4.
+Angka baseline berasal dari [Project Cost Estimation](../sprint-02/PROJECT_COST_ESTIMATION.md). Proyeksi menempatkan penggunaan biaya layanan pada Sprint 4.
 
 | Komponen | Anggaran baseline | Aktual s.d. 14 Nov | Sisa/proyeksi | EAC | Varians EAC |
 |---|---:|---:|---:|---:|---:|
@@ -91,15 +91,15 @@ EAC biaya = biaya aktual sampai tanggal tinjauan + proyeksi biaya tersisa. Varia
 
 ## 7. Referensi repository
 
-- [Project Backlog](PROJECT_BACKLOG.md)
-- [Sprint Tracker](SPRINT_TRACKER.md)
-- [WBS](sprint-01/WORK_BREAKDOWN_STRUCTURE.md)
-- [Project Schedule](sprint-02/PROJECT_SCHEDULE.md)
-- [Effort Estimation](sprint-02/EFFORT_ESTIMATION_MANDAY.md)
-- [Project Cost Estimation](sprint-02/PROJECT_COST_ESTIMATION.md)
-- [Risk Register](sprint-02/RISK_REGISTER.md)
-- [Open Questions](OPEN_QUESTIONS.md)
-- [Sprint 3 Plan](sprint-03/SPRINT_PLAN.md)
-- [Sprint 3 execution notes](sprint-03/SPRINT_EXECUTION.md)
-- [Sprint 3 implementation report](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md)
+- [Project Backlog](../PROJECT_BACKLOG.md)
+- [Sprint Tracker](../SPRINT_TRACKER.md)
+- [WBS](../sprint-01/WORK_BREAKDOWN_STRUCTURE.md)
+- [Project Schedule](../sprint-02/PROJECT_SCHEDULE.md)
+- [Effort Estimation](../sprint-02/EFFORT_ESTIMATION_MANDAY.md)
+- [Project Cost Estimation](../sprint-02/PROJECT_COST_ESTIMATION.md)
+- [Risk Register](../sprint-02/RISK_REGISTER.md)
+- [Asumsi Proyek](../OPEN_QUESTIONS.md)
+- [Sprint 3 Plan](../sprint-03/SPRINT_PLAN.md)
+- [Sprint 3 execution notes](../sprint-03/SPRINT_EXECUTION.md)
+- [Sprint 3 implementation report](../sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md)
 - Riwayat PR: [#14](https://github.com/MPPL01022026/kelompok-9/pull/14), [#15](https://github.com/MPPL01022026/kelompok-9/pull/15), [#16](https://github.com/MPPL01022026/kelompok-9/pull/16), [#17](https://github.com/MPPL01022026/kelompok-9/pull/17), [#18](https://github.com/MPPL01022026/kelompok-9/pull/18).

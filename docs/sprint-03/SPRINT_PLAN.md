@@ -7,7 +7,7 @@
 
 Sprint 3 dimulai dengan inisialisasi aplikasi Next.js, TypeScript, Tailwind CSS, Supabase client, katalog publik, detail produk, admin sign-in, serta skema awal PostgreSQL/RLS. Pengembangan berikutnya melanjutkan kerangka tersebut. Dokumen requirement, wireframe, model data, arsitektur, serta keputusan bisnis Sprint 2 tetap menjadi rujukan dan prasyarat untuk mengunci perilaku bisnis.
 
-Keputusan produk/harga, alur pesanan, aturan transaksi, akses admin, skema data, dan stack masih dicatat sebagai perlu validasi pada [Open Questions](../OPEN_QUESTIONS.md). Gunakan asumsi kerja yang sudah tertulis sampai keputusan pemilik, tim, dan dosen dicatat; jangan menganggap asumsi sebagai persetujuan.
+Keputusan produk/harga, alur pesanan, aturan transaksi, akses admin, skema data, dan stack mengikuti baseline pada [Asumsi dan Keputusan Proyek](../OPEN_QUESTIONS.md). Mode lokal menjadi target Sprint 3; integrasi hosted, laporan, pengujian penerimaan, dan deployment dijadwalkan pada Sprint 4.
 
 ## Sasaran dan batas sprint
 
@@ -33,7 +33,7 @@ Riwayat terfilter, rekap/statistik, pengujian penerimaan penuh, deployment, demo
 | 17–19 Nov | Pencatatan transaksi dan item dengan snapshot harga | Faiza; Niluh review alur | Transaksi tersimpan mengikuti aturan yang disepakati |
 | 20 Nov | Integrasi, review kriteria, demo internal dan rencana Sprint 4 | Nayla; seluruh tim | Review tracker, daftar isu, backlog Sprint 4 |
 
-Tanggal dan pembagian kerja adalah rencana awal, bukan catatan pekerjaan yang telah terjadi. Nayla memperbarui tracker hanya berdasarkan bukti aktual. Jika Sprint 2 belum menghasilkan persetujuan desain, tandai dependensi sebagai blocker dan catat siapa serta kapan keputusan diperlukan.
+Tanggal dan pembagian kerja adalah baseline rencana. Sprint 3 ditutup pada 14 November 2026 setelah MVP lokal selesai; realisasi dan estimasi effort dicatat di [Sprint Tracker](../SPRINT_TRACKER.md) dan [laporan Monitoring & Controlling Sprint 4](../sprint-04/MONITORING_CONTROLLING.md).
 
 ## Tanggung jawab
 

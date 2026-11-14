@@ -17,7 +17,11 @@ Laporan ini mencatat kondisi MVP yang tersedia pada repository dan lingkungan ke
 
 MVP menyediakan etalase produk, katalog dengan pencarian dan kategori, detail produk, keranjang, pesanan untuk diambil di kedai, tanda terima berkode, login admin, pengelolaan menu, dan antrean pesanan. Mode demonstrasi lokal menyimpan data di berkas JSON pada satu komputer. Pengelola dapat menambah, mengubah, mengaktifkan, dan menonaktifkan produk serta mengubah status pesanan. Waktu operasional ditampilkan dalam zona Asia/Jakarta.
 
-Pelanggan hanya diminta mengisi nama. Aplikasi tidak menangani pembayaran daring, alamat, nomor telepon, ataupun pengantaran. Data katalog pada tangkapan layar merupakan data contoh. Validasi katalog dan aturan usaha dengan pemilik tetap diperlukan sebelum penggunaan operasional.
+### Pembaruan penutupan per 14 November 2026
+
+Saya menutup Sprint 3 pada 14 November, enam hari kalender lebih awal dari target. PR #14–#17 menjadi implementasi MVP lokal dan digabung sebelum Sprint 3 dimulai; Sprint 3 menutup prototipe dan menetapkan integrasi hosted, laporan, UAT, dan deployment sebagai scope Sprint 4. Estimasi effort realisasi dan biaya kas sampai tanggal ini tercantum pada [Monitoring & Controlling Tugas 4](../sprint-04/MONITORING_CONTROLLING.md).
+
+Pelanggan hanya diminta mengisi nama. Aplikasi tidak menangani pembayaran daring, alamat, nomor telepon, ataupun pengantaran. Data katalog pada tangkapan layar menggunakan asumsi demo di [Asumsi dan Keputusan Proyek](../OPEN_QUESTIONS.md); batas ini menjadi dasar operasi MVP.
 
 <!-- pagebreak -->
 
@@ -42,9 +46,9 @@ MVP mencakup alur pemilihan produk, pemesanan untuk pengambilan di kedai, dan pe
 | PB-01 | Etalase dan katalog dengan pencarian, kategori, data produk, serta state kosong | Isi katalog dan harga masih data contoh |
 | PB-02 | Detail produk dan keranjang browser dengan pengelolaan kuantitas | Harga diperiksa kembali dari sumber data saat pesanan dibuat |
 | PB-03 | Login dan logout admin lokal berbasis kredensial environment | Kredensial lokal hanya untuk penggunaan development |
-| PB-04/PB-05 | Form tambah/ubah produk dan pengaturan aktif/nonaktif | Proses bisnis tetap perlu ditinjau pemilik |
+| PB-04/PB-05 | Form tambah/ubah produk dan pengaturan aktif/nonaktif | Aturan produk aktif/nonaktif mengikuti asumsi Q6 |
 | PB-06 | Pembuatan pesanan, snapshot harga/item, tanda terima, dan antrean admin | Pemesanan lokal hanya tersimpan di komputer yang menjalankan aplikasi |
-| Integrasi hosted | Migrasi SQL gabungan tersedia untuk ditinjau dan diimpor ke Supabase | Migrasi belum diterapkan pada project Supabase |
+| Integrasi hosted | Migrasi SQL gabungan tersedia untuk Supabase | Penerapan migrasi dan koneksi hosted dijadwalkan pada Sprint 4 |
 
 Produk contoh yang terlihat pada katalog adalah Ayam Gunting, Kentang Goreng, Chicken Ball, dan Fire Chicken Wings. Nama serta harga pada contoh tidak dinyatakan sebagai daftar harga resmi.
 
@@ -155,20 +159,20 @@ Wireframe diperbarui agar mengikuti struktur dan navigasi yang tampil pada aplik
 |---|---|
 | Peninjauan visual | Halaman beranda, katalog desktop dan ponsel, detail, dua state keranjang, tanda terima, login admin, dashboard, serta antrean ditangkap dari aplikasi lokal dan ditinjau secara visual |
 | Pemeriksaan interaksi browser | Navigasi halaman dan autentikasi admin lokal digunakan untuk memperoleh tangkapan layar; dokumentasi ini bukan laporan uji end-to-end |
-| TypeScript, lint, dan build | Tidak dijalankan ulang pada pembaruan dokumentasi ini; hasil sebelumnya tidak dijadikan klaim atas perubahan lokal terbaru |
+| TypeScript, lint, dan build | Tidak dijalankan ulang pada pembaruan dokumentasi 31 Oktober; pemeriksaan rilis dijadwalkan pada Sprint 4 |
 | Database lokal | Data contoh tersedia pada komputer pengembangan; tidak disinkronkan antarperangkat |
-| Migrasi Supabase | Belum diterapkan pada project Supabase |
-| Uji perangkat dan penerimaan stakeholder | Belum dicatat |
+| Migrasi Supabase | Dijadwalkan untuk integrasi Sprint 4 |
+| Uji perangkat dan penerimaan stakeholder | Dijadwalkan sebagai UAT Sprint 4 |
 
 ## 8. Risiko dan tindak lanjut
 
 | Tindak lanjut | Tujuan | Pemilik usulan |
 |---|---|---|
-| Tinjau nama produk, deskripsi, harga, dan aturan pengambilan dengan pemilik usaha | Mengganti data contoh dengan informasi yang disetujui | Nayla dan pemilik usaha |
-| Jalankan pemeriksaan fungsional pada alur pesanan dan perubahan status admin | Memastikan perilaku aplikasi sesuai acceptance criteria | Faiza dan Niluh |
-| Review dan terapkan migrasi pada project Supabase development | Memeriksa skema, RLS, RPC, dan akses admin | Faiza; Zahra meninjau model |
-| Tambahkan rate limit atau CAPTCHA untuk pemesanan hosted | Mengurangi spam pada endpoint yang dapat diakses publik | Faiza |
-| Catat kickoff, keputusan, review, dan persetujuan setelah kegiatan berlangsung | Menjaga bukti pelaksanaan tetap sesuai kejadian | Nayla dan seluruh anggota |
+| Gunakan katalog demo sesuai Q2 dan pertahankan sebagai data contoh | Menjaga nilai produk konsisten pada prototipe | Niluh dan Nayla |
+| Jalankan pemeriksaan fungsional pada alur pesanan dan perubahan status admin | Memastikan perilaku aplikasi sesuai acceptance criteria | Faiza dan Niluh, Sprint 4 |
+| Terapkan migrasi pada project Supabase development | Memeriksa skema, RLS, RPC, dan akses admin | Faiza; Zahra meninjau model, Sprint 4 |
+| Tambahkan rate limit atau CAPTCHA untuk pemesanan hosted | Mengurangi spam pada endpoint yang dapat diakses publik | Faiza, Sprint 4 |
+| Catat hasil review Sprint 3 dan keluaran Sprint 4 pada tracker | Menjaga kendali jadwal dan ruang lingkup | Nayla |
 
 ## 9. Referensi proyek
 
