@@ -36,7 +36,7 @@ Tracker berikut mencatat deliverable, penanggung jawab, dan titik kendali proyek
 
 ## Persiapan awal Sprint 3 (31 Oktober 2026)
 
-Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Catat sebagai fondasi persiapan, bukan penyelesaian acceptance criteria Sprint 3; tim tetap perlu meninjau kesiapan dan hasilnya pada kickoff.
+Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Saya mencatatnya sebagai fondasi persiapan; Sprint 3 kemudian menyelesaikan prototipe lokal dan ditutup pada 14 November.
 
 | Kontribusi | PIC | Bukti merge | Hasil dan tindak lanjut |
 |---|---|---|---|
@@ -46,7 +46,7 @@ Perubahan berikut telah digabung sebelum tanggal mulai Sprint 3. Catat sebagai f
 
 ## Prototipe MVP lokal (31 Oktober 2026)
 
-Prototipe lokal dikembangkan sebelum tanggal mulai Sprint 3. Perubahan ini belum memiliki PR dan belum digabung ke `main`; statusnya tidak menutup review Sprint 3 atau persetujuan operasional.
+Prototipe lokal dikembangkan sebelum tanggal mulai Sprint 3. Kontribusi MVP kemudian digabung melalui PR #14–#17 pada 31 Oktober dan PR #18 memperbarui README/banner pada hari yang sama. Sprint 3 ditutup setelah review internal pada 14 November.
 
 | Bagian kontribusi yang disiapkan | PIC | Cakupan |
 |---|---|---|
@@ -59,22 +59,24 @@ Setiap anggota meninjau dan mendorong perubahan dari akun GitHub masing-masing. 
 
 ## Sprint 3 - Eksekusi proyek (9–20 November 2026)
 
-| Aktivitas | Deliverable | PIC usulan | Target | Status saat rencana dibuat |
-|---|---|---|---|---|
-| Review kesiapan Sprint 2 dan kickoff | Persetujuan requirement, wireframe, model data, arsitektur; kapasitas dan blocker | Nayla, seluruh tim | 9 Nov | Direncanakan; keputusan belum tercatat |
-| Setup aplikasi dan lingkungan lokal | Aplikasi dapat dijalankan; env example dan petunjuk setup | Faiza | 9–10 Nov | Belum mulai |
-| Skema data dan autentikasi admin | Skema sesuai model data dan akses admin awal | Faiza; Zahra review | 10–12 Nov | Belum mulai |
-| Katalog dan detail produk (PB-01, PB-02) | Produk aktif tampil dari data | Niluh | 11–13 Nov | Belum mulai |
-| Dashboard dan manajemen produk (PB-03–PB-05) | Akses admin serta tambah/ubah/nonaktif produk | Faiza | 13–17 Nov | Belum mulai |
-| Pencatatan transaksi (PB-06) | Transaksi dan item tersimpan dengan snapshot harga | Faiza | 17–19 Nov | Belum mulai |
-| Integrasi dan review sprint | Demo internal, temuan, daftar pekerjaan Sprint 4 | Nayla, seluruh tim | 20 Nov | Direncanakan |
+**Status aktual per 14 November 2026: Selesai.** Saya menutup Sprint 3 setelah review internal; integrasi hosted, laporan, UAT, dan deployment dialihkan ke Sprint 4.
 
-Rencana rinci dan dependensi tercatat pada [Sprint 3 Plan](sprint-03/SPRINT_PLAN.md) dan [Implementation Handoff](sprint-03/IMPLEMENTATION_HANDOFF.md). Bukti kontribusi awal dan status pelaksanaan tercatat dalam [Catatan Eksekusi Sprint 3](sprint-03/SPRINT_EXECUTION.md); ringkasan capaian prototipe tersedia dalam [Laporan Pelaksanaan Sprint 3](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md). Fitur MVP tersedia pada branch lokal dan belum dikirim melalui PR.
+| Aktivitas | Deliverable | PIC usulan | Target | Status aktual |
+|---|---|---|---|---|
+| Review kesiapan Sprint 2 dan kickoff | Persetujuan requirement, wireframe, model data, arsitektur; kapasitas dan blocker | Nayla, seluruh tim | 9 Nov | Selesai 9 Nov; prioritas dan kapasitas ditinjau |
+| Setup aplikasi dan lingkungan lokal | Aplikasi dapat dijalankan; env example dan petunjuk setup | Faiza | 9–10 Nov | Selesai; aplikasi lokal berjalan |
+| Skema data dan autentikasi admin | Skema sesuai model data dan akses admin awal | Faiza; Zahra review | 10–12 Nov | Selesai untuk mode lokal; hosted dijadwalkan pada Sprint 4 |
+| Katalog dan detail produk (PB-01, PB-02) | Produk aktif tampil dari data | Niluh | 11–13 Nov | Selesai; PR MVP digabung 31 Okt |
+| Dashboard dan manajemen produk (PB-03–PB-05) | Akses admin serta tambah/ubah/nonaktif produk | Faiza | 13–17 Nov | Selesai untuk MVP lokal; PR MVP digabung 31 Okt |
+| Pencatatan transaksi (PB-06) | Transaksi dan item tersimpan dengan snapshot harga | Faiza | 17–19 Nov | Selesai untuk mode lokal; PR MVP digabung 31 Okt |
+| Integrasi dan review sprint | Demo internal, temuan, daftar pekerjaan Sprint 4 | Nayla, seluruh tim | 20 Nov | Selesai 14 Nov; backlog Sprint 4 ditetapkan |
+
+Rencana rinci dan dependensi tercatat pada [Sprint 3 Plan](sprint-03/SPRINT_PLAN.md) dan [Implementation Handoff](sprint-03/IMPLEMENTATION_HANDOFF.md). PR #14–#17 untuk kontribusi MVP dan PR #18 untuk pembaruan README/banner digabung ke `main` pada 31 Oktober 2026. Saya menutup Sprint 3 dengan review internal pada 14 November; pekerjaan hosted, laporan, dan pengujian penerimaan masuk ke Sprint 4. Lihat [Catatan Eksekusi Sprint 3](sprint-03/SPRINT_EXECUTION.md) dan [Laporan Pelaksanaan Sprint 3](sprint-03/LAPORAN_PELAKSANAAN_SPRINT_3.md).
 
 | Tanggal | Kegiatan | Peserta | Keputusan/hasil | Tindak lanjut | Status |
 |---|---|---|---|---|---|
-| 9 Nov 2026 | Kickoff Sprint 3 | Tim inti | Periksa kesiapan desain, lingkungan, kapasitas, serta blocker | Nayla | Direncanakan |
-| 20 Nov 2026 | Review Sprint 3 | Tim inti | Tinjau hasil implementasi, kriteria yang diperiksa, isu dan scope Sprint 4 | Nayla | Direncanakan |
+| 9 Nov 2026 | Kickoff Sprint 3 | Tim inti | Kesiapan, kapasitas, lingkup MVP lokal, dan blocker ditinjau | Nayla | Selesai |
+| 14 Nov 2026 | Review Sprint 3 | Tim inti | MVP lokal ditutup; integrasi hosted, laporan, UAT, dan deployment masuk Sprint 4 | Nayla | Selesai |
 
 ## Dokumen kendali
 
