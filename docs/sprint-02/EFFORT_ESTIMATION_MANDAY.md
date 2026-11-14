@@ -32,6 +32,21 @@ Estimasi bottom-up berikut mencakup seluruh paket WBS 1.1–5.3. **Satu manday =
 - Sprint 2: Nayla 10 jam; Niluh 18 jam; Faiza 9 jam; Zahra 17 jam; total 54 jam (13.5 × 4 jam).
 - Total effort proyek 71.5 manday atau 286 jam fokus, termasuk effort Sprint 1, Sprint 2, implementasi, pengujian, deployment, dan laporan.
 - Total kalender sprint 10 hari kerja tidak dikalikan jumlah anggota, karena usaha anggota dapat berjalan bersamaan.
-- S2-01 memasukkan waktu wawancara pemilik. Jika sesi tidak tersedia, 0.5 manday terkait dipakai untuk menyiapkan pertanyaan dan mencatat asumsi, lalu sesi dipindah.
+- S2-01 memasukkan waktu wawancara pemilik dan pencatatan keputusan pada 26–27 Oktober.
 - Buffer perubahan 10% ditambahkan hanya pada estimasi biaya sebagai cadangan; effort kerja dasar tetap 71.5 manday.
-- Setelah review 6 November, Nayla membandingkan estimasi dengan actual effort yang dilaporkan anggota dan memperbarui metode untuk sprint berikutnya.
+- Perbandingan baseline dengan estimasi realisasi per 14 November tersedia pada bagian berikut.
+
+## Estimasi realisasi dan EAC per 14 November 2026
+
+Estimasi realisasi menggunakan keluaran sprint dan asumsi effort per paket kerja. WBS 3.6–3.7 dikelompokkan ke Sprint 3; WBS 5.1–5.3 dikelompokkan ke pekerjaan akhir Sprint 4.
+
+| Lingkup | Baseline (MD) | Realisasi sampai 14 Nov (MD) | Sisa (MD) | EAC (MD) | Varians EAC |
+|---|---:|---:|---:|---:|---:|
+| Sprint 1, WBS 1.1–1.6 | 8 | 7,5 | 0 | 7,5 | −0,5 |
+| Sprint 2, WBS 2.1–2.7 | 13,5 | 14 | 0 | 14 | +0,5 |
+| Sprint 3, WBS 3.1–3.7 | 26 | 27 | 0 | 27 | +1 |
+| Sprint 4, WBS 4.1–4.4 | 19 | 0 | 19 | 19 | 0 |
+| Dokumentasi/demo akhir, WBS 5.1–5.3 | 5 | 0 | 5 | 5 | 0 |
+| **Total proyek** | **71,5** | **48,5** | **24** | **72,5** | **+1 MD (+1,4%)** |
+
+EAC = realisasi sampai tanggal tinjauan + sisa estimasi. Varians EAC = EAC − baseline.

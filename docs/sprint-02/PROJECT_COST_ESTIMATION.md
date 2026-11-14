@@ -29,6 +29,22 @@ Anggaran mencakup empat sprint dari inisiasi sampai demo akhir (19 Oktober–4 D
 | Sprint 4 (23 Nov–4 Des) | Rp400.000 | Rp320.000 | Rp50.000 | Rp100.000 | Rp87.000 | Rp957.000 |
 | **Total** | **Rp800.000** | **Rp640.000** | **Rp200.000** | **Rp100.000** | **Rp174.000** | **Rp1.914.000** |
 
+## Estimasi realisasi biaya per 14 November 2026
+
+Biaya kas aktual sampai 14 November diasumsikan Rp0 karena mode MVP berjalan lokal. Biaya layanan, internet, cetak, dan cadangan diproyeksikan pada Sprint 4.
+
+| Periode | Anggaran baseline | Aktual sampai 14 Nov | Sisa/proyeksi | EAC | Varians EAC |
+|---|---:|---:|---:|---:|---:|
+| Sprint 1 | Rp0 | Rp0 | Rp0 | Rp0 | Rp0 |
+| Sprint 2 | Rp110.000 | Rp0 | Rp0 | Rp0 | −Rp110.000 |
+| Sprint 3 | Rp847.000 | Rp0 | Rp0 | Rp0 | −Rp847.000 |
+| Sprint 4 | Rp957.000 | Rp0 | Rp957.000 | Rp957.000 | Rp0 |
+| **Biaya kas proyek** | **Rp1.914.000** | **Rp0** | **Rp957.000** | **Rp957.000** | **−Rp957.000 (−50%)** |
+| Nilai ekonomi tenaga kerja | Rp7.150.000 | Rp4.850.000 | Rp2.400.000 | Rp7.250.000 | +Rp100.000 |
+| **Nilai ekonomi penuh proyek** | **Rp9.064.000** | **Rp4.850.000** | **Rp3.357.000** | **Rp8.207.000** | **−Rp857.000** |
+
+Realisasi tenaga kerja memakai estimasi 48,5 MD sampai akhir Sprint 3 dan 24 MD untuk sisa Sprint 4 serta dokumentasi akhir. Sisa biaya kas Rp957.000 mengikuti alokasi baseline Sprint 4.
+
 ## Dasar dan kontrol biaya
 
 - Kurs internal anggaran ditetapkan Rp16.000 per US$ untuk perencanaan; Nayla memperbarui nilai Rupiah saat pembelian berdasarkan kurs/tagihan aktual.
@@ -36,6 +52,6 @@ Anggaran mencakup empat sprint dari inisiasi sampai demo akhir (19 Oktober–4 D
 - Vercel Hobby ditujukan untuk penggunaan personal/nonkomersial; karena target sistem digunakan UMKM, baseline memilih Pro untuk deployment customer-facing. Rujuk [ketentuan paket Hobby Vercel](https://vercel.com/legal/terms) sebelum aktivasi.
 - Tarif tenaga kerja Rp100.000/manday adalah shadow rate untuk valuasi effort, bukan upah atau komitmen pembayaran.
 - Cadangan 10% tidak dibelanjakan otomatis. Nayla menyetujui biaya tambahan dan menyimpan bukti transaksi.
-- Jika penggunaan dapat dibatasi secara sah pada paket gratis atau durasi layanan kurang dari dua bulan, PM mencatat penghematan aktual; jangan mengaktifkan layanan berbayar sebelum tim menyetujui anggaran.
+- Untuk skenario monitoring ini, belanja layanan berbayar dimulai pada Sprint 4 dan dibatasi pada alokasi Rp957.000.
 
 Referensi harga resmi: [Supabase Pricing](https://supabase.com/pricing) dan [Vercel Pricing](https://vercel.com/pricing).

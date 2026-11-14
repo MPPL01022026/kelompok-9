@@ -1,6 +1,6 @@
 # Project Backlog - baseline usulan
 
-Prioritas memakai MoSCoW untuk menyepakati urutan, bukan komitmen fitur final. Kriteria adalah kondisi yang dapat diperiksa saat implementasi; data bisnis harus dikonfirmasi dengan pemilik.
+Prioritas memakai MoSCoW untuk mengurutkan pekerjaan. Kriteria penerimaan dan asumsi data bisnis pada [Asumsi dan Keputusan Proyek](OPEN_QUESTIONS.md) menjadi baseline implementasi MVP dan Sprint 4.
 
 | ID | User story | Prioritas | Kriteria penerimaan | PIC usulan | Sprint target |
 |---|---|---|---|---|---|

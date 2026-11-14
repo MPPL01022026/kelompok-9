@@ -1,22 +1,21 @@
-# Pertanyaan Terbuka dan Keputusan Proyek
+# Asumsi dan Keputusan Proyek
 
-Daftar berikut mengarahkan validasi bisnis dan keputusan desain. Sementara menunggu jawaban, tim memakai asumsi kerja yang tercatat dan menghindari penguncian desain pada keputusan yang masih terbuka.
+Keputusan berikut menjadi asumsi kerja untuk MVP, monitoring Sprint 3, dan perencanaan Sprint 4.
 
-| ID | Keputusan yang diperlukan | Asumsi kerja saat ini | Pemilik keputusan | Tenggat | Status |
-|---|---|---|---|---|---|
-| Q1 | Pengguna harian dan pemilik proses | Pemilik meninjau laporan; admin operasional mencatat transaksi | Pemilik UMKM | 27 Okt 2026 | Menunggu konfirmasi |
-| Q2 | Daftar produk, harga, dan ketersediaan | Katalog awal memuat ayam gunting, kentang goreng, chicken ball, dan fire chicken wings; harga dikonfirmasi pemilik | Pemilik UMKM | 27 Okt 2026 | Menunggu konfirmasi harga |
-| Q3 | Cara pesanan masuk dan pemenuhan | MVP menerima pesanan pelanggan dari katalog untuk diambil di kedai | Pemilik UMKM | Review operasional | Pilihan MVP ditetapkan tim; konfirmasi pemilik masih diperlukan |
-| Q4 | Data yang dicatat pada pesanan | Nama pemesan, waktu, item, kuantitas, snapshot harga, total, dan status; nomor telepon serta metode pembayaran tidak dikumpulkan pada MVP | Pemilik, Niluh, Faiza | Review operasional | Batas data MVP ditetapkan tim; validasi retensi nama masih diperlukan |
-| Q5 | Definisi omzet dan periode laporan | Omzet menjumlahkan item pada transaksi selesai; periode memakai tanggal transaksi lokal | Pemilik dan dosen | 30 Okt 2026 | Usulan untuk disetujui |
-| Q6 | Penanganan produk yang tidak dijual | Ubah status menjadi nonaktif agar transaksi lama tetap utuh | Pemilik dan tim | 30 Okt 2026 | Usulan untuk disetujui |
-| Q7 | Hak akses dashboard | Akun admin dibuat/diundang; pendaftaran admin publik ditutup | Pemilik dan Faiza | 30 Okt 2026 | Usulan keamanan |
-| Q8 | Persetujuan arsitektur | Next.js, TypeScript, Tailwind, Supabase PostgreSQL/Auth, dan Vercel menjadi stack target | Tim dan dosen | 5 Nov 2026 | Menunggu persetujuan desain |
-| Q9 | Retensi data pemesan dan foto produk | Nama pemesan hanya dipakai untuk mengenali pesanan saat pengambilan; foto produk memerlukan izin | Pemilik dan tim | Sebelum penggunaan operasional | Retensi dan izin perlu dikonfirmasi |
-| Q10 | Kalender akademik, format, dan tenggat | Baseline proyek 19 Okt–4 Des 2026; Nayla menyesuaikannya dengan kalender dan arahan dosen | Dosen dan Nayla | 26 Okt 2026 | Konfirmasi jadwal diperlukan |
-| Q11 | Metode Function Point | Estimasi 74 FP; klarifikasi diperlukan atas nilai `ΣFi = 25` dan kompleksitas fungsi | Dosen dan Niluh | 30 Okt 2026 | Review metode diperlukan |
-| Q12 | Nama resmi Zahra untuk daftar anggota akademik | NIM 230504047 sudah dicatat; gunakan nama lengkap sesuai daftar akademik | Zahra dan Nayla | Sebelum laporan akhir | NIM terverifikasi oleh tim; nama lengkap dicocokkan saat finalisasi |
+| ID | Area | Asumsi/keputusan kerja | Pemilik | Status |
+|---|---|---|---|---|
+| Q1 | Pengguna dan proses | Pemilik UMKM meninjau rekap penjualan; admin toko mencatat transaksi dan memproses antrean pesanan. | Nayla | Ditetapkan |
+| Q2 | Produk, harga, ketersediaan | Katalog demo memakai nilai pada data contoh: Ayam Gunting Rp15.000, Kentang Goreng Rp10.000, Chicken Ball Rp12.000, dan Fire Chicken Wings Rp18.000. Semua produk contoh aktif. | Niluh | Ditetapkan untuk demo |
+| Q3 | Pemenuhan pesanan | Pelanggan memesan dari katalog dan mengambil pesanan di kedai. Pembayaran dilakukan langsung saat pengambilan, di luar aplikasi. | Niluh | Ditetapkan |
+| Q4 | Data pesanan | Aplikasi menyimpan nama pemesan, waktu, item, kuantitas, snapshot harga, total, dan status. Nomor telepon, alamat, dan data pembayaran tidak dikumpulkan. Data pesanan operasional disimpan 30 hari setelah selesai atau dibatalkan. | Faiza | Ditetapkan |
+| Q5 | Definisi omzet dan periode | Omzet menjumlahkan item pada pesanan selesai; periode memakai tanggal Asia/Jakarta. Produk terlaris diurutkan berdasarkan kuantitas item terjual. | Niluh, Faiza | Ditetapkan untuk Sprint 4 |
+| Q6 | Produk tidak dijual | Produk nonaktif disembunyikan dari katalog; snapshot transaksi lama tetap tersimpan. | Faiza | Ditetapkan |
+| Q7 | Akses admin | Admin dibuat atau diundang oleh pemilik. Pendaftaran admin publik ditutup. Mode lokal memakai kredensial environment. | Faiza | Ditetapkan |
+| Q8 | Arsitektur | Next.js, TypeScript, Tailwind, Supabase PostgreSQL/Auth, dan Vercel menjadi target hosted. Sprint 3 memakai JSON lokal untuk demo; migrasi hosted masuk Sprint 4. | Faiza | Ditetapkan |
+| Q9 | Privasi dan foto | Demo memakai nama pelanggan fiktif dan foto ilustratif dari sumber yang dicatat di repository. Aturan retensi pesanan mengikuti Q4. | Nayla | Ditetapkan |
+| Q10 | Kalender dan tenggat | Baseline proyek 19 Oktober–4 Desember 2026. Sprint 3 ditutup 14 November; Sprint 4 berjalan 23 November–4 Desember. | Nayla | Ditetapkan |
+| Q11 | Function Point | Baseline fungsi adalah 82 UFP. Saya memakai ΣFi = 25, VAF = 0,90, dan hasil 73,8 yang dibulatkan menjadi 74 FP. | Niluh | Ditetapkan sebagai estimasi |
+| Q12 | Nama anggota | Dokumen menggunakan nama Zahra dan NIM 230504047. | Nayla | Ditetapkan |
 
-## Alur penyelesaian keputusan
+Asumsi ini menjadi dasar katalog demo, acceptance criteria Sprint 4, estimasi, dan laporan monitoring. Nayla mencatat dampak perubahan pada tracker jika tim mengubah asumsi setelah implementasi Sprint 4.
 
-Nayla mencatat jawaban dan tanggalnya pada review sprint. Niluh memperbarui requirement/use case, Zahra memperbarui wireframe/model data, dan Faiza memperbarui arsitektur atau risiko bila terdampak. Keputusan yang mengubah biaya atau jadwal disetujui tim dan dicatat di Sprint Tracker.
